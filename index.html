@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Transtornos Alimentares</title>
+    <link rel="import" href="component.html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            background-color: #f4f7f8; /*fundo*/
+            color: #b677d3; /*vc sabe oq sao transtornos alimentares*/
+            
+        }
+
+        header {
+            background-color: #f4f7f8; /*fundo da frase transtornos alimentares*/
+            color: #b677d3; /*frase transtornos alimentares*/
+            padding: 25px;
+            text-align: center;
+        }
+
+        nav {
+            background-color:#b677d3; /*fundo das perguntas la em cima*/
+            padding: 12px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        nav button {
+            background-color:#b677d3; /*cor do fundo do botao das perguntas la em cima*/
+            color: #f4f7f8; /*cor da escrita do botao das perguntas la em cima*/
+            border: none;
+            padding: 12px 18px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        nav button:hover {
+            background-color: #8c33b6; /*cor quando passamos o mouse no botao*/
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            display: none;
+            background: rgb(247, 244, 242); /* cor da caixa de texto */
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px  #b677d3; /* cor da borda da caixa de texto */
+        }
+
+        .card h2 {
+            color: #b677d3 /* cor do titulo da caixa de texto */
+        }
+
+        footer {
+            background-color: #b677d3; /*fundo do final do site*/
+            color: #f4f7f8; /*fundo da frase no final do site*/
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #b677d3;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        .cta-button:hover {
+            background-color: #BA55D3;
+        }
+        .img1 {
+            height: auto;
+            max-width: 50%;
+            margin-top: 15px;
+            border: 5px solid #b677d3; /*borda da imagem do home*/
+            border-radius: 15px;
+        }
+        .img2 {
+            height: auto;
+            max-width: 30%;
+            margin-top: 10px;
+            border: 5px solid #b677d3; /*borda da imagem do home*/
+            border-radius: 10px;
+        }
+        
+    </style>
+</head>
+
+<body>
+<nav>
+    <button onclick="mostrar('home')">Home</button>
+    <button onclick="mostrar('quem')">Quem Somos</button>
+    <button onclick="mostrar('oque')">O que são</button>
+    <button onclick="mostrar('tipos')">Tipos</button>
+    <button onclick="mostrar('sinais')">Sinais</button>
+    <button onclick="mostrar('ajuda')">Ajuda</button>
+
+
+</nav>
+
+<header id="home">
+    <h1>Por trás da balança</h1>
+    <img class="img1" src="TranstornosAlimentares.jpg" alt="Conscientização sobre transtornos alimentares">
+</header>
+
+
+<div class="container">
+
+    <div id="quem" class="card">
+        <h2>Quem Somos</h2>
+        <p>
+            Somos estudantes do CEMEP e este projeto foi desenvolvido como parte de um trabalho escolar com o objetivo 
+            de conscientizar sobre os transtornos alimentares e destacar a importância da saúde mental, especialmente entre jovens.
+            <br>
+            <br>
+            <center>Criado por:</center> 
+            <br>
+
+            <br>
+            <center>Ana Clara Amaral de Oliveira<br>
+            <img class="img2" src="AnaClara.jpeg" alt="Ana Mria">
+            <br>
+            </center>
+            
+        
+            <br>
+            <center>Heloisa Maria Carvalho<br>
+            <img class="img2" src="HeloisaMaria.jpeg" alt="Heloisa Maria">
+            <br>
+            </center>
+
+    </div>
+
+    <div id="oque" class="card">
+        <h2>O que São Transtornos Alimentares?</h2>
+        <p>Transtornos alimentares são condições de saúde mental graves que envolvem comportamentos alimentares disruptivos e uma preocupação excessiva com o peso, forma corporal e imagem. Eles podem afetar pessoas de todas as idades, gêneros e origens, impactando não apenas o corpo, mas também a saúde emocional e social.</p>
+        <p>De acordo com a Organização Mundial da Saúde (OMS), esses transtornos são reconhecidos como problemas globais de saúde pública, com taxas crescentes em jovens. É essencial abordar o tema com empatia e conhecimento científico.</p>
+        <p><em>Fonte: OMS e American Psychiatric Association (APA).</em></p>
+    </div>
+
+    <div id="tipos" class="card">
+        <h2>Principais tipos</h2>
+        <ul>
+            <li><strong>Anorexia Nervosa:</strong> restrição extrema de alimentos e medo intenso de ganhar peso.</li>
+            <li><strong>Bulimia Nervosa:</strong> episódios de compulsão alimentar seguidos de comportamentos compensatórios.</li>
+            <li><strong>Transtorno da Compulsão Alimentar:</strong> ingestão excessiva de alimentos sem comportamentos compensatórios.</li>
+        </ul>
+    </div>
+
+    <div id="sinais" class="card">
+        <h2>Sinais de alerta</h2>
+        <ul>
+            <li>Preocupação excessiva com peso e aparência</li>
+            <li>Alterações nos hábitos alimentares</li>
+            <li>Isolamento social</li>
+            <li>Sentimentos de culpa ou vergonha ao comer</li>
+            <li>Variações significativas de peso</li>
+        </ul>
+    </div>
+
+    <div id="ajuda" class="card">
+        <h2>Buscar ajuda é essencial</h2>
+        <p>
+            O tratamento dos transtornos alimentares envolve acompanhamento com
+            profissionais da saúde, como psicólogos, nutricionistas e médicos.
+        </p>
+        <p>
+            Procurar ajuda é um passo importante para o cuidado e a recuperação.
+            <br>
+            <center><a href="tel:188" class="cta-button"><i class="fas fa-phone"></i> Ligue para o CVV Agora</a></center>
+        </p>
+
+    </div>
+
+
+</div>
+<footer>
+        <p>&copy; 2026 - Site Educativo sobre Transtornos Alimentares. Desenvolvido para conscientização. Não substitui aconselhamento médico profissional. </a></p>
+    </footer>
+</footer>
+
+<script>
+    function mostrar(id) {
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => card.style.display = 'none');
+
+        const header = document.getElementById('home');
+
+        if (id === 'home') {
+            header.style.display = 'block';
+        } else {
+            header.style.display = 'none';
+            document.getElementById(id).style.display = 'block';
+        }
+    }
+
+    
+    mostrar('home'); /*Mostra a Home ao abrir o site*/
+</script>
+
+</body>
+</html>
+
