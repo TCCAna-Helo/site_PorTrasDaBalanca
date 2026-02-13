@@ -2,18 +2,28 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Transtornos Alimentares</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Transtornos Alimentares</title>
     <link rel="import" href="component.html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
+        
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Times New Roman', Times, serif;
             margin: 0;
             background-color: #f4f7f8; /*fundo*/
             color: #b677d3; /*vc sabe oq sao transtornos alimentares*/
             
+        }
+        .titulo-principal {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-align: center;
+            font-size: 42px;
+            font-weight: 700;
+            padding: 30px 20px 10px 20px;
+            color: #b677d3;
+            letter-spacing: 1px;
         }
 
         header {
@@ -61,7 +71,7 @@
         }
 
         .card h2 {
-            color: #b677d3 /* cor do titulo da caixa de texto */
+            color: #b677d3; /* cor do titulo da caixa de texto */
         }
 
         footer {
@@ -104,7 +114,8 @@
 </head>
 
 <body>
-<nav>
+
+    <nav>
 
     <button onclick="mostrar('home')">
         <i class="fas fa-house"></i> Início
@@ -139,10 +150,10 @@
 
 
 <header id="home">
-    <h1>Por Trás da Balança</h1>
-    <h3 style="color:black;">
-    Este site foi desenvolvido como projeto de TCC com o objetivo de informar e conscientizar sobre transtornos alimentares em crianças e adolescentes, abordando sinais, tipos, formas de buscar ajuda, entre outras coisas.
-    </h3>
+
+    <div class="titulo-principal">
+    <i> Transtornos Alimentares</i>
+    </div>
 
     <img class="img1" src="TranstornosAlimentares.jpg" alt="Conscientização sobre transtornos alimentares">
 </header>
@@ -151,29 +162,47 @@
 <div class="container">
 
     <div id="quem" class="card">
-        <h2>Quem Somos</h2>
-        <p>
-            Somos estudantes do CEMEP e este projeto foi desenvolvido como parte de um trabalho escolar com o objetivo 
-            de conscientizar sobre os transtornos alimentares e destacar a importância da saúde mental, especialmente entre jovens.
-            <br>
-            <br>
-            <center>Criado por:</center> 
-            <br>
+    <h2>Quem Somos</h2>
 
-            <br>
-            <center>Ana Clara Amaral de Oliveira<br>
-            <img class="img2" src="AnaClara.jpeg" alt="Ana Mria">
-            <br>
-            </center>
-            
+    <p>
+        Somos estudantes do CEMEP e este projeto foi desenvolvido como parte de um trabalho escolar com o objetivo 
+        de conscientizar sobre os transtornos alimentares e destacar a importância da saúde mental, especialmente entre jovens.
+    </p>
+
+    <p style="text-align:center;"><strong>Criado por:</strong></p>
+
+    <div style="display:flex; justify-content:center; align-items:center; gap:50px; margin-top:20px;">
+
+        <div style="text-align:center;">
+
+        <img src="AnaClara.jpeg" 
+        alt="Ana Clara"
+
+        style="width:150px; 
+        height:150px; 
+        object-fit:cover; 
+        border:3px solid #b677d3; 
+        border-radius:10px;">
+
+        <p>Ana Clara Amaral de Oliveira</p>
+        </div>
+
+        <div style="text-align:center;">
+        <img src="HeloisaMaria.jpeg"
+        alt="Heloisa Maria"
         
-            <br>
-            <center>Heloisa Maria Carvalho<br>
-            <img class="img2" src="HeloisaMaria.jpeg" alt="Heloisa Maria">
-            <br>
-            </center>
+        style="width:150px;
+        height:150px; 
+        object-fit:cover; 
+        border:3px solid #b677d3; 
+        border-radius:10px;">
+
+        <p>Heloisa Maria Carvalho</p>
+        </div>
 
     </div>
+
+</div>
 
     <div id="oque" class="card">
         <h2>O que São Transtornos Alimentares?</h2>
@@ -202,6 +231,24 @@
         </ul>
     </div>
 
+    <div id="relatos" class="card">
+    <h2>Relatos Anônimos</h2>
+    <p>
+        “Durante muito tempo eu achei que precisava parecer perfeita.
+        Só depois percebi que precisava estar bem comigo mesma.”
+    </p>
+
+    <p>
+        “Fingir que estava tudo bem era mais fácil do que pedir ajuda.
+        Hoje sei que conversar foi o primeiro passo para melhorar.”
+    </p>
+
+    <p>
+        Esses relatos mostram que ninguém está sozinho. Muitas pessoas
+        passam por situações parecidas e é possível buscar apoio.
+    </p>
+    </div>
+
     <div id="ajuda" class="card">
         <h2>Buscar ajuda é essencial</h2>
         <p>
@@ -217,8 +264,9 @@
     </div>
 
 
-</div>
-<footer>
+    </div>
+
+    <footer>
         <p>&copy; 2026 - Site Educativo sobre Transtornos Alimentares. Desenvolvido para conscientização. Não substitui aconselhamento médico profissional. </a></p>
     </footer>
 
@@ -243,10 +291,4 @@
 
 </body>
 </html>
-
-
-
-
-
-
 
