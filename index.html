@@ -1,308 +1,114 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Transtornos Alimentares - TCC </title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="import" href="component.html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Transtornos Alimentares - TCC</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            margin: 0;
-            background-color: #f4f7f8; /*fundo*/
-            color: #b677d3; /*vc sabe oq sao transtornos alimentares*/
-            
-        }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-        header {
-            background-color: #f4f7f8; /*fundo da frase transtornos alimentares*/
-            color: #8c33b6; /*frase transtornos alimentares*/
-            padding: 25px; 
-            text-align: left; /* tira o centralizado */
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between; /* separa texto e imagem */
-            align-items: center; /* alinha no meio vertical */
-        }
-    
-        nav {
-            background-color:#b677d3; /*fundo das perguntas la em cima*/
-            padding: 12px;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
+<style>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: #d9d9d9;
+}
 
-        nav button {
-            background-color:#b677d3; /*cor do fundo do botao das perguntas la em cima*/
-            color: #f4f7f8; /*cor da escrita do botao das perguntas la em cima*/
-            border: none;
-            padding: 12px 18px;
-            border-radius: 6px;
-            font-weight: bold;
-            cursor: pointer;
-        }
+nav {
+    background: linear-gradient(to right, #a66bbe, #b677d3);
+    padding: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
 
-        nav button:hover {
-            background-color: #8c33b6; /*cor quando passamos o mouse no botao*/
-        }
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+}
 
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-         .card {
-            display: none;
-            background: rgb(247, 244, 242); /* cor da caixa de texto */
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px  #b677d3; /* cor da borda da caixa de texto */
-        }
+nav a:hover {
+    opacity: 0.8;
+}
 
-        .card h2 {
-            color: #b677d3; /* cor do titulo da caixa de texto */
-        }
+.titulo-menu {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    margin-right: 40px;
+}
 
+header {
+    padding: 60px 40px;
+}
 
-        footer {
-            background-color: #b677d3; /*fundo do final do site*/
-            color: #f4f7f8; /*fundo da frase no final do site*/
-            text-align: center;
-            padding: 15px;
-            font-size: 14px;
-        }
-        .cta-button {
-            display: inline-block;
-            background-color: #b677d3;
-            color: white;
-            padding: 12px 24px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 700;
-            transition: background-color 0.3s;
-            margin-top: 20px;
-        }
-        .cta-button:hover {
-            background-color: #BA55D3;
-        }
-        .img1 {
+h1 {
+    color: #7b2fa4;
+}
+
+p {
+    color: #a66bbe;
+    font-weight: bold;
+    max-width: 1100px;
+}
+
+.img1 {
     width: 100%;
     max-width: 450px;
-    height: auto;
-    margin-top: 20px;
     border: 5px solid #b677d3;
     border-radius: 15px;
+    margin-top: 30px;
 }
-        .img2 {
-            height: auto;
-            max-width: 30%;
-            margin-top: 10px;
-            border: 5px solid #b677d3; /*borda da imagem do home*/
-            border-radius: 10px;
-        }
-        
-    </style>
+
+footer {
+    background: linear-gradient(to right, #a66bbe, #b677d3);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+}
+</style>
 </head>
 
 <body>
+
 <nav>
-<nav style="padding:15px 10px; display:flex; align-items:center;">
-    <div style="color:white; font-size:22px; font-weight:bold;">
-    Por Trás da Balança
-    </div>
-</nav>
-    <button onclick="mostrar('home')">
-        <i class="fas fa-house"></i> Início
-    
-    </button>
+<span class="titulo-menu">Por Trás da Balança</span>
 
-    <button onclick="mostrar('quem')">
-        <i class="fas fa-users"></i> Quem Somos
-    </button>
-
-    <button onclick="mostrar('oque')">
-        <i class="fas fa-circle-info"></i> O que são
-    </button>
-
-    <button onclick="mostrar('tipos')">
-        <i class="fas fa-list"></i> Tipos
-    </button>
-
-    <button onclick="mostrar('sinais')">
-        <i class="fas fa-triangle-exclamation"></i> Sinais
-    </button>
-
-    <button onclick="mostrar('relatos')">
-        <i class="fas fa-comment-dots"></i> Relatos Anônimos
-    </button>
-
-    <button onclick="mostrar('ajuda')">
-        <i class="fas fa-hand-holding-heart"></i> Ajuda
-    </button>
-
+<a href="index.html"><i class="fas fa-house"></i> Início</a>
+<a href="quem.html"><i class="fas fa-users"></i> Quem Somos</a>
+<a href="oque.html"><i class="fas fa-circle-info"></i> O que são</a>
+<a href="tipos.html"><i class="fas fa-list"></i> Tipos</a>
+<a href="sinais.html"><i class="fas fa-triangle-exclamation"></i> Sinais</a>
+<a href="relatos.html"><i class="fas fa-comment-dots"></i> Relatos Anônimos</a>
+<a href="ajuda.html"><i class="fas fa-hand-holding-heart"></i> Ajuda</a>
 </nav>
 
-<br>
-    <br>
-<header id="home">
-    <h1>Transtornos Alimentares</h1>
-    <h3 style="color: #b677d3;">
+<header>
+<h1>Transtornos Alimentares</h1>
 
-     <p>
-        Este site foi desenvolvido como projeto de TCC com o objetivo de
-        informar e conscientizar sobre transtornos alimentares em crianças
-        e adolescentes.
-    </p>
+<p>
+Este site foi desenvolvido como projeto de TCC com o objetivo de informar e conscientizar sobre transtornos alimentares em crianças e adolescentes.
+A proposta é apresentar, de forma clara e acessível, os principais tipos de transtornos alimentares, seus sinais e sintomas, possíveis causas, impactos na saúde física e emocional, além de orientar sobre como e onde buscar ajuda.
+</p>
+Os distúrbios alimentares podem incluir ingestão inadequada ou excessiva de alimentos, o que pode, em última instância, prejudicar o bem-estar de um indivíduo. As formas
+mais comuns de transtornos alimentares incluem Anorexia Nervosa, Bulimia Nervosa e Transtorno da Compulsão Alimentar e afetam tanto mulheres quanto homens. Transtornos alimentares
+podem se desenvolver durante qualquer fase da vida, mas geralmente aparecem durante a adolescência ou na idade adulta jovem. Classificados como uma doença médica, o tratamento
+adequado pode ser altamente eficaz para muitos dos tipos específicos de distúrbios alimentares.
+<p>
 
-    <p>
-        A proposta é apresentar, de forma clara e acessível, os principais
-        tipos de transtornos alimentares, seus sinais e sintomas, possíveis
-        causas, impactos na saúde física e emocional, além de orientar sobre
-        como e onde buscar ajuda.
-    </p>
-    </h3>
+</p>
 
-    <img class="img1" src="TranstornosAlimentares.jpg" alt="Conscientização sobre transtornos alimentares">
+<img class="img1" src="TranstornosAlimentares.jpg" alt="Conscientização sobre transtornos alimentares">
 </header>
 
-
-<div id="quem" class="card">
-    <h2>Quem Somos</h2>
-
-    <p>
-        Somos estudantes do CEMEP e este projeto foi desenvolvido como parte de um trabalho escolar com o objetivo 
-        de conscientizar sobre os transtornos alimentares e destacar a importância da saúde mental, especialmente entre jovens.
-    </p>
-
-    <p style="text-align:center;"><strong>Criado por:</strong></p>
-
-    <div style="display:flex; justify-content:center; align-items:center; gap:50px; margin-top:20px;">
-
-        <div style="text-align:center;">
-            <img src="AnaClara.jpeg"
-            style="width:150px; height:150px; object-fit:cover; border:3px solid #b677d3; border-radius:10px;">
-            <p>Ana Clara Amaral de Oliveira</p>
-        </div>
-
-        <div style="text-align:center;">
-            <img src="HeloisaMaria.jpeg"
-            style="width:150px; height:150px; object-fit:cover; border:3px solid #b677d3; border-radius:10px;">
-            <p>Heloisa Maria Carvalho</p>
-        </div>
-
-    </div>
-</div>
-
-    <div id="oque" class="card">
-        <h2>O que São Transtornos Alimentares?</h2>
-        
-        <p>Transtornos alimentares descrevem doenças que são caracterizadas por hábitos alimentares irregulares e sofrimento grave ou preocupação com o peso ou a forma do corpo.</p>
-    
-        <p>Os distúrbios alimentares podem incluir ingestão inadequada ou excessiva de alimentos, o que pode, em última instância, prejudicar o bem-estar de um indivíduo. As formas
-        mais comuns de transtornos alimentares incluem Anorexia Nervosa, Bulimia Nervosa e Transtorno da Compulsão Alimentar e afetam tanto mulheres quanto homens. Transtornos alimentares
-        podem se desenvolver durante qualquer fase da vida, mas geralmente aparecem durante a adolescência ou na idade adulta jovem. Classificados como uma doença médica, o tratamento
-        adequado pode ser altamente eficaz para muitos dos tipos específicos de distúrbios alimentares.</p>
-    
-        <p>Embora essas condições sejam tratáveis, os sintomas e consequências podem ser prejudiciais e mortais se não forem abordados. Transtornos alimentares comumente coexistem com
-        outras condições, como transtornos de ansiedade, abuso de substâncias ou depressão.</p>
-    </div>
-
-    <div id="tipos" class="card">
-        <h2>Principais tipos</h2>
-        <ul>
-            <li><strong>Anorexia Nervosa:</strong> O homem ou a mulher que sofrem de Anorexia nervosa normalmente tem um medo obsessivo
-                        de ganhar peso, recusa em manter um peso corporal saudável e uma percepção irreal da imagem corporal. Muitas 
-                        pessoas com anorexia nervosa limitam ferozmente a quantidade de comida que consomem e se consideram com sobrepeso, 
-                        mesmo quando estão claramente abaixo do peso. A anorexia pode ter efeitos prejudiciais à saúde, como danos cerebrais,
-                        insuficiência de múltiplos órgãos, perda óssea, dificuldades cardíacas e infertilidade. O risco de morte é maior em 
-                        indivíduos com essa doença.</li>
-            <br>
-            <li><strong>Bulimia Nervosa:</strong> Este transtorno alimentar é caracterizado por compulsão alimentar repetida, seguida por 
-                        comportamentos que compensam os excessos, como vômitos forçados, exercícios excessivos ou uso frequente de laxantes
-                        ou diuréticos. Homens e mulheres que sofrem de Bulimia podem temer o ganho de peso e sentem-se gravemente infelizes 
-                        com o tamanho e a forma do corpo. O ciclo de compulsão alimentar e purgação é, tipicamente, realizado em segredo,
-                        criando sentimentos de vergonha, culpa e falta de controle. A Bulimia pode ter efeitos prejudiciais, como problemas 
-                        gastrointestinais, desidratação grave e dificuldades cardíacas resultantes de um desequilíbrio eletrolítico.</li>
-
-            <br>
-            <li><strong>Transtorno de Compulsão Alimentar Periódica:</strong> Indivíduos que sofrem de Transtorno da compulsão alimentar compulsiva
-                        frequentemente perdem o controle sobre sua alimentação. Diferentemente da Bulimia nervosa, no entanto, episódios de compulsão
-                        alimentar não são seguidos por comportamentos compensatórios, como purgação, jejum ou exercícios excessivos. Por causa disso, 
-                        muitas pessoas que sofrem dessa condição podem ser obesas e com maior risco de desenvolver outras condições, como doença 
-                        cardiovascular. Homens e mulheres que lutam contra esse distúrbio também podem experimentar sentimentos intensos de culpa,
-                        angústia e constrangimento relacionados à compulsão alimentar, o que poderia influenciar a progressão do distúrbio alimentar.</li>
-
-          <br>
-            <li><strong>Causas dos Transtornos Alimentares:</strong>Transtornos alimentares são transtornos complexos, influenciados por uma faceta de fatores. 
-                        Embora a causa exata seja desconhecida, geralmente acredita-se que uma combinação de anormalidades biológicas, psicológicas e/ou ambientais
-                        contribui para o desenvolvimento dessas doenças.</li>
-        </ul>
-    </div>
-
-    <div id="sinais" class="card">
-        <h2>Sinais de alerta</h2>
-        <ul>
-            <li>Preocupação excessiva com peso e aparência</li>
-            <br>
-            <li>Alterações nos hábitos alimentares</li>
-            <br>
-            <li>Isolamento social</li>
-            <br>
-            <li>Sentimentos de culpa ou vergonha ao comer</li>
-            <br>
-            <li>Variações significativas de peso</li>
-        </ul>
-    </div>
-    
-    <div id="relatos" class="card">
-    <h2>Relatos Anônimos</h2>
-    <p>Espaço reservado para relatos anônimos sobre experiências relacionadas a transtornos alimentares.</p>
-</div>
-
-    <div id="ajuda" class="card">
-        <h2>Buscar ajuda é essencial</h2>
-        <p>
-            O tratamento dos transtornos alimentares envolve acompanhamento com
-            profissionais da saúde, como psicólogos, nutricionistas e médicos.
-        </p>
-        <p>
-            Procurar ajuda é um passo importante para o cuidado e a recuperação.
-            <br>
-            <center><a href="tel:188" class="cta-button"><i class="fas fa-phone"></i> Ligue para o CVV Agora</a></center>
-        </p>
-</div>
-    
 <footer>
-        <p>&copy; 2026 - Site Educativo sobre Transtornos Alimentares. Desenvolvido para conscientização. Não substitui aconselhamento médico profissional. </a></p>
-    </footer>
-    
-<script>
-function mostrar(id) {
+© 2026 - Site Educativo sobre Transtornos Alimentares. Desenvolvido para conscientização. Não substitui aconselhamento médico profissional.
+</footer>
 
-    // Esconde o header
-    document.getElementById("home").style.display = "none";
-
-    // Esconde todos os cards
-    const secoes = document.querySelectorAll(".card");
-    secoes.forEach(secao => {
-        secao.style.display = "none";
-    });
-
-    // Se for home, mostra o header
-    if (id === "home") {
-        document.getElementById("home").style.display = "block";
-    } else {
-        document.getElementById(id).style.display = "block";
-    }
-}
-
-// Mostra a home ao abrir
-mostrar("home");
-</script>
-    
 </body>
 </html>
