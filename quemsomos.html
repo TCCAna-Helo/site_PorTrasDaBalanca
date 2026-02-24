@@ -14,6 +14,10 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     background-color: #f5f5f5; /*FUNDO DO SITE*/
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* altura mínima da tela inteira */
 }
 
 nav {
@@ -71,6 +75,7 @@ p {
     flex-direction: column;
     align-items: center;
     padding: 40px 20px;
+    flex: 1; /* empurra o footer para baixo */
 }
 
 .caixa-texto {
@@ -88,6 +93,7 @@ footer {
     text-align: center;
     padding: 20px;
     margin-top: 60px;
+    width: 100%; /* ocupa toda a largura */
 }
         
 </style>
