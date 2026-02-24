@@ -66,6 +66,22 @@ p {
     margin-top: 30px;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.caixa-texto {
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px; /* bordas arredondadas */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 900px;
+    text-align: center;
+}
+
 footer { 
     background: #cea2fd; /*FINAL DO SITE ONDE ESTA ESCRITO*/
     color: white; /*ESCRITA QUE ESTA NO FINAL DO SITE "© 2026 - Site Educativo sobre Transtornos Alimentares...."*/
@@ -73,6 +89,7 @@ footer {
     padding: 20px;
     margin-top: 60px;
 }
+        
 </style>
 </head>
 
@@ -90,11 +107,14 @@ footer {
 </nav>
 
 <div class="container">
-<h2>Quem Somos</h2>
+    <div class="caixa-texto">
+        <h2>Quem Somos</h2>
+
+        <p>Somos estudantes do CEMEP e desenvolvemos este projeto como parte do TCC com o objetivo de conscientizar sobre saúde mental.</p>
+
+        <p><strong>Desenvolvido por:</strong></p>
+    </div>
         
-<p>Somos estudantes do CEMEP e desenvolvemos este projeto como parte do TCC com o objetivo de conscientizar sobre saúde mental.</p>
-        
-<p><strong>Desenvolvido por:</strong></p>
         <div style="display:flex; justify-content:center; align-items:center; gap:50px; margin-top:20px;">
 
         <div style="text-align:center;">
