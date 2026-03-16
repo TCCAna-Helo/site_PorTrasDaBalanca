@@ -1,3 +1,3 @@
 # Transtornos Alimentares - TCC
 
-![Logo](fotoLOGO.png)
+![fotoLogo](fotoLOGO.png)
