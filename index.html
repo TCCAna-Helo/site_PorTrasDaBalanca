@@ -18,7 +18,7 @@
             
         }
 
-        :root {
+        :root { /*define variáveis globais, chamadas de CSS Custom Properties.*/
             --primary: linear-gradient(135deg, #803ca8 0%, #a56cdf 100%);
             --primary-light: #b2a0f5; /*cor principal (roxo claro)*/
             --secondary: #f8fafc;/*cor principal (roxo escuro)*/
@@ -60,7 +60,6 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff15"><path d="M0 0L50 30Q100 0 200 40T400 30T600 40Q800 20 900 50T1000 0V100H0Z"/></svg>');
             background-size: cover;
         }
 
@@ -340,85 +339,98 @@
                 <h2><i class="fas fa-users"></i></i>Quem somos?</h2>
                 
             
-                        <p>Somos estudantes do CEMEP e desenvolvemos este projeto como parte do TCC com o objetivo de conscientizar sobre saúde mental.
-                        <br>
-                        Desenvolvido por:</p>
-                         <div style="display:flex; justify-content:center; align-items:center; gap:50px; margin-top:20px;">
+                <p>Somos estudantes do CEMEP e desenvolvemos este projeto como parte do TCC com o objetivo de conscientizar sobre saúde mental.
+                <br>
+                Desenvolvido por:</p>
+           
+                <div style="display:flex; justify-content:center; align-items:center; gap:50px; margin-top:20px;">
 
-                        <div style="text-align:center;">
-                        <img src="AnaClara.jpeg"
-                        style="width:250px;
-                        height:250px;
-                        object-fit:cover;
-                        border:3px solid #b677d3;
-                        border-radius:10px;">
-                        <p>Ana Clara Amaral de Oliveira</p>
-                        </div>
+                <div style="text-align:center;">
+                <img src="AnaClara.jpeg"
+                style="width:250px;
+                height:250px;
+                object-fit:cover;
+                border:3px solid #b677d3;
+                border-radius:10px;">
+                <p>Ana Clara Amaral de Oliveira</p>
+                </div>
 
-                        <div style="text-align:center;">
-                        <img src="helofononova.jpeg"
-                        style="width:250px;
-                        height:250px;
-                        object-fit:cover;
-                        border:3px solid #b677d3;
-                        border-radius:10px;">
-                        <p>Heloísa Maria Carvalho</p>
-                    </div>
-                    </div>
+                <div style="text-align:center;">
+                <img src="helofononova.jpeg"
+                style="width:250px;
+                height:250px;
+                object-fit:cover;
+                border:3px solid #b677d3;
+                border-radius:10px;">
+                <p>Heloísa Maria Carvalho</p>
+                </div>
+                    
+                </div>
                 
        
-        <br>
-        <div class="container">
+            <br>
+            <div class="container">
+                
             <div class="section fade-in">
+                
                 <h2><i class="fas fa-info-circle"></i>O que são?</h2>
                 <div class="grid">
-                    <div class="card">
-                        <h3 style="font-size: 1.4rem; margin-bottom: 20px; color: var(--text-primary);">Anorexia Nervosa</h3>
-                        <p>Restrição extrema de comida por medo de ganhar peso, mesmo estando muito abaixo do peso ideal.</p>
-                    </div>
-                    <div class="card">
-                        <h3 style="font-size: 1.4rem; margin-bottom: 20px; color: var(--text-primary);">Bulimia Nervosa</h3>
-                        <p>Episódios de compulsão alimentar seguidos de vômitos, laxantes ou exercícios excessivos.</p>
-                    </div>
-                    <div class="card">
-                        <h3 style="font-size: 1.4rem; margin-bottom: 20px; color: var(--text-primary);">Compulsão Alimentar</h3>
-                        <p>Consumo excessivo de comida sem controle, seguido de culpa e vergonha.</h3>
-                    </div>
+                    
+                <div class="card">
+                <h3 style="font-size: 1.4rem; margin-bottom: 20px; color: var(--text-primary);">Anorexia Nervosa</h3>
+                <p>Restrição extrema de comida por medo de ganhar peso, mesmo estando muito abaixo do peso ideal.</p>
                 </div>
-            </div>
+                    
+                <div class="card">
+                <h3 style="font-size: 1.4rem; margin-bottom: 20px; color: var(--text-primary);">Bulimia Nervosa</h3>
+                <p>Episódios de compulsão alimentar seguidos de vômitos, laxantes ou exercícios excessivos.</p>
+                </div>
+                    
+                <div class="card">
+                <h3 style="font-size: 1.4rem; margin-bottom: 20px; color: var(--text-primary);">Compulsão Alimentar</h3>
+                <p>Consumo excessivo de comida sem controle, seguido de culpa e vergonha.</h3>
+                </div>
+                    
+                </div>
+                </div>
 
             <div class="section fade-in">
+                
                 <h2><i class="fas fa-exclamation-triangle"></i>Sinais de alerta</h2>
                 <div class="grid">
-                    <div class="card warning-card">
-                        <h3><i class="fas fa-clock"></i>Comportamento</h3>
-                        <ul class="warning-list">
-                            <li>Evita refeições em grupo</li>
-                            <li>Come escondido ou muito rápido</li>
-                            <li>Desaparece após comer</li>
-                            <li>Exercícios compulsivos</li>
-                        </ul>
-                    </div>
-                    <div class="card warning-card">
-                        <h3><i class="fas fa-chart-line"></i>Físico</h3>
-                        <ul class="warning-list">
-                            <li>Perda rápida de peso</li>
-                            <li>Cansaço constante</li>
-                            <li>Problemas dentários</li>
-                            <li>Cabelos fracos</li>
-                        </ul>
-                    </div>
-                    <div class="card warning-card">
-                        <h3><i class="fas fa-head-side-virus"></i>Emocional</h3>
-                        <ul class="warning-list">
-                            <li>Baixa autoestima</li>
-                            <li>Ansiedade com comida</li>
-                            <li>Isolamento social</li>
-                            <li>Irritabilidade</li>
-                        </ul>
-                    </div>
+                    
+                <div class="card warning-card">
+                <h3><i class="fas fa-clock"></i>Comportamento</h3>
+                <ul class="warning-list">
+                    <li>Evita refeições em grupo</li>
+                    <li>Come escondido ou muito rápido</li>
+                    <li>Desaparece após comer</li>
+                    <li>Exercícios compulsivos</li>
+                </ul>
                 </div>
-            </div>
+                    
+                <div class="card warning-card">
+                <h3><i class="fas fa-chart-line"></i>Físico</h3>
+                <ul class="warning-list">
+                    <li>Perda rápida de peso</li>
+                    <li>Cansaço constante</li>
+                    <li>Problemas dentários</li>
+                    <li>Cabelos fracos</li>
+                </ul>
+                </div>
+                    
+                <div class="card warning-card">
+                <h3><i class="fas fa-head-side-virus"></i>Emocional</h3>
+                <ul class="warning-list">
+                    <li>Baixa autoestima</li>
+                    <li>Ansiedade com comida</li>
+                    <li>Isolamento social</li>
+                    <li>Irritabilidade</li>
+                </ul>
+                </div>
+                    
+                </div>
+                </div>
 
             <div class="section fade-in">
                 <h2><i class="fas fa-chart-bar"></i>Estatísticas</h2>
