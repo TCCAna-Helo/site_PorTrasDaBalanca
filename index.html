@@ -299,6 +299,29 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+   /*QUIZ CSS*/
+    .quiz-card {
+    margin-top: 20px;
+}
+
+.option {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #eee;
+    transition: 0.3s;
+    font-family: 'Inter', sans-serif;
+}
+
+.option:hover {
+    background: #a56cdf;
+    color: white;
+}      
     </style>
     
 </head>
@@ -517,10 +540,23 @@
             <p style="margin-top: 32px; color: var(--text-secondary); font-size: 1.1rem;">
             (Arthur Schopenhauer)
     </p>
-</div>
+    </div>
+    </div>
 
-            </div>
-           
+        
+    <!-- QUIZ HTML-->
+    <div class="section fade-in">
+    <h2><i class="fas fa-question-circle"></i> Quiz</h2>
+
+    <div class="card quiz-card">
+        <p><strong>1. Qual é um sinal de alerta?</strong></p>
+
+        <button class="option" onclick="responder(true)">Evitar refeições em grupo</button>
+        <button class="option" onclick="responder(false)">Dormir cedo</button>
+
+        <p class="resultado"></p>
+    </div>
+</div>
     </main>
        <footer style="
         background: var(--primary);
@@ -556,7 +592,18 @@
             });
         });
 
-     
+     /*QUIZ JAVA*/
+        function responder(correto) {
+const resultado = document.querySelector(".resultado");
+
+    if (correto) {
+        resultado.innerText = "✔️ Correto!";
+        resultado.style.color = "green";
+    } else {
+        resultado.innerText = "❌ Errado!";
+        resultado.style.color = "red";
+    }
+}
         
     </script>
 </body>
