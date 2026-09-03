@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Transtornos Alimentares</title>
 
-    <!-- Logo que aparece na aba do navegador -->
+    <!-- FAVICON -->
     <link rel="icon" type="image/png" href="logoooSite.png">
     <link rel="apple-touch-icon" sizes="180x180" href="logoooSite.png">
 
-    <!-- Fontes -->
+    <!-- FONTE -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Ícones -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- ÍCONES -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
 
@@ -29,55 +32,200 @@
         }
 
         :root {
-            --primary: linear-gradient(135deg, #803ca8 0%, #a56cdf 100%);
+
+            --primary: linear-gradient(
+                135deg,
+                #803ca8 0%,
+                #a56cdf 100%
+            );
+
             --primary-light: #b2a0f5;
             --secondary: #f8fafc;
             --accent: #10b981;
             --text-primary: #1e293b;
             --text-secondary: #64748b;
             --border: #e2e8f0;
-            --shadow: 0 20px 60px rgba(0,0,0,0.1);
-            --shadow-hover: 0 30px 80px rgba(0,0,0,0.15);
+            --shadow:
+                0 20px 60px rgba(0,0,0,0.10);
+
+            --shadow-hover:
+                0 30px 80px rgba(0,0,0,0.15);
         }
 
+
         body {
+
             font-family: 'Inter', sans-serif;
             line-height: 1.7;
             color: var(--text-primary);
             background: var(--secondary);
             overflow-x: hidden;
+            transition:
+                background 0.3s ease,
+                color 0.3s ease;
         }
 
+
         /* =========================
-           BOTÃO LOGIN
+           MODO ESCURO
         ========================= */
 
-        .botao-login {
-            position: absolute;
-            top: 25px;
-            right: 30px;
-            z-index: 100;
+        body.dark-mode {
 
-            padding: 10px 22px;
+            --secondary: #111827;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --border: #374151;
+            background: #111827;
+            color: #f1f5f9;
+        }
 
+
+        body.dark-mode .card,
+        body.dark-mode .card-section,
+        body.dark-mode .contacts,
+        body.dark-mode .stat-card {
+
+            background: #1f2937;
+            color: #f1f5f9;
+        }
+
+
+        body.dark-mode .contact-item {
+
+            background: #374151;
+            color: #f1f5f9;
+        }
+
+
+        body.dark-mode .contact-number {
+
+            color: #f1f5f9;
+        }
+
+
+        body.dark-mode .menu-links {
+
+            background: #1f2937;
+        }
+
+
+        body.dark-mode .menu-links a,
+        body.dark-mode .menu-links button {
+
+            color: #c084fc;
+        }
+
+
+        body.dark-mode .menu-links a:hover,
+        body.dark-mode .menu-links button:hover {
+
+            background: #803ca8;
+            color: white;
+        }
+
+
+        /* =========================
+           MENU FIXO
+        ========================= */
+
+        .menu-fixo {
+
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: auto;
+            height: auto;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            padding: 0;
+            z-index: 1000;
+            box-shadow: none;
+        }
+
+
+        .menu-botao {
+
+            background: #803ca8;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            transition: 0.3s;
+            box-shadow:
+                0 5px 15px rgba(0,0,0,0.15);
+        }
+
+
+        .menu-botao:hover {
+
+            background: #6d2f91;
+            transform: scale(1.05);
+        }
+
+
+        /* =========================
+           MENU ABERTO
+        ========================= */
+
+        .menu-links {
+
+            position: fixed;
+            top: 80px;
+            left: 20px;
+            right: auto;
+            width: 230px;
             background: white;
+            border-radius: 15px;
+            box-shadow:
+                0 8px 25px rgba(0,0,0,0.2);
+            padding: 10px;
+            display: none;
+            flex-direction: column;
+            z-index: 999;
+        }
+
+
+        .menu-links.aberto {
+            display: flex;
+        }
+
+
+        .menu-links a,
+        .menu-links button {
+            width: 100%;
+            padding: 13px 15px;
+            border: none;
+            background: transparent;
+            text-align: left;
             color: #803ca8;
-
-            text-decoration: none;
-            border-radius: 20px;
-
-            font-size: 16px;
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
             font-weight: 600;
-
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-
+            text-decoration: none;
+            border-radius: 8px;
+            cursor: pointer;
             transition: 0.3s;
         }
 
-        .botao-login:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+
+        .menu-links a:hover,
+        .menu-links button:hover {
+            background: #803ca8;
+            color: white;
         }
+
+
+        /* =========================
+           CONTAINER
+        ========================= */
 
         .container {
             max-width: 1200px;
@@ -91,27 +239,32 @@
         ========================= */
 
         header {
+
             background: var(--primary);
             color: white;
-            padding: 100px 0 80px;
+            padding: 140px 0 80px;
             position: relative;
             overflow: hidden;
         }
 
+
         header::before {
+
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff15"><path d="M0 0L50 30Q100 0 200 40T400 30T600 40Q800 20 900 50T1000 0V100H0Z"/></svg>');
+            background:
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff15"><path d="M0 0L50 30Q100 0 200 40T400 30T600 40Q800 20 900 50T1000 0V100H0Z"/></svg>');
 
             background-size: cover;
         }
 
+
         .header-content {
+
             position: relative;
             z-index: 2;
             text-align: center;
@@ -119,19 +272,29 @@
             margin: 0 auto;
         }
 
+
         h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
+
+            font-size:
+                clamp(2.5rem, 5vw, 4rem);
+
             font-weight: 700;
             margin-bottom: 20px;
-
-            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffffff 0%,
+                    #f1f5f9 100%
+                );
 
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
+
         .subtitle {
+
             font-size: 20px;
             font-weight: 400;
             opacity: 0.95;
@@ -141,16 +304,18 @@
 
 
         /* =========================
-           CONTEÚDO PRINCIPAL
+           CONTEÚDO
         ========================= */
 
         main {
             padding: 80px 0;
         }
 
+
         .section {
             margin-bottom: 100px;
         }
+
 
         .card-section {
             background: white;
@@ -159,23 +324,24 @@
             box-shadow: var(--shadow);
         }
 
+
         h2 {
+
             font-size: 35px;
             font-weight: 600;
             margin-bottom: 32px;
-
             display: flex;
             align-items: center;
             gap: 16px;
         }
 
-        h2 i {
-            background: var(--primary);
 
+        h2 i {
+
+            background: var(--primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-
             font-size: 2rem;
         }
 
@@ -186,50 +352,85 @@
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns:
+                repeat(auto-fit, minmax(350px, 1fr));
             gap: 32px;
             margin-top: 48px;
         }
 
+
         .card {
+
             background: white;
             border-radius: 24px;
             padding: 40px;
-
             box-shadow: var(--shadow);
-
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-
-            border: 1px solid rgba(255,255,255,0.2);
-
+            transition:
+                all 0.4s
+                cubic-bezier(0.4,0,0.2,1);
+            border:
+                1px solid rgba(255,255,255,0.2);
             position: relative;
             overflow: hidden;
         }
 
+
         .card::before {
             content: '';
             position: absolute;
-
             top: 0;
             left: 0;
             right: 0;
-
             height: 4px;
-
             background: var(--primary);
-
             transform: scaleX(0);
-
-            transition: transform 0.4s ease;
+            transition:
+                transform 0.4s ease;
         }
+
 
         .card:hover {
-            transform: translateY(-12px);
-            box-shadow: var(--shadow-hover);
+            transform:
+                translateY(-12px);
+            box-shadow:
+                var(--shadow-hover);
         }
+
 
         .card:hover::before {
             transform: scaleX(1);
+        }
+
+
+        /* =========================
+           QUEM SOMOS
+        ========================= */
+
+        .equipe {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+
+        .pessoa {
+            text-align: center;
+        }
+
+
+        .pessoa img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border:
+                3px solid #b677d3;
+            border-radius: 10px;
+            display: block;
+            margin-bottom: 10px;
         }
 
 
@@ -238,41 +439,66 @@
         ========================= */
 
         .warning-card {
-            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
-            border: 1px solid #fca5a5;
+            background:
+                linear-gradient(
+                    135deg,
+                    #fee2e2 0%,
+                    #fecaca 100%
+                );
+            border:
+                1px solid #fca5a5;
         }
+
 
         .warning-card h3 {
             color: #dc2626;
             font-size: 1.4rem;
             margin-bottom: 20px;
-
             display: flex;
             align-items: center;
             gap: 12px;
         }
 
+
         .warning-list {
             list-style: none;
         }
 
+
         .warning-list li {
             padding: 12px 0;
             padding-left: 32px;
-
             position: relative;
-
             color: #991b1b;
             font-weight: 500;
         }
 
-        .warning-list li::before {
-            content: '⚠️';
 
+        .warning-list li::before {
             position: absolute;
             left: 0;
-
             font-size: 1.1rem;
+        }
+
+
+        body.dark-mode .warning-card {
+            background:
+                linear-gradient(
+                    135deg,
+                    #451a1a,
+                    #3f2020
+                );
+            border-color: #7f1d1d;
+        }
+
+
+        body.dark-mode .warning-list li {
+            color: #fecaca;
+        }
+
+
+        body.dark-mode .warning-card h3 {
+            color: #fca5a5;
         }
 
 
@@ -282,70 +508,58 @@
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-
+            grid-template-columns:
+                repeat(auto-fit, minmax(200px, 1fr));
             gap: 24px;
-
             margin: 48px 0;
         }
+
 
         .stat-card {
             background: white;
             border-radius: 24px;
-
             padding: 40px 24px;
-
             box-shadow: var(--shadow);
-
             text-align: center;
         }
+
 
         .stat-number {
             font-size: 3.5rem;
             font-weight: 700;
-
             background: var(--primary);
-
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-
             line-height: 1;
-
             display: block;
         }
 
+
         .stat-label {
             color: var(--text-secondary);
-
             font-size: 1.1rem;
             font-weight: 500;
-
             margin-top: 8px;
+            display: block;
         }
 
 
         /* =========================
-           COMO PREVENIR
+           PREVENÇÃO
         ========================= */
 
         .tip-number {
             width: 56px;
             height: 56px;
-
             border-radius: 16px;
-
             background: var(--primary);
-
             color: white;
-
             display: flex;
             align-items: center;
             justify-content: center;
-
             font-weight: 600;
             font-size: 1.3rem;
-
             margin: 0 auto 24px;
         }
 
@@ -355,115 +569,48 @@
         ========================= */
 
         .contacts {
+
             background: white;
-
             border-radius: 24px;
-
             padding: 60px 40px;
-
             text-align: center;
-
             box-shadow: var(--shadow);
-
-            margin-top: 60px;
+            margin-bottom: 100px;
         }
+
 
         .contact-grid {
             display: grid;
-
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
             gap: 32px;
-
             margin-top: 40px;
         }
 
+
         .contact-item {
             padding: 32px;
-
             background: var(--secondary);
-
             border-radius: 16px;
-
-            transition: all 0.3s ease;
+            transition:
+                all 0.3s ease;
         }
+
 
         .contact-item:hover {
-            background: var(--primary-light);
-
-            transform: translateY(-4px);
+            background:
+                var(--primary-light);
+            transform:
+                translateY(-4px);
         }
+
 
         .contact-number {
             font-size: 2.2rem;
             font-weight: 700;
-
             color: var(--text-primary);
-
             display: block;
-
             margin-bottom: 8px;
-        }
-
-
-        /* =========================
-           QUIZ
-        ========================= */
-
-        .quiz-card {
-            margin-top: 20px;
-        }
-
-        .quiz-question {
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-        }
-
-        .option {
-            display: block;
-
-            width: 100%;
-
-            margin: 10px 0;
-
-            padding: 12px;
-
-            border: none;
-
-            border-radius: 10px;
-
-            cursor: pointer;
-
-            background: #eee;
-
-            transition: 0.3s;
-
-            font-family: 'Inter', sans-serif;
-
-            font-size: 1rem;
-        }
-
-        .option:hover {
-            background: #a56cdf;
-
-            color: white;
-        }
-
-        .resultado,
-        .resultado2,
-        .resultado3,
-        .resultado4,
-        .resultado5,
-        .resultado6,
-        .resultado7,
-        .resultado8,
-        .resultado9,
-        .resultado10 {
-            margin-top: 15px;
-
-            font-weight: 600;
-
-            min-height: 24px;
         }
 
 
@@ -473,16 +620,29 @@
 
         .fade-in {
             opacity: 0;
-
-            transform: translateY(40px);
-
-            transition: all 0.8s ease;
+            transform:
+                translateY(40px);
+            transition:
+                all 0.8s ease;
         }
+
 
         .fade-in.visible {
             opacity: 1;
+            transform:
+                translateY(0);
+        }
 
-            transform: translateY(0);
+
+        /* =========================
+           RODAPÉ
+        ========================= */
+
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 20px;
         }
 
 
@@ -493,853 +653,1051 @@
         @media (max-width: 768px) {
 
             .container {
-                padding: 0 16px;
+
+                padding:
+                    0 16px;
             }
+
 
             header {
-                padding: 60px 0 40px;
+
+                padding:
+                    120px 0 50px;
             }
+
 
             main {
-                padding: 40px 0;
+
+                padding:
+                    40px 0;
             }
+
 
             .card {
-                padding: 32px 24px;
+
+                padding:
+                    32px 24px;
             }
+
 
             .grid {
-                grid-template-columns: 1fr;
+
+                grid-template-columns:
+                    1fr;
             }
+
 
             h2 {
-                font-size: 28px;
+
+                font-size:
+                    28px;
             }
 
-            .botao-login {
-                top: 15px;
-                right: 15px;
-                padding: 8px 16px;
-                font-size: 14px;
+
+            .subtitle {
+
+                font-size:
+                    17px;
             }
+
+
+            .pessoa img {
+
+                width:
+                    220px;
+
+                height:
+                    220px;
+            }
+
         }
 
     </style>
+
 </head>
 
 
 <body>
 
-    <!-- =========================
-         BOTÃO LOGIN
-    ========================= -->
 
-    <a href="login.html" class="botao-login">Login</a>
+<!-- =========================
+     MENU FIXO
+========================= -->
+
+<nav class="menu-fixo">
+
+    <button
+        class="menu-botao"
+        onclick="abrirMenu()"
+        aria-label="Abrir menu">
+
+        <i class="fas fa-bars"></i>
+
+    </button>
+
+</nav>
 
 
-    <!-- =========================
-         CABEÇALHO
-    ========================= -->
+<!-- =========================
+     OPÇÕES DO MENU
+========================= -->
 
-    <header>
+<div class="menu-links" id="menuLinks">
 
-        <div class="container">
+    <a href="#inicio">
 
-            <div class="header-content fade-in">
+        Início
 
-                <h1>Transtornos Alimentares</h1>
+    </a>
 
-                <p class="subtitle">
-                    Conscientização e prevenção para crianças e adolescentes.
-                    Informação clara para identificar, prevenir e agir.
+
+    <a href="#sobre">
+
+        Quem somos
+
+    </a>
+
+
+    <a href="#transtornos">
+
+        Transtornos
+
+    </a>
+
+
+    <a href="#prevencao">
+
+        Prevenção
+
+    </a>
+
+
+    <!-- QUIZ É UMA PÁGINA SEPARADA -->
+
+    <a href="quiz.html">
+
+        Quiz
+
+    </a>
+
+
+    <a href="#ajuda">
+
+        Ajuda
+
+    </a>
+
+
+    <button
+        class="botao-tema"
+        onclick="alternarTema()">
+
+        Tema
+
+    </button>
+
+
+    <a href="login.html">
+
+        Login
+
+    </a>
+
+
+</div>
+
+
+<!-- =========================
+     CABEÇALHO
+========================= -->
+
+<header id="inicio">
+
+    <div class="container">
+
+        <div class="header-content fade-in">
+
+            <h1>
+
+                Transtornos Alimentares
+
+            </h1>
+
+
+            <p class="subtitle">
+
+                Conscientização e prevenção
+                para crianças e adolescentes.
+
+                Informação clara para identificar,
+                prevenir e agir.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     CONTEÚDO PRINCIPAL
+========================= -->
+
+<main>
+
+    <div class="container">
+
+
+        <!-- =========================
+             SOBRE
+        ========================= -->
+
+        <div
+            class="section fade-in"
+            id="sobre">
+
+            <div class="card">
+
+                <p>
+
+                    Este site foi desenvolvido como
+                    projeto de TCC com o objetivo de
+                    informar e conscientizar sobre
+                    transtornos alimentares em crianças
+                    e adolescentes.
+
+                    <br><br>
+
+                    A proposta é apresentar, de forma
+                    clara e acessível, os principais
+                    tipos de transtornos alimentares,
+                    seus sinais e sintomas, possíveis
+                    causas, impactos na saúde física e
+                    emocional, além de orientar sobre
+                    como e onde buscar ajuda.
+
                 </p>
 
             </div>
 
         </div>
 
-    </header>
+
+        <!-- =========================
+             QUEM SOMOS
+        ========================= -->
+
+        <div class="section fade-in">
+
+            <h2>
+
+                <i class="fas fa-users"></i>
+
+                Quem somos?
+
+            </h2>
 
 
-    <!-- =========================
-         CONTEÚDO
-    ========================= -->
+            <p>
 
-    <main>
+                Somos estudantes do CEMEP e
+                desenvolvemos este projeto como parte
+                do TCC com o objetivo de conscientizar
+                sobre saúde mental.
 
-        <div class="container">
+                <br><br>
+
+                Desenvolvido por:
+
+            </p>
 
 
-            <!-- POR TRÁS DA BALANÇA -->
+            <div class="equipe">
 
-            <div class="section fade-in">
 
-                <h2>
-                    <i class="fas fa-scale-balanced"></i>
-                    Por trás da balança
-                </h2>
+                <div class="pessoa">
+
+                    <img
+                        src="AnaClara.jpeg"
+                        alt="Ana Clara">
+
+                    <p>
+
+                        Ana Clara Amaral de Oliveira
+
+                    </p>
+
+                </div>
+
+
+                <div class="pessoa">
+
+                    <img
+                        src="helofononova.jpeg"
+                        alt="Heloísa">
+
+                    <p>
+
+                        Heloísa Maria Carvalho
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             O QUE SÃO
+        ========================= -->
+
+        <div
+            class="section fade-in"
+            id="transtornos">
+
+            <h2>
+
+                <i class="fas fa-info-circle"></i>
+
+                O que são?
+
+            </h2>
+
+
+            <div class="grid">
+
+
+                <!-- ANOREXIA -->
 
                 <div class="card">
 
+                    <h3>
+
+                        Anorexia Nervosa
+
+                    </h3>
+
                     <p>
-                        Este site foi desenvolvido como projeto de TCC com o objetivo
-                        de informar e conscientizar sobre transtornos alimentares em
-                        crianças e adolescentes.
-                        <br><br>
 
-                        A proposta é apresentar, de forma clara e acessível,
-                        os principais tipos de transtornos alimentares, seus sinais
-                        e sintomas, possíveis causas, impactos na saúde física e
-                        emocional, além de orientar sobre como e onde buscar ajuda.
+                        Restrição extrema de comida
+                        por medo de ganhar peso,
+                        mesmo estando muito abaixo
+                        do peso.
+
                     </p>
 
                 </div>
 
-            </div>
 
+                <!-- BULIMIA -->
 
-            <!-- QUEM SOMOS -->
+                <div class="card">
 
-            <div class="section fade-in">
+                    <h3>
 
-                <h2>
-                    <i class="fas fa-users"></i>
-                    Quem somos?
-                </h2>
+                        Bulimia Nervosa
 
-                <p>
-                    Somos estudantes do CEMEP e desenvolvemos este projeto como
-                    parte do TCC com o objetivo de conscientizar sobre saúde mental.
-                    <br><br>
-                    Desenvolvido por:
-                </p>
+                    </h3>
 
+                    <p>
 
-                <div style="
-                    display:flex;
-                    justify-content:center;
-                    align-items:center;
-                    gap:50px;
-                    margin-top:20px;
-                    flex-wrap:wrap;
-                ">
+                        Episódios de compulsão
+                        alimentar seguidos de
+                        comportamentos compensatórios.
 
-
-                    <div style="text-align:center;">
-
-                        <img
-                            src="AnaClara.jpeg"
-                            style="
-                                width:250px;
-                                height:250px;
-                                object-fit:cover;
-                                border:3px solid #b677d3;
-                                border-radius:10px;
-                            "
-                        >
-
-                        <p>
-                            Ana Clara Amaral de Oliveira
-                        </p>
-
-                    </div>
-
-
-                    <div style="text-align:center;">
-
-                        <img
-                            src="helofononova.jpeg"
-                            style="
-                                width:250px;
-                                height:250px;
-                                object-fit:cover;
-                                border:3px solid #b677d3;
-                                border-radius:10px;
-                            "
-                        >
-
-                        <p>
-                            Heloísa Maria Carvalho
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- O QUE SÃO -->
-
-            <div class="section fade-in">
-
-                <h2>
-                    <i class="fas fa-info-circle"></i>
-                    O que são?
-                </h2>
-
-                <div class="grid">
-
-
-                    <div class="card">
-
-                        <h3 style="
-                            font-size:1.4rem;
-                            margin-bottom:20px;
-                            color:var(--text-primary);
-                        ">
-                            Anorexia Nervosa
-                        </h3>
-
-                        <p>
-                            Restrição extrema de comida por medo de ganhar peso,
-                            mesmo estando muito abaixo do peso.
-                        </p>
-
-                    </div>
-
-
-                    <div class="card">
-
-                        <h3 style="
-                            font-size:1.4rem;
-                            margin-bottom:20px;
-                            color:var(--text-primary);
-                        ">
-                            Bulimia Nervosa
-                        </h3>
-
-                        <p>
-                            Episódios de compulsão alimentar seguidos de
-                            comportamentos compensatórios.
-                        </p>
-
-                    </div>
-
-
-                    <div class="card">
-
-                        <h3 style="
-                            font-size:1.4rem;
-                            margin-bottom:20px;
-                            color:var(--text-primary);
-                        ">
-                            Compulsão Alimentar
-                        </h3>
-
-                        <p>
-                            Episódios de consumo alimentar acompanhado de
-                            sensação de perda de controle.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- SINAIS DE ALERTA -->
-
-            <div class="section fade-in">
-
-                <h2>
-                    <i class="fas fa-exclamation-triangle"></i>
-                    Sinais de alerta
-                </h2>
-
-                <div class="grid">
-
-
-                    <div class="card warning-card">
-
-                        <h3>
-                            <i class="fas fa-clock"></i>
-                            Comportamento
-                        </h3>
-
-                        <ul class="warning-list">
-
-                            <li>Evita refeições em grupo</li>
-                            <li>Come escondido ou muito rápido</li>
-                            <li>Desaparece após comer</li>
-                            <li>Exercícios compulsivos</li>
-
-                        </ul>
-
-                    </div>
-
-
-                    <div class="card warning-card">
-
-                        <h3>
-                            <i class="fas fa-chart-line"></i>
-                            Físico
-                        </h3>
-
-                        <ul class="warning-list">
-
-                            <li>Perda rápida de peso</li>
-                            <li>Cansaço constante</li>
-                            <li>Problemas dentários</li>
-                            <li>Cabelos fracos</li>
-
-                        </ul>
-
-                    </div>
-
-
-                    <div class="card warning-card">
-
-                        <h3>
-                            <i class="fas fa-head-side-virus"></i>
-                            Emocional
-                        </h3>
-
-                        <ul class="warning-list">
-
-                            <li>Baixa autoestima</li>
-                            <li>Ansiedade com comida</li>
-                            <li>Isolamento social</li>
-                            <li>Irritabilidade</li>
-
-                        </ul>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- ESTATÍSTICAS -->
-
-            <div class="section fade-in card-section">
-
-                <h2>
-                    <i class="fas fa-chart-bar"></i>
-                    Estatísticas
-                </h2>
-
-                <div class="stats-grid">
-
-
-                    <div class="stat-card">
-
-                        <span class="stat-number">
-                            1 em 10
-                        </span>
-
-                        <span class="stat-label">
-                            adolescentes afetados
-                        </span>
-
-                    </div>
-
-
-                    <div class="stat-card">
-
-                        <span class="stat-number">
-                            90%
-                        </span>
-
-                        <span class="stat-label">
-                            ocorrem em meninas
-                        </span>
-
-                    </div>
-
-
-                    <div class="stat-card">
-
-                        <span class="stat-number">
-                            12-18
-                        </span>
-
-                        <span class="stat-label">
-                            anos (pico maior)
-                        </span>
-
-                    </div>
-
-
-                    <div class="stat-card">
-
-                        <span class="stat-number">
-                            70%
-                        </span>
-
-                        <span class="stat-label">
-                            podem ser prevenidos
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- COMO PREVENIR -->
-
-            <div class="section fade-in">
-
-                <h2>
-                    <i class="fas fa-heart"></i>
-                    Como prevenir
-                </h2>
-
-                <div class="grid">
-
-
-                    <div class="card">
-
-                        <div class="tip-number">
-                            1
-                        </div>
-
-                        <p>
-                            Promova refeições familiares sem julgamentos
-                            sobre peso ou comida.
-                        </p>
-
-                    </div>
-
-
-                    <div class="card">
-
-                        <div class="tip-number">
-                            2
-                        </div>
-
-                        <p>
-                            Fale sobre saúde, não aparência.
-                            Valorize força e energia.
-                        </p>
-
-                    </div>
-
-
-                    <div class="card">
-
-                        <div class="tip-number">
-                            3
-                        </div>
-
-                        <p>
-                            Observe mudanças e converse com empatia,
-                            sem acusações.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- AJUDA -->
-
-            <div class="contacts fade-in">
-
-                <h2 style="margin-bottom:32px;">
-
-                    <i class="fas fa-phone"></i>
-
-                    Ajuda imediata
-
-                </h2>
-
-
-                <div class="contact-grid">
-
-
-                    <div class="contact-item">
-
-                        <span class="contact-number">
-                            188
-                        </span>
-
-                        <strong>
-                            CVV
-                        </strong>
-
-                        <br>
-
-                        <small>
-                            24 horas - Apoio emocional
-                        </small>
-
-                    </div>
-
-
-                    <div class="contact-item">
-
-                        <span class="contact-number">
-                            100
-                        </span>
-
-                        <strong>
-                            Disque 100
-                        </strong>
-
-                        <br>
-
-                        <small>
-                            Direitos Humanos
-                        </small>
-
-                    </div>
-
-
-                    <div class="contact-item">
-
-                        <span class="contact-number">
-                            CAPS
-                        </span>
-
-                        <strong>
-                            CAPS/UBS
-                        </strong>
-
-                        <br>
-
-                        <small>
-                            Saúde Mental SUS
-                        </small>
-
-                    </div>
+                    </p>
 
                 </div>
 
 
-                <p style="
-                    margin-top:32px;
-                    color:var(--text-secondary);
-                    font-size:1.1rem;
-                ">
+                <!-- COMPULSÃO -->
 
-                    Fale com pais, professores ou psicólogos.
-                    O primeiro passo é buscar ajuda.
+                <div class="card">
 
-                </p>
+                    <h3>
 
-            </div>
+                        Compulsão Alimentar
 
+                    </h3>
 
-            <!-- =========================
-                 QUIZ
-            ========================= -->
+                    <p>
 
-            <div class="section fade-in">
+                        Episódios de consumo alimentar
+                        acompanhados de sensação de
+                        perda de controle.
 
-                <h2>
-                    <i class="fas fa-question-circle"></i>
-                    Quiz
-                </h2>
-
-
-                <div class="card quiz-card">
-
-
-                    <!-- PERGUNTA 1 -->
-
-                    <p class="quiz-question">
-                        <strong>
-                            1. Comer até se sentir desconfortavelmente cheio e comer mesmo sem fome é sinal de qual transtorno?
-                        </strong>
                     </p>
-
-                    <button class="option" onclick="responder(true)">
-                        A) Compulsão alimentar
-                    </button>
-
-                    <button class="option" onclick="responder(false)">
-                        B) Anorexia nervosa
-                    </button>
-
-                    <p class="resultado"></p>
-
-
-                    <br><br>
-
-
-                    <!-- PERGUNTA 2 -->
-
-                    <p class="quiz-question">
-                        <strong>
-                            2. Mesmo estando abaixo do peso, existe um medo intenso de engordar. Característica da:
-                        </strong>
-                    </p>
-
-                    <button class="option" onclick="responderQuiz2(false)">
-                        A) Bulimia nervosa
-                    </button>
-
-                    <button class="option" onclick="responderQuiz2(true)">
-                        B) Anorexia nervosa
-                    </button>
-
-                    <p class="resultado2"></p>
-
-
-                    <br><br>
-
-
-                    <!-- PERGUNTA 3 -->
-
-                    <p class="quiz-question">
-                        <strong>
-                            3. Qual desses fatores pode contribuir para o desenvolvimento de transtornos alimentares?
-                        </strong>
-                    </p>
-
-                    <button class="option" onclick="responderQuiz3(true)">
-                        A) Pressões sociais e padrões de beleza
-                    </button>
-
-                    <button class="option" onclick="responderQuiz3(false)">
-                        B) Beber água regularmente
-                    </button>
-
-                    <p class="resultado3"></p>
-
-
-                    <br><br>
-
-
-                    <!-- PERGUNTA 4 -->
-
-                    <p class="quiz-question">
-                        <strong>
-                            4. O que a pessoa pode sentir após ingerir muita comida compulsivamente?
-                        </strong>
-                    </p>
-
-                    <button class="option" onclick="responderQuiz4(true)">
-                        A) Culpa, vergonha ou arrependimento
-                    </button>
-
-                    <button class="option" onclick="responderQuiz4(false)">
-                        B) Necessariamente satisfação e tranquilidade
-                    </button>
-
-                    <p class="resultado4"></p>
-
-
-                    <br><br>
-
-
-                    <!-- PERGUNTA 5 -->
-
-                    <p class="quiz-question">
-                        <strong>
-                            5. Qual é uma característica da bulimia que não está presente na compulsão alimentar?
-                        </strong>
-                    </p>
-
-                    <button class="option" onclick="responderQuiz5(true)">
-                        A) Comportamentos compensatórios, como vômitos provocados ou exercício excessivo
-                    </button>
-
-                    <button class="option" onclick="responderQuiz5(false)">
-                        B) Comer uma grande quantidade de comida em pouco tempo
-                    </button>
-
-                    <p class="resultado5"></p>
-
-
-                    <br><br>
-
-
-                    <!-- PERGUNTA 6 -->
-
-                    <p class="quiz-question">
-                        <strong>
-                            6. Portadores da ______ vivem um ciclo de restrição alimentar, seguido de compulsão e comportamentos compensatórios. 
-                            O texto fala sobre:
-                        </strong>
-                    </p>
-
-                    <button class="option" onclick="responderQuiz6(true)">
-                        A) Bulimia nervosa
-                    </button>
-
-                    <button class="option" onclick="responderQuiz6(false)">
-                        B) Transtorno de compulsão alimentar
-                    </button>
-
-                    <p class="resultado6"></p>
-
-
-                    <br><br>
-
-
-                    <!-- PERGUNTA 7 -->
-
-                    <p class="quiz-question">
-                        <strong>
-                            7. Na Compulsão Alimentar, as pessoas podem ter tendência a:
-                        </strong>
-                    </p>
-
-                    <button class="option" onclick="responderQuiz7(true)">
-                       A) Comer grandes quantidades de comida mesmo sem fome e sentir perda de controle
-                    </button>
-
-                    <button class="option" onclick="responderQuiz7(false)">
-                        B) Sempre evitar completamente qualquer tipo de alimento
-                    </button>
-
-                    <p class="resultado7"></p>
-
-
-                    <br><br>
-
-
-                    <!-- PERGUNTA 8 -->
-
-                    <p class="quiz-question">
-                        <strong>
-                        8. Qual desses transtornos alimentares apresenta maior risco de morte?
-                        </strong>
-                    </p>
-
-                    <button class="option" onclick="responderQuiz8(true)">
-                        A) Anorexia nervosa
-                    </button>
-
-                    <button class="option" onclick="responderQuiz8(false)">
-                        B) Transtorno de compulsão alimentar
-                    </button>
-
-                    <p class="resultado8"></p>
-
-
-                    <br><br>
-
-
-                    <!-- PERGUNTA 9 -->
-
-                    <p class="quiz-question">
-                        <strong>
-                            9. Vício em comer e procurar na comida uma forma de refúgio são características associadas à:
-                        </strong>
-                    </p>
-
-                    <button class="option" onclick="responderQuiz9(true)">
-                        A) Compulsão alimentar
-                    </button>
-
-                    <button class="option" onclick="responderQuiz9(false)">
-                        B) Anorexia nervosa
-                    </button>
-
-                    <p class="resultado9"></p>
-
-
-                    <br><br>
-
-
-                    <!-- PERGUNTA 10 -->
-
-                    <p class="quiz-question">
-                        <strong>
-                            10. Portadores da ______ vivem um ciclo de restrição alimentar, seguido de episódio de compulsão e comportamentos compensatórios, como vômitos ou exercícios intensos. 
-                            O texto retrata:
-                        </strong>
-                    </p>
-
-                    <button class="option" onclick="responderQuiz10(true)">
-                        A) Bulimia nervosa
-                    </button>
-
-                    <button class="option" onclick="responderQuiz10(false)">
-                        B) Anorexia nervosa
-                    </button>
-
-                    <p class="resultado10"></p>
 
                 </div>
 
+
+                <!-- VIGOREXIA -->
+
+                <div class="card">
+
+                    <h3>
+
+                        Vigorexia
+
+                    </h3>
+
+                    <p>
+
+                        Também conhecida como dismorfia
+                        muscular, envolve uma percepção
+                        distorcida do próprio corpo,
+                        com preocupação excessiva
+                        relacionada à musculatura.
+
+                    </p>
+
+                </div>
+
+
+                <!-- SÍNDROME DE GOURMET -->
+
+                <div class="card">
+
+                    <h3>
+
+                        Síndrome de Gourmet
+
+                    </h3>
+
+                    <p>
+
+                        É um distúrbio raro em que a
+                        pessoa desenvolve interesse
+                        excessivo por comidas sofisticadas,
+                        exóticas e pela preparação dos
+                        pratos.
+
+                    </p>
+
+                </div>
+
+
+                <!-- TRANSTORNO NOTURNO -->
+
+                <div class="card">
+
+                    <h3>
+
+                        Transtorno Alimentar Noturno
+
+                    </h3>
+
+                    <p>
+
+                        É caracterizado pelo consumo
+                        significativo de alimentos durante
+                        a noite ou por episódios de
+                        alimentação após acordar.
+
+                    </p>
+
+                </div>
+
+
+                <!-- DIABULIMIA -->
+
+                <div class="card">
+
+                    <h3>
+
+                        Diabulimia
+
+                    </h3>
+
+                    <p>
+
+                        Termo usado para descrever
+                        comportamentos alimentares
+                        relacionados ao controle inadequado
+                        da insulina em pessoas com
+                        diabetes tipo 1, geralmente
+                        associado à preocupação com peso.
+
+                    </p>
+
+                </div>
+
+
+                <!-- ORTOREXIA -->
+
+                <div class="card">
+
+                    <h3>
+
+                        Ortorexia
+
+                    </h3>
+
+                    <p>
+
+                        Preocupação excessiva com uma
+                        alimentação considerada saudável,
+                        podendo gerar regras alimentares
+                        muito rígidas.
+
+                    </p>
+
+                </div>
+
+
+                <!-- ARFID -->
+
+                <div class="card">
+
+                    <h3>
+
+                        ARFID
+
+                    </h3>
+
+                    <p>
+
+                        Restrição ou evitação de alimentos
+                        que pode prejudicar a alimentação
+                        e a obtenção adequada de nutrientes.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             SINAIS DE ALERTA
+        ========================= -->
+
+        <div class="section fade-in">
+
+            <h2>
+
+                <i class="fas fa-exclamation-triangle"></i>
+
+                Sinais de alerta
+
+            </h2>
+
+
+            <div class="grid">
+
+
+                <!-- COMPORTAMENTO -->
+
+                <div class="card warning-card">
+
+                    <h3>
+
+                        <i class="fas fa-clock"></i>
+
+                        Comportamento
+
+                    </h3>
+
+
+                    <ul class="warning-list">
+
+                        <li>
+
+                            Evita refeições em grupo
+
+                        </li>
+
+
+                        <li>
+
+                            Come escondido ou muito rápido
+
+                        </li>
+
+
+                        <li>
+
+                            Desaparece após comer
+
+                        </li>
+
+
+                        <li>
+
+                            Exercícios compulsivos
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- FÍSICO -->
+
+                <div class="card warning-card">
+
+                    <h3>
+
+                        <i class="fas fa-chart-line"></i>
+
+                        Físico
+
+                    </h3>
+
+
+                    <ul class="warning-list">
+
+                        <li>
+
+                            Perda rápida de peso
+
+                        </li>
+
+
+                        <li>
+
+                            Cansaço constante
+
+                        </li>
+
+
+                        <li>
+
+                            Problemas dentários
+
+                        </li>
+
+
+                        <li>
+
+                            Cabelos fracos
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- EMOCIONAL -->
+
+                <div class="card warning-card">
+
+                    <h3>
+
+                        <i class="fas fa-head-side-virus"></i>
+
+                        Emocional
+
+                    </h3>
+
+
+                    <ul class="warning-list">
+
+                        <li>
+
+                            Baixa autoestima
+
+                        </li>
+
+
+                        <li>
+
+                            Ansiedade com comida
+
+                        </li>
+
+
+                        <li>
+
+                            Isolamento social
+
+                        </li>
+
+
+                        <li>
+
+                            Irritabilidade
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             ESTATÍSTICAS
+        ========================= -->
+
+        <div class="section fade-in card-section">
+
+            <h2>
+
+                <i class="fas fa-chart-bar"></i>
+
+                Estatísticas
+
+            </h2>
+
+
+            <div class="stats-grid">
+
+
+                <div class="stat-card">
+
+                    <span class="stat-number">
+
+                        1 em 10
+
+                    </span>
+
+                    <span class="stat-label">
+
+                        adolescentes afetados
+
+                    </span>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-number">
+
+                        90%
+
+                    </span>
+
+                    <span class="stat-label">
+
+                        ocorrem em meninas
+
+                    </span>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-number">
+
+                        12-18
+
+                    </span>
+
+                    <span class="stat-label">
+
+                        anos (pico maior)
+
+                    </span>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-number">
+
+                        70%
+
+                    </span>
+
+                    <span class="stat-label">
+
+                        podem ser prevenidos
+
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             PREVENÇÃO
+        ========================= -->
+
+        <div
+            class="section fade-in"
+            id="prevencao">
+
+            <h2>
+
+                <i class="fas fa-heart"></i>
+
+                Como prevenir
+
+            </h2>
+
+
+            <div class="grid">
+
+
+                <div class="card">
+
+                    <div class="tip-number">
+
+                        1
+
+                    </div>
+
+                    <p>
+
+                        Promova refeições familiares
+                        sem julgamentos sobre peso
+                        ou comida.
+
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="tip-number">
+
+                        2
+
+                    </div>
+
+                    <p>
+
+                        Fale sobre saúde, não aparência.
+                        Valorize força e energia.
+
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="tip-number">
+
+                        3
+
+                    </div>
+
+                    <p>
+
+                        Observe mudanças e converse
+                        com empatia, sem acusações.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             AJUDA
+        ========================= -->
+
+        <div
+            class="contacts fade-in"
+            id="ajuda">
+
+            <h2>
+
+                <i class="fas fa-phone"></i>
+
+                Ajuda imediata
+
+            </h2>
+
+
+            <div class="contact-grid">
+
+
+                <div class="contact-item">
+
+                    <span class="contact-number">
+
+                        188
+
+                    </span>
+
+                    <strong>
+
+                        CVV
+
+                    </strong>
+
+                    <br>
+
+                    <small>
+
+                        24 horas - Apoio emocional
+
+                    </small>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <span class="contact-number">
+
+                        100
+
+                    </span>
+
+                    <strong>
+
+                        Disque 100
+
+                    </strong>
+
+                    <br>
+
+                    <small>
+
+                        Direitos Humanos
+
+                    </small>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <span class="contact-number">
+
+                        CAPS
+
+                    </span>
+
+                    <strong>
+
+                        CAPS/UBS
+
+                    </strong>
+
+                    <br>
+
+                    <small>
+
+                        Saúde Mental SUS
+
+                    </small>
+
+                </div>
+
+
             </div>
 
 
-            <!-- FRASE -->
+            <p style="
+                margin-top:32px;
+                color:var(--text-secondary);
+                font-size:1.1rem;
+            ">
 
-            <div style="text-align:center;">
+                Fale com pais, professores ou
+                psicólogos. O primeiro passo é
+                buscar ajuda.
 
-                <p style="
+            </p>
+
+        </div>
+
+
+        <!-- =========================
+             FRASE
+        ========================= -->
+
+        <div
+            style="
+                text-align:center;
+                margin-bottom:60px;
+            ">
+
+            <p
+                style="
                     margin-top:40px;
                     color:var(--text-secondary);
                     font-size:1.1rem;
                 ">
 
-                    “O maior erro que um homem pode cometer
-                    é sacrificar a sua saúde a qualquer outra vantagem.”
+                “O maior erro que um homem pode
+                cometer é sacrificar a sua saúde
+                a qualquer outra vantagem.”
 
-                </p>
+            </p>
 
 
-                <p style="
+            <p
+                style="
                     margin-top:32px;
                     color:var(--text-secondary);
                     font-size:1.1rem;
                 ">
 
-                    (Arthur Schopenhauer)
+                (Arthur Schopenhauer)
 
-                </p>
-
-            </div>
-
+            </p>
 
         </div>
-
-    </main>
-
-
-    <!-- =========================
-         RODAPÉ
-    ========================= -->
-
-    <footer style="
-        background:var(--primary);
-        color:white;
-        text-align:center;
-        padding:20px 20px;
-        margin-top:60px;
-    ">
-
-        <p style="
-            font-size:0.95rem;
-            opacity:0.9;
-        ">
-
-            TCC Transtornos Alimentares — CEMEP • 2025
-
-        </p>
-
-    </footer>
+    </div>
+</main>
 
 
-    <!-- =========================
-         JAVASCRIPT
-    ========================= -->
+<!-- =========================
+     RODAPÉ
+========================= -->
 
-    <script>
+<footer>
 
-        /* =========================
-           ANIMAÇÃO AO ROLAR A PÁGINA
-        ========================= */
+    <p>
+        TCC Transtornos Alimentares — CEMEP 2026
+    </p>
 
-        const observer = new IntersectionObserver((entries) => {
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+
+    /* =========================
+       ANIMAÇÃO
+    ========================= */
+
+    const observer =
+        new IntersectionObserver((entries) => {
 
             entries.forEach(entry => {
 
                 if (entry.isIntersecting) {
 
-                    entry.target.classList.add('visible');
+                    entry.target
+                        .classList
+                        .add('visible');
 
                 }
 
@@ -1348,318 +1706,108 @@
         });
 
 
-        document
-            .querySelectorAll('.fade-in')
-            .forEach(el => {
+    document
+        .querySelectorAll('.fade-in')
+        .forEach(el => {
 
-                observer.observe(el);
+            observer.observe(el);
 
-            });
+        });
 
 
-        /* =========================
-           SCROLL SUAVE
-        ========================= */
+    /* =========================
+       SCROLL SUAVE
+    ========================= */
 
-        document
-            .querySelectorAll('a[href^="#"]')
-            .forEach(anchor => {
+    document
+        .querySelectorAll('a[href^="#"]')
+        .forEach(anchor => {
 
-                anchor.addEventListener('click', function (e) {
+            anchor.addEventListener(
+                'click',
+                function(e) {
 
                     e.preventDefault();
 
-                    document
-                        .querySelector(this.getAttribute('href'))
-                        .scrollIntoView({
+                    const destino =
+                        document.querySelector(
+                            this.getAttribute('href')
+                        );
+
+                    if (destino) {
+
+                        destino.scrollIntoView({
                             behavior: 'smooth'
                         });
 
-                });
+                    }
 
-            });
+                    /* Fecha o menu depois de clicar */
 
+                    document
+                        .getElementById("menuLinks")
+                        .classList
+                        .remove("aberto");
 
-        /* =========================
-           QUIZ - PERGUNTA 1
-        ========================= */
+                }
+            );
 
-        function responder(correto) {
-
-            const resultado =
-                document.querySelector(".resultado");
-
-            if (correto) {
-
-                resultado.innerText =
-                    "✔️ Correto!";
-
-                resultado.style.color = "green";
-
-            } else {
-
-                resultado.innerText =
-                    "❌ Não é a resposta";
-
-                resultado.style.color = "red";
-
-            }
-
-        }
+        });
 
 
-        /* =========================
-           QUIZ - PERGUNTA 2
-        ========================= */
+    /* =========================
+       ABRIR / FECHAR MENU
+    ========================= */
 
-        function responderQuiz2(correto) {
+    function abrirMenu() {
 
-            const resultado =
-                document.querySelector(".resultado2");
+        const menu =
+            document.getElementById("menuLinks");
 
-            if (correto) {
+        menu.classList.toggle("aberto");
 
-                resultado.innerText =
-                    "✔️ Correto!";
-
-                resultado.style.color = "green";
-
-            } else {
-
-                resultado.innerText =
-                    "❌ Não é a resposta.";
-
-                resultado.style.color = "red";
-
-            }
-
-        }
+    }
 
 
-        /* =========================
-           QUIZ - PERGUNTA 3
-        ========================= */
+    /* =========================
+       MODO ESCURO
+    ========================= */
 
-        function responderQuiz3(correto) {
+    function alternarTema() {
 
-            const resultado =
-                document.querySelector(".resultado3");
+        document.body
+            .classList
+            .toggle("dark-mode");
 
-            if (correto) {
 
-                resultado.innerText =
-                    "✔️ Correto!";
+        const botao =
+            document.querySelector(".botao-tema");
 
-                resultado.style.color = "green";
 
-            } else {
+        if (
+            document.body
+                .classList
+                .contains("dark-mode")
+        ) {
 
-                resultado.innerText =
-                    "❌ Não é a resposta.";
+            botao.innerHTML = `
+                <i class="fas fa-sun"></i>
+                Tema
+            `;
 
-                resultado.style.color = "red";
+        } else {
 
-            }
+            botao.innerHTML = `
+                <i class="fas fa-moon"></i>
+                Tema
+            `;
 
         }
 
+    }
 
-        /* =========================
-           QUIZ - PERGUNTA 4
-        ========================= */
-
-        function responderQuiz4(correto) {
-
-            const resultado =
-                document.querySelector(".resultado4");
-
-            if (correto) {
-
-                resultado.innerText =
-                    "✔️ Correto!";
-
-                resultado.style.color = "green";
-
-            } else {
-
-                resultado.innerText =
-                    "❌ Não é a resposta.";
-
-                resultado.style.color = "red";
-
-            }
-
-        }
-
-
-        /* =========================
-           QUIZ - PERGUNTA 5
-        ========================= */
-
-        function responderQuiz5(correto) {
-
-            const resultado =
-                document.querySelector(".resultado5");
-
-            if (correto) {
-
-                resultado.innerText =
-                    "✔️ Correto!";
-
-                resultado.style.color = "green";
-
-            } else {
-
-                resultado.innerText =
-                    "❌ Não é a resposta.";
-
-                resultado.style.color = "red";
-
-            }
-
-        }
-
-
-        /* =========================
-           QUIZ - PERGUNTA 6
-        ========================= */
-
-        function responderQuiz6(correto) {
-
-            const resultado =
-                document.querySelector(".resultado6");
-
-            if (correto) {
-
-                resultado.innerText =
-                    "✔️ Correto!";
-
-                resultado.style.color = "green";
-
-            } else {
-
-                resultado.innerText =
-                    "❌ Não é a resposta.";
-
-                resultado.style.color = "red";
-
-            }
-
-        }
-
-
-        /* =========================
-           QUIZ - PERGUNTA 7
-        ========================= */
-
-        function responderQuiz7(correto) {
-
-            const resultado =
-                document.querySelector(".resultado7");
-
-            if (correto) {
-
-                resultado.innerText =
-                    "✔️ Correto!";
-
-                resultado.style.color = "green";
-
-            } else {
-
-                resultado.innerText =
-                    "❌ Não é a resposta.";
-
-                resultado.style.color = "red";
-
-            }
-
-        }
-
-
-        /* =========================
-           QUIZ - PERGUNTA 8
-        ========================= */
-
-        function responderQuiz8(correto) {
-
-            const resultado =
-                document.querySelector(".resultado8");
-
-            if (correto) {
-
-                resultado.innerText =
-                    "✔️ Correto!";
-
-                resultado.style.color = "green";
-
-            } else {
-
-                resultado.innerText =
-                    "❌ Não é a resposta.";
-
-                resultado.style.color = "red";
-
-            }
-
-        }
-
-
-        /* =========================
-           QUIZ - PERGUNTA 9
-        ========================= */
-
-        function responderQuiz9(correto) {
-
-            const resultado =
-                document.querySelector(".resultado9");
-
-            if (correto) {
-
-                resultado.innerText =
-                    "✔️ Correto!";
-
-                resultado.style.color = "green";
-
-            } else {
-
-                resultado.innerText =
-                    "❌ Não é a resposta.";
-
-                resultado.style.color = "red";
-
-            }
-
-        }
-
-
-        /* =========================
-           QUIZ - PERGUNTA 10
-        ========================= */
-
-        function responderQuiz10(correto) {
-
-            const resultado =
-                document.querySelector(".resultado10");
-
-            if (correto) {
-
-                resultado.innerText =
-                    "✔️ Correto!";
-
-                resultado.style.color = "green";
-
-            } else {
-
-                resultado.innerText =
-                    "❌ Não é a resposta.";
-
-                resultado.style.color = "red";
-
-            }
-
-        }
-
-    </script>
+</script>
 
 </body>
+
 </html>
