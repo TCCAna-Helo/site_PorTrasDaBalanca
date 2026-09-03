@@ -1,0 +1,1635 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quiz | Transtornos Alimentares</title>
+
+    <link rel="icon" type="image/png" href="logoooSite.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --roxo: #803ca8;
+            --roxo-claro: #a56cdf;
+            --fundo: #f7f5fa;
+            --card: #ffffff;
+            --texto: #24202b;
+            --texto-secundario: #6f6878;
+            --borda: #e8e1ed;
+            --verde: #22a06b;
+            --vermelho: #dc4c64;
+            --sombra: 0 15px 45px rgba(75, 35, 100, 0.12);
+        }
+
+        body.dark-mode {
+            --fundo: #12101a;
+            --card: #211d29;
+            --texto: #f5f1f8;
+            --texto-secundario: #c8c0cf;
+            --borda: #393140;
+            --sombra: 0 15px 45px rgba(0, 0, 0, 0.35);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--fundo);
+            color: var(--texto);
+            min-height: 100vh;
+            transition: background 0.3s, color 0.3s;
+        }
+
+
+        /* =========================
+           MENU
+        ========================= */
+
+        .menu-fixo {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+
+        .menu-botao {
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-radius: 14px;
+            background: #803ca8;
+            color: white;
+            font-size: 21px;
+            cursor: pointer;
+
+            box-shadow:
+                0 7px 20px rgba(128, 60, 168, 0.3);
+
+            transition: 0.3s;
+        }
+
+        .menu-botao:hover {
+            transform: scale(1.05);
+            background: #6d2f91;
+        }
+
+        .menu-links {
+            position: fixed;
+            top: 80px;
+            left: 20px;
+            width: 235px;
+            padding: 10px;
+            background: var(--card);
+            border-radius: 16px;
+            box-shadow: var(--sombra);
+            display: none;
+            flex-direction: column;
+            z-index: 999;
+        }
+
+        .menu-links.aberto {
+            display: flex;
+        }
+
+        .menu-links a,
+        .menu-links button {
+            width: 100%;
+            padding: 13px 15px;
+            border: none;
+            border-radius: 9px;
+            background: transparent;
+            color: var(--roxo);
+            text-decoration: none;
+            text-align: left;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .menu-links a i,
+        .menu-links button i {
+            width: 23px;
+        }
+
+        .menu-links a:hover,
+        .menu-links button:hover {
+            background: var(--roxo);
+            color: white;
+        }
+
+
+        /* =========================
+           TOPO
+        ========================= */
+
+        .topo {
+            padding: 100px 20px 50px;
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #803ca8,
+                    #a56cdf
+                );
+
+            color: white;
+        }
+
+        .icone-topo {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 22px;
+            font-size: 30px;
+        }
+
+        .topo h1 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            margin-bottom: 10px;
+        }
+
+        .topo p {
+            max-width: 600px;
+            margin: auto;
+            font-size: 16px;
+            opacity: 0.92;
+        }
+
+
+        /* =========================
+           CONTAINER
+        ========================= */
+
+        .container {
+            width: min(800px, calc(100% - 30px));
+            margin: 0 auto;
+            padding: 40px 0 70px;
+        }
+
+
+        /* =========================
+           VOLTAR
+        ========================= */
+
+        .voltar {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--roxo);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 25px;
+            transition: 0.2s;
+        }
+
+        .voltar:hover {
+            transform: translateX(-4px);
+        }
+
+
+        /* =========================
+           PROGRESSO
+        ========================= */
+
+        .progresso-area {
+            margin-bottom: 22px;
+        }
+
+        .progresso-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 9px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--texto-secundario);
+        }
+
+        .barra {
+            width: 100%;
+            height: 9px;
+            background: var(--borda);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .barra-progresso {
+            width: 10%;
+            height: 100%;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #803ca8,
+                    #a56cdf
+                );
+
+            border-radius: 20px;
+            transition: width 0.4s ease;
+        }
+
+
+        /* =========================
+           CARD
+        ========================= */
+
+        .quiz-card {
+            background: var(--card);
+            border: 1px solid var(--borda);
+            border-radius: 25px;
+            padding: 38px;
+            box-shadow: var(--sombra);
+            animation: aparecer 0.4s ease;
+        }
+
+        @keyframes aparecer {
+
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* =========================
+           NÚMERO DA PERGUNTA
+        ========================= */
+
+        .numero-pergunta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--roxo);
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .numero-pergunta i {
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           PERGUNTA
+        ========================= */
+
+        .pergunta {
+            font-size: clamp(1.25rem, 3vw, 1.65rem);
+            line-height: 1.45;
+            margin-bottom: 28px;
+        }
+
+
+        /* =========================
+           ALTERNATIVAS
+        ========================= */
+
+        .alternativas {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .alternativa {
+            width: 100%;
+            padding: 17px 18px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            border: 2px solid var(--borda);
+            border-radius: 15px;
+            background: var(--card);
+            color: var(--texto);
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            text-align: left;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .alternativa:hover {
+            border-color: var(--roxo-claro);
+            transform: translateX(4px);
+        }
+
+        .letra {
+            min-width: 35px;
+            height: 35px;
+            border-radius: 10px;
+            background: #f0e8f5;
+            color: var(--roxo);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+        }
+
+        body.dark-mode .letra {
+            background: #342b3c;
+        }
+
+
+        /* =========================
+           RESPOSTA CORRETA
+        ========================= */
+
+        .alternativa.correta {
+            border-color: var(--verde);
+            background:
+                rgba(34, 160, 107, 0.10);
+        }
+
+
+        /* =========================
+           RESPOSTA ERRADA
+        ========================= */
+
+        .alternativa.errada {
+            border-color: var(--vermelho);
+            background:
+                rgba(220, 76, 100, 0.10);
+        }
+
+
+        .alternativa.desativada {
+            cursor: default;
+        }
+
+        .alternativa.desativada:hover {
+            transform: none;
+        }
+
+
+        /* =========================
+           FEEDBACK
+        ========================= */
+
+        .feedback {
+            display: none;
+            margin-top: 20px;
+            padding: 15px 17px;
+            border-radius: 13px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .feedback.mostrar {
+            display: block;
+            animation: aparecer 0.3s ease;
+        }
+
+        .feedback.certo {
+            background:
+                rgba(34, 160, 107, 0.12);
+            color: var(--verde);
+        }
+
+        .feedback.errado {
+            background:
+                rgba(220, 76, 100, 0.12);
+            color: var(--vermelho);
+        }
+
+
+        /* =========================
+           BOTÃO PRÓXIMA
+        ========================= */
+
+        .area-proxima {
+            margin-top: 25px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .proxima {
+            border: none;
+            padding: 14px 24px;
+            border-radius: 13px;
+            background: var(--roxo);
+            color: white;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            gap: 9px;
+            transition: 0.25s;
+        }
+
+        .proxima.mostrar {
+            display: flex;
+        }
+
+        .proxima:hover {
+            background: #6d2f91;
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           RESULTADO
+        ========================= */
+
+        .resultado-final {
+            display: none;
+            background: var(--card);
+            border: 1px solid var(--borda);
+            border-radius: 25px;
+            padding: 45px 35px;
+            text-align: center;
+            box-shadow: var(--sombra);
+            animation: aparecer 0.5s ease;
+        }
+
+        .resultado-final.mostrar {
+            display: block;
+        }
+
+        .trofeu {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            border-radius: 25px;
+            background: #f1e6f6;
+            color: var(--roxo);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+        }
+
+        body.dark-mode .trofeu {
+            background: #342b3c;
+        }
+
+        .resultado-final h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .pontuacao {
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--roxo);
+            margin: 15px 0;
+        }
+
+        .mensagem-final {
+            max-width: 560px;
+            margin: 0 auto 25px;
+            color: var(--texto-secundario);
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           BOTÕES FINAIS
+        ========================= */
+
+        .botoes-final {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .botao-final {
+            padding: 13px 22px;
+            border-radius: 13px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.25s;
+        }
+
+        .refazer {
+            border: none;
+            background: var(--roxo);
+            color: white;
+        }
+
+        .inicio {
+            border: 2px solid var(--borda);
+            background: transparent;
+            color: var(--texto);
+        }
+
+        .botao-final:hover {
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           RESPONSIVO
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            .menu-fixo {
+                top: 15px;
+                left: 15px;
+            }
+
+            .menu-links {
+                left: 15px;
+                top: 75px;
+            }
+
+            .topo {
+                padding: 90px 20px 40px;
+            }
+
+            .container {
+                width: min(100% - 22px, 800px);
+                padding-top: 30px;
+            }
+
+            .quiz-card {
+                padding: 27px 20px;
+                border-radius: 20px;
+            }
+
+            .alternativa {
+                padding: 14px;
+            }
+
+            .area-proxima {
+                justify-content: stretch;
+            }
+
+            .proxima {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .resultado-final {
+                padding: 35px 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     MENU
+========================= -->
+
+<nav class="menu-fixo">
+
+    <button
+        class="menu-botao"
+        onclick="abrirMenu()"
+        aria-label="Abrir menu">
+
+        <i class="fas fa-bars"></i>
+
+    </button>
+
+</nav>
+
+
+<div class="menu-links" id="menuLinks">
+
+    <a href="index.html">
+        Início
+    </a>
+
+
+    <a href="index.html#sobre">
+        Quem somos 
+    </a>
+
+
+    <a href="index.html#transtornos">
+        Transtornos
+    </a>
+
+
+    <a href="index.html#prevencao">
+        Prevenção
+    </a>
+
+
+    <a href="quiz.html">
+        Quiz
+    </a>
+
+
+    <a href="index.html#ajuda">
+        Ajuda
+    </a>
+
+
+    <button
+        class="botao-tema"
+        onclick="alternarTema()">
+        Tema
+    </button>
+
+
+    <a href="login.html">
+        Login
+    </a>
+
+</div>
+
+
+<!-- =========================
+     TOPO
+========================= -->
+
+<header class="topo">
+
+<h1>
+    Quiz
+</h1>
+
+    <p>
+
+        Vamos ver o quanto você aprendeu
+        sobre transtornos alimentares?
+
+    </p>
+
+</header>
+
+
+<!-- =========================
+     CONTEÚDO
+========================= -->
+
+<main class="container">
+
+
+    <a href="index.html" class="voltar">
+
+        <i class="fas fa-arrow-left"></i>
+        Voltar para o início
+    </a>
+
+
+    <!-- =========================
+         PROGRESSO
+    ========================= -->
+
+    <div
+        class="progresso-area"
+        id="progressoArea">
+
+        <div class="progresso-info">
+
+            <span id="contador">
+
+                Pergunta 1 de 10
+
+            </span>
+
+
+            <span id="porcentagem">
+
+                10%
+
+            </span>
+
+        </div>
+
+
+        <div class="barra">
+
+            <div
+                class="barra-progresso"
+                id="barraProgresso">
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         CARD DO QUIZ
+    ========================= -->
+
+    <div
+        class="quiz-card"
+        id="quizCard">
+
+
+        <div class="numero-pergunta">
+
+            <i class="fas fa-lightbulb"></i>
+
+            <span id="numeroPergunta">
+
+                PERGUNTA 1
+
+            </span>
+
+        </div>
+
+
+        <h2
+            class="pergunta"
+            id="pergunta">
+
+        </h2>
+
+
+        <div
+            class="alternativas"
+            id="alternativas">
+
+        </div>
+
+
+        <div
+            class="feedback"
+            id="feedback">
+
+        </div>
+
+
+        <div class="area-proxima">
+
+            <button
+                class="proxima"
+                id="botaoProxima"
+                onclick="proximaPergunta()">
+
+                Próxima
+
+                <i class="fas fa-arrow-right"></i>
+
+            </button>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =========================
+         RESULTADO
+    ========================= -->
+
+    <div
+        class="resultado-final"
+        id="resultadoFinal">
+
+
+        <div class="trofeu">
+
+            <i class="fas fa-trophy"></i>
+
+        </div>
+
+
+        <h2>
+            Quiz concluído! 🎉
+        </h2>
+
+
+        <div
+            class="pontuacao"
+            id="pontuacao">
+
+            0/10
+
+        </div>
+
+
+        <p
+            class="mensagem-final"
+            id="mensagemFinal">
+
+        </p>
+
+
+        <div class="botoes-final">
+
+
+            <button
+                class="botao-final refazer"
+                onclick="reiniciarQuiz()">
+
+                <i class="fas fa-rotate-right"></i>
+
+                Refazer quiz
+
+            </button>
+
+
+            <a
+                href="index.html"
+                class="botao-final inicio">
+
+                <i class="fas fa-house"></i>
+
+                Voltar ao início
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+</main>
+
+
+<script>
+
+
+/* =========================
+   PERGUNTAS
+========================= */
+
+const perguntas = [
+
+    {
+        pergunta:
+            "O que caracteriza principalmente o transtorno de compulsão alimentar?",
+
+        alternativas: [
+
+            "Comer grandes quantidades de comida sentindo perda de controle",
+
+            "Evitar completamente todos os alimentos",
+
+            "Ter medo de água durante as refeições",
+
+            "Comer somente alimentos considerados saudáveis"
+
+        ],
+
+        correta: 0
+    },
+
+
+    {
+        pergunta:
+            "Qual transtorno está associado a uma preocupação intensa com o peso e medo de engordar?",
+
+        alternativas: [
+
+            "Transtorno de compulsão alimentar",
+
+            "Anorexia nervosa",
+
+            "Bulimia nervosa",
+
+            "Nenhuma das alternativas"
+
+        ],
+
+        correta: 1
+    },
+
+
+    {
+        pergunta:
+            "Qual desses fatores pode contribuir para o desenvolvimento de transtornos alimentares?",
+
+        alternativas: [
+
+            "Pressões sociais e padrões de beleza",
+
+            "Beber água regularmente",
+
+            "Dormir bem",
+
+            "Praticar atividades de lazer"
+
+        ],
+
+        correta: 0
+    },
+
+
+    {
+        pergunta:
+            "A bulimia nervosa pode envolver episódios de compulsão alimentar acompanhados de:",
+
+        alternativas: [
+
+            "Comportamentos compensatórios",
+
+            "Maior consumo de água",
+
+            "Sono excessivo",
+
+            "Aumento obrigatório do apetite"
+
+        ],
+
+        correta: 0
+    },
+
+
+    {
+        pergunta:
+            "Uma pessoa com transtorno alimentar pode apresentar mudanças relacionadas a:",
+
+        alternativas: [
+
+            "Comportamento alimentar e relação com a comida",
+
+            "Somente a altura",
+
+            "Somente a cor dos olhos",
+
+            "Apenas o tipo de cabelo"
+
+        ],
+
+        correta: 0
+    },
+
+
+    {
+        pergunta:
+            "Qual atitude é mais adequada quando alguém apresenta sinais de um transtorno alimentar?",
+
+        alternativas: [
+
+            "Fazer comentários sobre o corpo da pessoa",
+
+            "Ignorar os sinais",
+
+            "Buscar apoio de um adulto de confiança e de profissionais",
+
+            "Tentar resolver tudo sozinho"
+
+        ],
+
+        correta: 2
+    },
+
+
+    {
+        pergunta:
+            "Os transtornos alimentares podem afetar:",
+
+        alternativas: [
+
+            "Somente a alimentação",
+
+            "A saúde física e emocional",
+
+            "Somente o peso",
+
+            "Apenas a aparência"
+
+        ],
+
+        correta: 1
+    },
+
+
+    {
+        pergunta:
+            "Qual afirmação sobre transtornos alimentares é verdadeira?",
+
+        alternativas: [
+
+            "São apenas uma escolha pessoal",
+
+            "Podem acontecer com pessoas de diferentes corpos e idades",
+
+            "Sempre desaparecem sozinhos",
+
+            "Não precisam de atenção"
+
+        ],
+
+        correta: 1
+    },
+
+
+    {
+        pergunta:
+            "A prevenção dos transtornos alimentares pode envolver:",
+
+        alternativas: [
+
+            "Valorizar apenas a aparência",
+
+            "Promover uma relação saudável com a alimentação e com o próprio corpo",
+
+            "Fazer dietas extremamente restritivas",
+
+            "Comparar o corpo com o de outras pessoas"
+
+        ],
+
+        correta: 1
+    },
+
+
+    {
+        pergunta:
+            "Qual é uma atitude importante diante de suspeitas de transtorno alimentar?",
+
+        alternativas: [
+
+            "Procurar ajuda e conversar com alguém de confiança",
+
+            "Esconder o problema",
+
+            "Fazer críticas à pessoa",
+
+            "Evitar qualquer conversa sobre o assunto"
+
+        ],
+
+        correta: 0
+    }
+
+];
+
+
+let perguntaAtual = 0;
+
+let pontuacao = 0;
+
+let respondeu = false;
+
+
+/* =========================
+   MOSTRAR PERGUNTA
+========================= */
+
+function mostrarPergunta() {
+
+    respondeu = false;
+
+
+    const pergunta =
+        perguntas[perguntaAtual];
+
+
+    document.getElementById(
+        "numeroPergunta"
+    ).textContent =
+        "PERGUNTA " +
+        (perguntaAtual + 1);
+
+
+    document.getElementById(
+        "contador"
+    ).textContent =
+        "Pergunta " +
+        (perguntaAtual + 1) +
+        " de " +
+        perguntas.length;
+
+
+    const porcentagem =
+        Math.round(
+            ((perguntaAtual + 1) /
+            perguntas.length) * 100
+        );
+
+
+    document.getElementById(
+        "porcentagem"
+    ).textContent =
+        porcentagem + "%";
+
+
+    document.getElementById(
+        "barraProgresso"
+    ).style.width =
+        porcentagem + "%";
+
+
+    document.getElementById(
+        "pergunta"
+    ).textContent =
+        pergunta.pergunta;
+
+
+    const alternativas =
+        document.getElementById(
+            "alternativas"
+        );
+
+
+    alternativas.innerHTML = "";
+
+
+    const letras = [
+        "A",
+        "B",
+        "C",
+        "D"
+    ];
+
+
+    pergunta.alternativas.forEach(
+        function(texto, indice) {
+
+            const botao =
+                document.createElement(
+                    "button"
+                );
+
+
+            botao.className =
+                "alternativa";
+
+
+            botao.innerHTML = `
+
+                <span class="letra">
+
+                    ${letras[indice]}
+
+                </span>
+
+                <span>
+
+                    ${texto}
+
+                </span>
+
+            `;
+
+
+            botao.onclick =
+                function() {
+
+                    selecionarResposta(
+                        botao,
+                        indice
+                    );
+
+                };
+
+
+            alternativas.appendChild(
+                botao
+            );
+
+        }
+    );
+
+
+    const feedback =
+        document.getElementById(
+            "feedback"
+        );
+
+
+    feedback.className =
+        "feedback";
+
+
+    feedback.textContent = "";
+
+
+    const proxima =
+        document.getElementById(
+            "botaoProxima"
+        );
+
+
+    proxima.classList.remove(
+        "mostrar"
+    );
+
+
+    if (
+        perguntaAtual ===
+        perguntas.length - 1
+    ) {
+
+        proxima.innerHTML = `
+
+            Ver resultado
+
+            <i class="fas fa-trophy"></i>
+
+        `;
+
+    } else {
+
+        proxima.innerHTML = `
+
+            Próxima
+
+            <i class="fas fa-arrow-right"></i>
+
+        `;
+
+    }
+
+}
+
+
+/* =========================
+   SELECIONAR RESPOSTA
+========================= */
+
+function selecionarResposta(
+    botao,
+    indice
+) {
+
+    if (respondeu) {
+        return;
+    }
+
+
+    respondeu = true;
+
+
+    const pergunta =
+        perguntas[perguntaAtual];
+
+
+    const todos =
+        document.querySelectorAll(
+            ".alternativa"
+        );
+
+
+    todos.forEach(
+        function(item) {
+
+            item.classList.add(
+                "desativada"
+            );
+
+            item.disabled = true;
+
+        }
+    );
+
+
+    if (
+        indice ===
+        pergunta.correta
+    ) {
+
+        botao.classList.add(
+            "correta"
+        );
+
+
+        pontuacao++;
+
+
+        mostrarFeedback(
+            true,
+            "Muito bem! Você acertou!"
+        );
+
+    } else {
+
+        botao.classList.add(
+            "errada"
+        );
+
+
+        todos[
+            pergunta.correta
+        ].classList.add(
+            "correta"
+        );
+
+
+        mostrarFeedback(
+            false,
+            "Essa não é a resposta correta. A alternativa verde é a correta."
+        );
+
+    }
+
+
+    document.getElementById(
+        "botaoProxima"
+    ).classList.add(
+        "mostrar"
+    );
+
+}
+
+
+/* =========================
+   FEEDBACK
+========================= */
+
+function mostrarFeedback(
+    correto,
+    mensagem
+) {
+
+    const feedback =
+        document.getElementById(
+            "feedback"
+        );
+
+
+    feedback.textContent =
+        (correto ? "✓ " : "✕ ") +
+        mensagem;
+
+
+    feedback.className =
+        "feedback mostrar " +
+        (
+            correto
+                ? "certo"
+                : "errado"
+        );
+
+}
+
+
+/* =========================
+   PRÓXIMA PERGUNTA
+========================= */
+
+function proximaPergunta() {
+
+    if (!respondeu) {
+        return;
+    }
+
+
+    perguntaAtual++;
+
+
+    if (
+        perguntaAtual >=
+        perguntas.length
+    ) {
+
+        mostrarResultado();
+
+        return;
+
+    }
+
+
+    const card =
+        document.getElementById(
+            "quizCard"
+        );
+
+
+    card.style.animation = "none";
+
+
+    void card.offsetWidth;
+
+
+    card.style.animation =
+        "aparecer 0.4s ease";
+
+
+    mostrarPergunta();
+
+
+    window.scrollTo({
+        top: 200,
+        behavior: "smooth"
+    });
+
+}
+
+
+/* =========================
+   RESULTADO
+========================= */
+
+function mostrarResultado() {
+
+    document.getElementById(
+        "quizCard"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "progressoArea"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "resultadoFinal"
+    ).classList.add(
+        "mostrar"
+    );
+
+
+    document.getElementById(
+        "pontuacao"
+    ).textContent =
+        pontuacao +
+        "/" +
+        perguntas.length;
+
+
+    const porcentagem =
+        (pontuacao /
+        perguntas.length) *
+        100;
+
+
+    let mensagem;
+
+
+    if (porcentagem >= 80) {
+
+        mensagem =
+            "Excelente! Você demonstrou que conhece bem os principais conceitos sobre transtornos alimentares. Continue buscando informações confiáveis e ajudando a combater preconceitos.";
+
+    }
+
+    else if (porcentagem >= 50) {
+
+        mensagem =
+            "Muito bom! Você já conhece vários aspectos importantes. Continue aprendendo sobre o assunto e compartilhando informações responsáveis.";
+
+    }
+
+    else {
+
+        mensagem =
+            "Este quiz é uma oportunidade para aprender mais. Conhecer o tema ajuda a reconhecer a importância da informação, da prevenção e da busca por ajuda.";
+
+    }
+
+
+    document.getElementById(
+        "mensagemFinal"
+    ).textContent =
+        mensagem;
+
+
+    window.scrollTo({
+        top: 200,
+        behavior: "smooth"
+    });
+
+}
+
+
+/* =========================
+   REINICIAR QUIZ
+========================= */
+
+function reiniciarQuiz() {
+
+    perguntaAtual = 0;
+
+    pontuacao = 0;
+
+    respondeu = false;
+
+
+    document.getElementById(
+        "resultadoFinal"
+    ).classList.remove(
+        "mostrar"
+    );
+
+
+    document.getElementById(
+        "quizCard"
+    ).style.display =
+        "block";
+
+
+    document.getElementById(
+        "progressoArea"
+    ).style.display =
+        "block";
+
+
+    mostrarPergunta();
+
+
+    window.scrollTo({
+        top: 200,
+        behavior: "smooth"
+    });
+
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+function abrirMenu() {
+
+    const menu =
+        document.getElementById(
+            "menuLinks"
+        );
+
+
+    menu.classList.toggle(
+        "aberto"
+    );
+
+}
+
+
+/* =========================
+   MODO ESCURO
+========================= */
+
+function alternarTema() {
+
+    document.body.classList.toggle(
+        "dark-mode"
+    );
+
+
+    const botao =
+        document.querySelector(
+            ".botao-tema"
+        );
+
+
+    if (
+        document.body.classList.contains(
+            "dark-mode"
+        )
+    ) {
+
+        botao.innerHTML = `
+
+            <i class="fas fa-sun"></i>
+
+            Tema
+
+        `;
+
+    } else {
+
+        botao.innerHTML = `
+
+            <i class="fas fa-moon"></i>
+
+            Tema
+
+        `;
+
+    }
+
+}
+
+
+/* =========================
+   INICIAR QUIZ
+========================= */
+
+mostrarPergunta();
+
+</script>
+
+
+</body>
+
+</html>
