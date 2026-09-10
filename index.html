@@ -19,841 +19,1403 @@
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <style>
 
-        /* =========================
-           CONFIGURAÇÕES GERAIS
-        ========================= */
+<style>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+/* =========================================================
+   CONFIGURAÇÕES GERAIS
+========================================================= */
 
-        :root {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-            --primary: linear-gradient(
-                135deg,
-                #803ca8 0%,
-                #a56cdf 100%
-            );
+html {
+    scroll-behavior: smooth;
+}
 
-            --primary-light: #b2a0f5;
-            --secondary: #f8fafc;
-            --accent: #10b981;
-            --text-primary: #1e293b;
-            --text-secondary: #64748b;
-            --border: #e2e8f0;
-            --shadow:
-                0 20px 60px rgba(0,0,0,0.10);
+:root {
 
-            --shadow-hover:
-                0 30px 80px rgba(0,0,0,0.15);
-        }
+    --primary: linear-gradient(
+        135deg,
+        #803ca8 0%,
+        #a56cdf 100%
+    );
 
+    --primary-light: #b2a0f5;
 
-        body {
+    --secondary: #f8fafc;
 
-            font-family: 'Inter', sans-serif;
-            line-height: 1.7;
-            color: var(--text-primary);
-            background: var(--secondary);
-            overflow-x: hidden;
-            transition:
-                background 0.3s ease,
-                color 0.3s ease;
-        }
+    --accent: #10b981;
+
+    --text-primary: #1e293b;
+
+    --text-secondary: #64748b;
+
+    --border: #e2e8f0;
+
+    --shadow:
+        0 20px 60px rgba(0,0,0,0.10);
+
+    --shadow-hover:
+        0 30px 80px rgba(0,0,0,0.15);
+}
 
 
-        /* =========================
-           MODO ESCURO
-        ========================= */
+body {
 
-        body.dark-mode {
+    font-family: 'Inter', sans-serif;
 
-            --secondary: #111827;
-            --text-primary: #f1f5f9;
-            --text-secondary: #cbd5e1;
-            --border: #374151;
-            background: #111827;
-            color: #f1f5f9;
-        }
+    line-height: 1.7;
 
+    color: var(--text-primary);
 
-        body.dark-mode .card,
-        body.dark-mode .card-section,
-        body.dark-mode .contacts,
-        body.dark-mode .stat-card {
+    background: var(--secondary);
 
-            background: #1f2937;
-            color: #f1f5f9;
-        }
+    overflow-x: hidden;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
 
 
-        body.dark-mode .contact-item {
+/* =========================================================
+   MODO ESCURO
+========================================================= */
 
-            background: #374151;
-            color: #f1f5f9;
-        }
+body.dark-mode {
 
+    --secondary: #111827;
 
-        body.dark-mode .contact-number {
+    --text-primary: #f1f5f9;
 
-            color: #f1f5f9;
-        }
+    --text-secondary: #cbd5e1;
 
+    --border: #374151;
 
-        body.dark-mode .menu-links {
+    background: #111827;
 
-            background: #1f2937;
-        }
-
-
-        body.dark-mode .menu-links a,
-        body.dark-mode .menu-links button {
-
-            color: #c084fc;
-        }
+    color: #f1f5f9;
+}
 
 
-        body.dark-mode .menu-links a:hover,
-        body.dark-mode .menu-links button:hover {
+body.dark-mode .card,
+body.dark-mode .card-section,
+body.dark-mode .contacts,
+body.dark-mode .stat-card {
 
-            background: #803ca8;
-            color: white;
-        }
+    background: #1f2937;
 
-
-        /* =========================
-           MENU FIXO
-        ========================= */
-
-        .menu-fixo {
-
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            width: auto;
-            height: auto;
-            background: transparent;
-            display: flex;
-            align-items: center;
-            padding: 0;
-            z-index: 1000;
-            box-shadow: none;
-        }
+    color: #f1f5f9;
+}
 
 
-        .menu-botao {
+body.dark-mode .contact-item {
 
-            background: #803ca8;
-            border: none;
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 12px;
-            transition: 0.3s;
-            box-shadow:
-                0 5px 15px rgba(0,0,0,0.15);
-        }
+    background: #374151;
+
+    color: #f1f5f9;
+}
 
 
-        .menu-botao:hover {
+body.dark-mode .contact-number {
 
-            background: #6d2f91;
-            transform: scale(1.05);
-        }
-
-
-        /* =========================
-           MENU ABERTO
-        ========================= */
-
-        .menu-links {
-
-            position: fixed;
-            top: 80px;
-            left: 20px;
-            right: auto;
-            width: 230px;
-            background: white;
-            border-radius: 15px;
-            box-shadow:
-                0 8px 25px rgba(0,0,0,0.2);
-            padding: 10px;
-            display: none;
-            flex-direction: column;
-            z-index: 999;
-        }
+    color: #f1f5f9;
+}
 
 
-        .menu-links.aberto {
-            display: flex;
-        }
+body.dark-mode .menu-links {
 
-        /* =========================
-           SAUDAÇÃO DO USUÁRIO
-        ========================= */
-
-        .saudacao-menu {
-            padding: 15px;
-            margin-bottom: 5px;
-            color: #803ca8;
-            font-size: 16px;
-            font-weight: 700;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        body.dark-mode .saudacao-menu {
-            color: #c084fc;
-            border-bottom-color: #374151;
-        }
+    background: #1f2937;
+}
 
 
+body.dark-mode .menu-links a,
+body.dark-mode .menu-links button {
+
+    color: #c084fc;
+}
 
 
-        .menu-links a,
-        .menu-links button {
-            width: 100%;
-            padding: 13px 15px;
-            border: none;
-            background: transparent;
-            text-align: left;
-            color: #803ca8;
-            font-family: 'Inter', sans-serif;
-            font-size: 15px;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+body.dark-mode .menu-links a:hover,
+body.dark-mode .menu-links button:hover {
+
+    background: #803ca8;
+
+    color: white;
+}
 
 
-        .menu-links a:hover,
-        .menu-links button:hover {
-            background: #803ca8;
-            color: white;
-        }
+body.dark-mode .saudacao-menu {
+
+    color: #c084fc;
+
+    border-bottom-color: #374151;
+}
 
 
-        /* =========================
-           CONTAINER
-        ========================= */
+/* =========================================================
+   MENU FIXO
+========================================================= */
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
+.menu-fixo {
+
+    position: fixed;
+
+    top: 20px;
+
+    left: 20px;
+
+    width: auto;
+
+    height: auto;
+
+    background: transparent;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0;
+
+    z-index: 1000;
+
+    box-shadow: none;
+}
 
 
-        /* =========================
-           CABEÇALHO
-        ========================= */
+.menu-botao {
 
-       header {
-    background: var(--primary);
+    background: #803ca8;
+
+    border: none;
+
     color: white;
 
-    padding: 100px 0 0;
+    font-size: 24px;
 
-    min-height: 500px; /*aumenta a parte roxa*/
-           
+    cursor: pointer;
+
+    width: 50px;
+
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.15);
+}
+
+
+.menu-botao:hover {
+
+    background: #6d2f91;
+
+    transform: scale(1.05);
+}
+
+
+/* =========================================================
+   MENU ABERTO
+========================================================= */
+
+.menu-links {
+
+    position: fixed;
+
+    top: 80px;
+
+    left: 20px;
+
+    width: 230px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.2);
+
+    padding: 10px;
+
+    display: none;
+
+    flex-direction: column;
+
+    z-index: 999;
+}
+
+
+.menu-links.aberto {
+
+    display: flex;
+}
+
+
+/* =========================================================
+   SAUDAÇÃO
+========================================================= */
+
+.saudacao-menu {
+
+    padding: 15px;
+
+    margin-bottom: 5px;
+
+    color: #803ca8;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    border-bottom:
+        1px solid #e2e8f0;
+}
+
+
+/* =========================================================
+   LINKS DO MENU
+========================================================= */
+
+.menu-links a,
+.menu-links button {
+
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: none;
+
+    background: transparent;
+
+    text-align: left;
+
+    color: #803ca8;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.menu-links a:hover,
+.menu-links button:hover {
+
+    background: #803ca8;
+
+    color: white;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container {
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 0 24px;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+========================================================= */
+
+header {
+
+    background: var(--primary);
+
+    color: white;
+
+    min-height: 500px;
+
     position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+/* Fundo decorativo */
+
+header::before {
+
+    content: '';
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff15"><path d="M0 0L50 30Q100 0 200 40T400 30T600 40Q800 20 900 50T1000 0V100H0Z"/></svg>');
+
+    background-size: cover;
+
+    background-position: center;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   TEXTO DO CABEÇALHO
+========================================================= */
+
+.header-content {
+
+    position: relative;
+
+    z-index: 4;
+
+    width: 55%;
+
+    max-width: 650px;
+
+    padding-left: 40px;
+
+    text-align: left;
+}
+
+
+h1 {
+
+    font-size:
+        clamp(2.5rem, 4vw, 3.5rem);
+
+    font-weight: 700;
+
+    margin-bottom: 18px;
+
+    line-height: 1.1;
+
+    white-space: nowrap;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #f1f5f9 100%
+        );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    background-clip: text;
+}
+
+
+.subtitle {
+
+    font-size: 19px;
+
+    font-weight: 400;
+
+    line-height: 1.6;
+
+    opacity: 0.96;
+
+    max-width: 580px;
+
+    margin: 0 0 20px 0;
+
+    text-align: left;
+}
+
+
+/* Frase adicional */
+
+.frase-header {
+
+    font-family: Georgia, serif;
+
+    font-style: italic;
+
+    font-size: 17px;
+
+    color:
+        rgba(255,255,255,0.9);
+
+    margin-top: 18px;
+}
+
+
+.frase-header::after {
+
+    content: '';
+
+    display: block;
+
+    width: 90px;
+
+    height: 2px;
+
+    margin-top: 8px;
+
+    background:
+        rgba(255,255,255,0.55);
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   IMAGEM PRINCIPAL
+   SUA IMAGEM ORIGINAL
+========================================================= */
+
+.imagem-header {
+
+    position: absolute;
+
+    right: 0;
+
+    bottom: 0;
+
+    width: 48%;
+
+    max-width: 650px;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    object-position: right bottom;
+
+    z-index: 3;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CONTEÚDO
+========================================================= */
+
+main {
+
+    padding: 70px 0;
+}
+
+
+.section {
+
+    margin-bottom: 100px;
+}
+
+
+/* =========================================================
+   SOBRE
+========================================================= */
+
+#sobre {
+
+    max-width: 850px;
+
+    margin:
+        -10px auto 80px;
+}
+
+
+#sobre .card {
+
+    padding: 30px 35px;
+
+    border-radius: 20px;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.08);
+}
+
+
+#sobre .card p {
+
+    color: var(--text-secondary);
+}
+
+
+/* =========================================================
+   CARD SECTION
+========================================================= */
+
+.card-section {
+
+    background: white;
+
+    border-radius: 24px;
+
+    padding: 40px;
+
+    box-shadow: var(--shadow);
+}
+
+
+/* =========================================================
+   TÍTULOS
+========================================================= */
+
+h2 {
+
+    font-size: 35px;
+
+    font-weight: 600;
+
+    margin-bottom: 32px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+}
+
+
+h2 i {
+
+    background: var(--primary);
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    background-clip: text;
+
+    font-size: 2rem;
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(350px, 1fr));
+
+    gap: 32px;
+
+    margin-top: 48px;
+}
+
+
+.card {
+
+    background: white;
+
+    border-radius: 24px;
+
+    padding: 40px;
+
+    box-shadow: var(--shadow);
+
+    transition:
+        all 0.4s
+        cubic-bezier(0.4,0,0.2,1);
+
+    border:
+        1px solid rgba(255,255,255,0.2);
+
+    position: relative;
+
     overflow: hidden;
 }
 
 
-        header::before {
+.card::before {
 
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff15"><path d="M0 0L50 30Q100 0 200 40T400 30T600 40Q800 20 900 50T1000 0V100H0Z"/></svg>');
+    content: '';
 
-            background-size: cover;
-        }
+    position: absolute;
 
-.header-content {
-    position: relative;
-    z-index: 4;
-    text-align: left;
-    max-width: 700px;
-    margin: 0;
-    padding-left: 40px;
-    padding-top: 20px;
+    top: 0;
+
+    left: 0;
+
+    right: 0;
+
+    height: 4px;
+
+    background: var(--primary);
+
+    transform: scaleX(0);
+
+    transition:
+        transform 0.4s ease;
 }
 
-        h1 {
-    font-size: clamp(2.5rem, 4vw, 3.5rem);
-    font-weight: 700;
-    margin-bottom: 15px;
-    line-height: 1.1;
-    white-space: nowrap;
 
-    background: linear-gradient(
-        135deg,
-        #ffffff 0%,
-        #f1f5f9 100%
-    );
+.card:hover {
+
+    transform:
+        translateY(-12px);
+
+    box-shadow:
+        var(--shadow-hover);
+}
+
+
+.card:hover::before {
+
+    transform: scaleX(1);
+}
+
+
+.card h3 {
+
+    margin-bottom: 15px;
+
+    font-size: 1.35rem;
+
+    color: var(--text-primary);
+}
+
+
+/* =========================================================
+   QUEM SOMOS
+========================================================= */
+
+.equipe {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 50px;
+
+    margin-top: 30px;
+
+    flex-wrap: wrap;
+}
+
+
+.pessoa {
+
+    text-align: center;
+}
+
+
+.pessoa img {
+
+    width: 250px;
+
+    height: 250px;
+
+    object-fit: cover;
+
+    border:
+        3px solid #b677d3;
+
+    border-radius: 10px;
+
+    display: block;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   SINAIS DE ALERTA
+========================================================= */
+
+.warning-card {
+
+    background:
+        linear-gradient(
+            135deg,
+            #fee2e2 0%,
+            #fecaca 100%
+        );
+
+    border:
+        1px solid #fca5a5;
+}
+
+
+.warning-card h3 {
+
+    color: #dc2626;
+
+    font-size: 1.4rem;
+
+    margin-bottom: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.warning-list {
+
+    list-style: none;
+}
+
+
+.warning-list li {
+
+    padding: 12px 0;
+
+    padding-left: 32px;
+
+    position: relative;
+
+    color: #991b1b;
+
+    font-weight: 500;
+}
+
+
+.warning-list li::before {
+
+    content: "•";
+
+    position: absolute;
+
+    left: 5px;
+
+    font-size: 1.4rem;
+
+    color: #dc2626;
+}
+
+
+body.dark-mode .warning-card {
+
+    background:
+        linear-gradient(
+            135deg,
+            #451a1a,
+            #3f2020
+        );
+
+    border-color: #7f1d1d;
+}
+
+
+body.dark-mode .warning-list li {
+
+    color: #fecaca;
+}
+
+
+body.dark-mode .warning-card h3 {
+
+    color: #fca5a5;
+}
+
+
+/* =========================================================
+   ESTATÍSTICAS
+========================================================= */
+
+.stats-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(200px, 1fr));
+
+    gap: 24px;
+
+    margin: 48px 0;
+}
+
+
+.stat-card {
+
+    background: white;
+
+    border-radius: 24px;
+
+    padding: 40px 24px;
+
+    box-shadow: var(--shadow);
+
+    text-align: center;
+}
+
+
+.stat-number {
+
+    font-size: 3.5rem;
+
+    font-weight: 700;
+
+    background: var(--primary);
 
     -webkit-background-clip: text;
+
     -webkit-text-fill-color: transparent;
+
     background-clip: text;
-}
 
-       .subtitle {
-    font-size: 20px;
-    font-weight: 400;
-    opacity: 0.95;
-    max-width: 600px;
-    margin: 0 0 40px 0;
-    text-align: left;
+    line-height: 1;
+
+    display: block;
 }
 
 
-        /* =========================
-           CONTEÚDO
-        ========================= */
+.stat-label {
 
-        main {
-            padding: 80px 0;
-        }
+    color: var(--text-secondary);
 
+    font-size: 1.1rem;
 
-        .section {
-            margin-bottom: 100px;
-        }
+    font-weight: 500;
 
+    margin-top: 8px;
 
-        .card-section {
-            background: white;
-            border-radius: 24px;
-            padding: 40px;
-            box-shadow: var(--shadow);
-        }
-
-
-        h2 {
-
-            font-size: 35px;
-            font-weight: 600;
-            margin-bottom: 32px;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-
-        h2 i {
-
-            background: var(--primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-size: 2rem;
-        }
-
-
-        /* =========================
-           CARDS
-        ========================= */
-
-        .grid {
-            display: grid;
-            grid-template-columns:
-                repeat(auto-fit, minmax(350px, 1fr));
-            gap: 32px;
-            margin-top: 48px;
-        }
-
-
-        .card {
-
-            background: white;
-            border-radius: 24px;
-            padding: 40px;
-            box-shadow: var(--shadow);
-            transition:
-                all 0.4s
-                cubic-bezier(0.4,0,0.2,1);
-            border:
-                1px solid rgba(255,255,255,0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--primary);
-            transform: scaleX(0);
-            transition:
-                transform 0.4s ease;
-        }
-
-
-        .card:hover {
-            transform:
-                translateY(-12px);
-            box-shadow:
-                var(--shadow-hover);
-        }
-
-
-        .card:hover::before {
-            transform: scaleX(1);
-        }
-
-
-        /* =========================
-           QUEM SOMOS
-        ========================= */
-
-        .equipe {
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 50px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
-
-
-        .pessoa {
-            text-align: center;
-        }
-
-
-        .pessoa img {
-            width: 250px;
-            height: 250px;
-            object-fit: cover;
-            border:
-                3px solid #b677d3;
-            border-radius: 10px;
-            display: block;
-            margin-bottom: 10px;
-        }
-
-
-        /* =========================
-           SINAIS DE ALERTA
-        ========================= */
-
-        .warning-card {
-            background:
-                linear-gradient(
-                    135deg,
-                    #fee2e2 0%,
-                    #fecaca 100%
-                );
-            border:
-                1px solid #fca5a5;
-        }
-
-
-        .warning-card h3 {
-            color: #dc2626;
-            font-size: 1.4rem;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-
-        .warning-list {
-            list-style: none;
-        }
-
-
-        .warning-list li {
-            padding: 12px 0;
-            padding-left: 32px;
-            position: relative;
-            color: #991b1b;
-            font-weight: 500;
-        }
-
-
-        .warning-list li::before {
-            position: absolute;
-            left: 0;
-            font-size: 1.1rem;
-        }
-
-
-        body.dark-mode .warning-card {
-            background:
-                linear-gradient(
-                    135deg,
-                    #451a1a,
-                    #3f2020
-                );
-            border-color: #7f1d1d;
-        }
-
-
-        body.dark-mode .warning-list li {
-            color: #fecaca;
-        }
-
-
-        body.dark-mode .warning-card h3 {
-            color: #fca5a5;
-        }
-
-
-        /* =========================
-           ESTATÍSTICAS
-        ========================= */
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns:
-                repeat(auto-fit, minmax(200px, 1fr));
-            gap: 24px;
-            margin: 48px 0;
-        }
-
-
-        .stat-card {
-            background: white;
-            border-radius: 24px;
-            padding: 40px 24px;
-            box-shadow: var(--shadow);
-            text-align: center;
-        }
-
-
-        .stat-number {
-            font-size: 3.5rem;
-            font-weight: 700;
-            background: var(--primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1;
-            display: block;
-        }
-
-
-        .stat-label {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            font-weight: 500;
-            margin-top: 8px;
-            display: block;
-        }
-
-
-        /* =========================
-           PREVENÇÃO
-        ========================= */
-
-        .tip-number {
-            width: 56px;
-            height: 56px;
-            border-radius: 16px;
-            background: var(--primary);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            font-size: 1.3rem;
-            margin: 0 auto 24px;
-        }
-
-
-        /* =========================
-           CONTATOS
-        ========================= */
-
-        .contacts {
-
-            background: white;
-            border-radius: 24px;
-            padding: 60px 40px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            margin-bottom: 100px;
-        }
-
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns:
-                repeat(auto-fit, minmax(250px, 1fr));
-            gap: 32px;
-            margin-top: 40px;
-        }
-
-
-        .contact-item {
-            padding: 32px;
-            background: var(--secondary);
-            border-radius: 16px;
-            transition:
-                all 0.3s ease;
-        }
-
-
-        .contact-item:hover {
-            background:
-                var(--primary-light);
-            transform:
-                translateY(-4px);
-        }
-
-
-        .contact-number {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            display: block;
-            margin-bottom: 8px;
-        }
-
-
-        /* =========================
-           ANIMAÇÕES
-        ========================= */
-
-        .fade-in {
-            opacity: 0;
-            transform:
-                translateY(40px);
-            transition:
-                all 0.8s ease;
-        }
-
-
-        .fade-in.visible {
-            opacity: 1;
-            transform:
-                translateY(0);
-        }
-
-
-        /* =========================
-           RODAPÉ
-        ========================= */
-
-        footer {
-            background: var(--primary);
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-
-
-        /* =========================
-           RESPONSIVIDADE
-        ========================= */
-
-        @media (max-width: 768px) {
-
-            .container {
-
-                padding:
-                    0 16px;
-            }
-
-
-            header {
-
-                padding:
-                    120px 0 50px;
-            }
-
-
-            main {
-
-                padding:
-                    40px 0;
-            }
-
-
-            .card {
-
-                padding:
-                    32px 24px;
-            }
-
-
-            .grid {
-
-                grid-template-columns:
-                    1fr;
-            }
-
-
-            h2 {
-
-                font-size:
-                    28px;
-            }
-
-
-            .subtitle {
-
-                font-size:
-                    17px;
-            }
-
-
-            .pessoa img {
-
-                width:
-                    220px;
-
-                height:
-                    220px;
-            }
-
-        }
-        .imagem-header {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-
-    width: 48%;
-    max-width: 720px;
-
-    height: 100%;
-    object-fit: contain;
-    object-position: right bottom;
-
-    z-index: 3;
+    display: block;
 }
 
-        /* =========================
+
+/* =========================================================
+   PREVENÇÃO
+========================================================= */
+
+.tip-number {
+
+    width: 56px;
+
+    height: 56px;
+
+    border-radius: 16px;
+
+    background: var(--primary);
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: 600;
+
+    font-size: 1.3rem;
+
+    margin: 0 auto 24px;
+}
+
+
+/* =========================================================
+   CONTATOS
+========================================================= */
+
+.contacts {
+
+    background: white;
+
+    border-radius: 24px;
+
+    padding: 60px 40px;
+
+    text-align: center;
+
+    box-shadow: var(--shadow);
+
+    margin-bottom: 100px;
+}
+
+
+.contact-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 32px;
+
+    margin-top: 40px;
+}
+
+
+.contact-item {
+
+    padding: 32px;
+
+    background: var(--secondary);
+
+    border-radius: 16px;
+
+    transition:
+        all 0.3s ease;
+}
+
+
+.contact-item:hover {
+
+    background:
+        var(--primary-light);
+
+    transform:
+        translateY(-4px);
+}
+
+
+.contact-number {
+
+    font-size: 2.2rem;
+
+    font-weight: 700;
+
+    color: var(--text-primary);
+
+    display: block;
+
+    margin-bottom: 8px;
+}
+
+
+/* =========================================================
+   ANIMAÇÕES
+========================================================= */
+
+.fade-in {
+
+    opacity: 0;
+
+    transform:
+        translateY(40px);
+
+    transition:
+        all 0.8s ease;
+}
+
+
+.fade-in.visible {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   RODAPÉ
+========================================================= */
+
+footer {
+
+    background: var(--primary);
+
+    color: white;
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    header {
+
+        min-height: 450px;
+    }
+
+
+    .header-content {
+
+        width: 54%;
+
+        padding-left: 25px;
+    }
+
+
+    h1 {
+
+        font-size: 2.4rem;
+
+        white-space: normal;
+    }
+
+
+    .subtitle {
+
+        font-size: 16px;
+    }
+
+
+    .imagem-header {
+
+        width: 48%;
+
+        right: 0;
+    }
+}
+
+
+/* =========================================================
    CELULAR
-========================= */
+   TEXTO EM CIMA + IMAGEM EMBAIXO
+========================================================= */
 
 @media (max-width: 768px) {
 
-    header {
-        min-height: 500px;
-        padding: 100px 0 0;
+    .container {
+
+        padding: 0 18px;
     }
 
+
+    header {
+
+        min-height: 650px;
+
+        padding: 0;
+
+        display: block;
+    }
+
+
+    /* TEXTO */
+
     .header-content {
+
+        width: 100%;
+
         max-width: 100%;
-        padding: 20px 20px 0;
+
+        padding:
+            90px 20px 0;
+
         text-align: center;
     }
 
+
     h1 {
-        font-size: 2.3rem;
-        white-space: normal;
+
+        font-size: 2.15rem;
+
         line-height: 1.15;
+
+        white-space: normal;
+
         margin-bottom: 15px;
     }
 
+
     .subtitle {
-        font-size: 17px;
+
+        font-size: 16px;
+
+        line-height: 1.55;
+
         max-width: 100%;
-        margin: 0 auto;
+
+        margin:
+            0 auto 18px;
+
         text-align: center;
     }
 
+
+    .frase-header {
+
+        font-size: 15px;
+
+        margin-top: 12px;
+    }
+
+
+    .frase-header::after {
+
+        margin-left: auto;
+
+        margin-right: auto;
+    }
+
+
+    /* =====================================================
+       IMAGEM EMBAIXO NO CELULAR
+    ===================================================== */
+
     .imagem-header {
-        width: 80%;
-        height: 250px;
+
+        position: absolute;
+
+        width: 88%;
+
+        max-width: 430px;
+
+        height: 300px;
+
         right: 50%;
-        transform: translateX(50%);
+
         bottom: 0;
+
+        transform:
+            translateX(50%);
+
+        object-fit: contain;
+
         object-position: center bottom;
     }
 
+
+    /* =====================================================
+       CONTEÚDO
+    ===================================================== */
+
     main {
+
         padding: 40px 0;
     }
 
-    .container {
-        padding: 0 16px;
+
+    #sobre {
+
+        margin:
+            0 auto 60px;
     }
+
+
+    #sobre .card {
+
+        padding: 25px 22px;
+
+        font-size: 13px;
+
+        text-align: left;
+    }
+
+
+    .section {
+
+        margin-bottom: 70px;
+    }
+
 
     .card,
     .card-section {
-        padding: 25px 20px;
+
+        padding:
+            25px 20px;
+
         border-radius: 18px;
     }
 
+
     h2 {
+
         font-size: 28px;
+
         gap: 10px;
     }
 
-    .grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
+
+    h2 i {
+
+        font-size: 1.6rem;
     }
 
-    .stats-grid {
+
+    .grid {
+
         grid-template-columns: 1fr;
+
+        gap: 20px;
+
+        margin-top: 30px;
+    }
+
+
+    .stats-grid {
+
+        grid-template-columns: 1fr;
+
         gap: 18px;
     }
 
+
     .contact-grid {
+
         grid-template-columns: 1fr;
+
         gap: 20px;
     }
 
+
     .contacts {
+
         padding: 40px 20px;
     }
 
+
     .equipe {
+
         gap: 30px;
     }
 
+
     .pessoa img {
+
         width: 200px;
+
         height: 200px;
     }
 
+
+    /* MENU */
+
     .menu-botao {
+
         width: 45px;
+
         height: 45px;
+
         font-size: 20px;
     }
 
+
     .menu-fixo {
+
         top: 15px;
+
         left: 15px;
     }
 
+
     .menu-links {
+
         top: 70px;
+
         left: 15px;
-        width: calc(100% - 30px);
+
+        width:
+            calc(100% - 30px);
+
         max-width: 300px;
+    }
+
+
+    .stat-number {
+
+        font-size: 3rem;
+    }
+
+
+    .contact-number {
+
+        font-size: 2rem;
     }
 }
 
-        
-    </style>
+
+/* =========================================================
+   CELULARES PEQUENOS
+========================================================= */
+
+@media (max-width: 480px) {
+
+    header {
+
+        min-height: 590px;
+    }
+
+
+    .header-content {
+
+        padding:
+            80px 15px 0;
+    }
+
+
+    h1 {
+
+        font-size: 1.85rem;
+    }
+
+
+    .subtitle {
+
+        font-size: 14px;
+    }
+
+
+    .frase-header {
+
+        font-size: 13px;
+    }
+
+
+    .imagem-header {
+
+        width: 94%;
+
+        height: 250px;
+
+        bottom: 0;
+    }
+
+
+    .menu-links {
+
+        max-width: none;
+    }
+
+
+    h2 {
+
+        font-size: 25px;
+    }
+
+
+    .card {
+
+        padding:
+            22px 18px;
+    }
+}
+
+</style>
 
 </head>
 
@@ -861,9 +1423,9 @@
 <body>
 
 
-<!-- =========================
+<!-- =========================================================
      MENU FIXO
-========================= -->
+========================================================= -->
 
 <nav class="menu-fixo">
 
@@ -879,110 +1441,104 @@
 </nav>
 
 
-<!-- =========================
+<!-- =========================================================
      OPÇÕES DO MENU
-========================= -->
+========================================================= -->
 
 <div class="menu-links" id="menuLinks">
 
-    <!-- SAUDAÇÃO DO USUÁRIO -->
-    <div class="saudacao-menu" id="saudacaoMenu">
+    <div
+        class="saudacao-menu"
+        id="saudacaoMenu">
+
         Olá, visitante 👋
+
     </div>
 
 
     <a href="#inicio">
-
         Início
-
     </a>
 
 
     <a href="#sobre">
-
         Quem somos
-
     </a>
 
 
     <a href="#transtornos">
-
         Transtornos
-
     </a>
 
-        
+
     <a href="#sinais_alerta">
         Sinais de Alerta
     </a>
 
-    
+
     <a href="#estatistica">
         Estatísticas
     </a>
 
 
     <a href="#prevencao">
-
         Prevenção
-
     </a>
 
 
     <a href="#ajuda">
-
         Ajuda
-
     </a>
 
 
-    <!-- QUIZ É UMA PÁGINA SEPARADA -->
     <a href="quiz.html">
-
         Quiz
-
     </a>
 
-    
 
     <button
         class="botao-tema"
         onclick="alternarTema()">
 
+        <i class="fas fa-moon"></i>
         Tema
 
     </button>
 
 
     <a href="login.html">
-
         Login
-
     </a>
-
 
 </div>
 
 
-<!-- =========================
+<!-- =========================================================
      CABEÇALHO
-========================= -->
+========================================================= -->
 
 <header id="inicio">
 
-    <img  
-    src="ImagemPrincipal.png.png" 
-    alt="Ilustração sobre transtornos alimentares" 
-    class="imagem-header" 
->
+
+    <!-- =====================================================
+         SUA IMAGEM ORIGINAL
+         NÃO TROQUEI
+    ====================================================== -->
+
+    <img
+        src="ImagemPrincipal.png.png"
+        alt="Ilustração sobre transtornos alimentares"
+        class="imagem-header"
+    >
+
+
     <div class="container">
 
         <div class="header-content fade-in">
 
+
             <h1>
-
                 Transtornos Alimentares
-
             </h1>
 
 
@@ -996,6 +1552,14 @@
 
             </p>
 
+
+            <p class="frase-header">
+
+                Informação também é uma forma de cuidado.
+
+            </p>
+
+
         </div>
 
     </div>
@@ -1003,18 +1567,18 @@
 </header>
 
 
-<!-- =========================
+<!-- =========================================================
      CONTEÚDO PRINCIPAL
-========================= -->
+========================================================= -->
 
 <main>
 
     <div class="container">
 
 
-        <!-- =========================
+        <!-- =================================================
              SOBRE
-        ========================= -->
+        ================================================== -->
 
         <div
             class="section fade-in"
@@ -1047,11 +1611,12 @@
         </div>
 
 
-        <!-- =========================
+        <!-- =================================================
              QUEM SOMOS
-        ========================= -->
+        ================================================== -->
 
-        <div class="section fade-in">
+        <div
+            class="section fade-in">
 
             <h2>
 
@@ -1086,9 +1651,7 @@
                         alt="Ana Clara">
 
                     <p>
-
                         Ana Clara Amaral de Oliveira
-
                     </p>
 
                 </div>
@@ -1101,9 +1664,7 @@
                         alt="Heloísa">
 
                     <p>
-
                         Heloísa Maria Carvalho
-
                     </p>
 
                 </div>
@@ -1114,9 +1675,9 @@
         </div>
 
 
-        <!-- =========================
+        <!-- =================================================
              O QUE SÃO
-        ========================= -->
+        ================================================== -->
 
         <div
             class="section fade-in"
@@ -1139,9 +1700,7 @@
                 <div class="card">
 
                     <h3>
-
                         Anorexia Nervosa
-
                     </h3>
 
                     <p>
@@ -1161,9 +1720,7 @@
                 <div class="card">
 
                     <h3>
-
                         Bulimia Nervosa
-
                     </h3>
 
                     <p>
@@ -1182,9 +1739,7 @@
                 <div class="card">
 
                     <h3>
-
                         Compulsão Alimentar
-
                     </h3>
 
                     <p>
@@ -1203,9 +1758,7 @@
                 <div class="card">
 
                     <h3>
-
                         Vigorexia
-
                     </h3>
 
                     <p>
@@ -1226,9 +1779,7 @@
                 <div class="card">
 
                     <h3>
-
                         Síndrome de Gourmet
-
                     </h3>
 
                     <p>
@@ -1249,9 +1800,7 @@
                 <div class="card">
 
                     <h3>
-
                         Transtorno Alimentar Noturno
-
                     </h3>
 
                     <p>
@@ -1271,9 +1820,7 @@
                 <div class="card">
 
                     <h3>
-
                         Diabulimia
-
                     </h3>
 
                     <p>
@@ -1295,9 +1842,7 @@
                 <div class="card">
 
                     <h3>
-
                         Ortorexia
-
                     </h3>
 
                     <p>
@@ -1317,9 +1862,7 @@
                 <div class="card">
 
                     <h3>
-
                         ARFID
-
                     </h3>
 
                     <p>
@@ -1338,12 +1881,13 @@
         </div>
 
 
-        <!-- =========================
+        <!-- =================================================
              SINAIS DE ALERTA
-        ========================= -->
+        ================================================== -->
 
-        <div class="section fade-in"
-        id="sinais_alerta">
+        <div
+            class="section fade-in"
+            id="sinais_alerta">
 
             <h2>
 
@@ -1356,8 +1900,6 @@
 
             <div class="grid">
 
-
-                <!-- COMPORTAMENTO -->
 
                 <div class="card warning-card">
 
@@ -1373,38 +1915,25 @@
                     <ul class="warning-list">
 
                         <li>
-
                             Evita refeições em grupo
-
                         </li>
 
-
                         <li>
-
                             Come escondido ou muito rápido
-
                         </li>
 
-
                         <li>
-
                             Desaparece após comer
-
                         </li>
 
-
                         <li>
-
                             Exercícios compulsivos
-
                         </li>
 
                     </ul>
 
                 </div>
 
-
-                <!-- FÍSICO -->
 
                 <div class="card warning-card">
 
@@ -1420,38 +1949,25 @@
                     <ul class="warning-list">
 
                         <li>
-
                             Perda rápida de peso
-
                         </li>
 
-
                         <li>
-
                             Cansaço constante
-
                         </li>
 
-
                         <li>
-
                             Problemas dentários
-
                         </li>
 
-
                         <li>
-
                             Cabelos fracos
-
                         </li>
 
                     </ul>
 
                 </div>
 
-
-                <!-- EMOCIONAL -->
 
                 <div class="card warning-card">
 
@@ -1467,30 +1983,19 @@
                     <ul class="warning-list">
 
                         <li>
-
                             Baixa autoestima
-
                         </li>
 
-
                         <li>
-
                             Ansiedade com comida
-
                         </li>
 
-
                         <li>
-
                             Isolamento social
-
                         </li>
 
-
                         <li>
-
                             Irritabilidade
-
                         </li>
 
                     </ul>
@@ -1503,11 +2008,12 @@
         </div>
 
 
-        <!-- =========================
+        <!-- =================================================
              ESTATÍSTICAS
-        ========================= -->
+        ================================================== -->
 
-        <div class="section fade-in card-section"
+        <div
+            class="section fade-in card-section"
             id="estatistica">
 
             <h2>
@@ -1525,15 +2031,11 @@
                 <div class="stat-card">
 
                     <span class="stat-number">
-
                         1 em 10
-
                     </span>
 
                     <span class="stat-label">
-
                         adolescentes afetados
-
                     </span>
 
                 </div>
@@ -1542,15 +2044,11 @@
                 <div class="stat-card">
 
                     <span class="stat-number">
-
                         90%
-
                     </span>
 
                     <span class="stat-label">
-
                         ocorrem em meninas
-
                     </span>
 
                 </div>
@@ -1559,15 +2057,11 @@
                 <div class="stat-card">
 
                     <span class="stat-number">
-
                         12-18
-
                     </span>
 
                     <span class="stat-label">
-
                         anos (pico maior)
-
                     </span>
 
                 </div>
@@ -1576,15 +2070,11 @@
                 <div class="stat-card">
 
                     <span class="stat-number">
-
                         70%
-
                     </span>
 
                     <span class="stat-label">
-
                         podem ser prevenidos
-
                     </span>
 
                 </div>
@@ -1595,9 +2085,9 @@
         </div>
 
 
-        <!-- =========================
+        <!-- =================================================
              PREVENÇÃO
-        ========================= -->
+        ================================================== -->
 
         <div
             class="section fade-in"
@@ -1618,9 +2108,7 @@
                 <div class="card">
 
                     <div class="tip-number">
-
                         1
-
                     </div>
 
                     <p>
@@ -1637,9 +2125,7 @@
                 <div class="card">
 
                     <div class="tip-number">
-
                         2
-
                     </div>
 
                     <p>
@@ -1655,9 +2141,7 @@
                 <div class="card">
 
                     <div class="tip-number">
-
                         3
-
                     </div>
 
                     <p>
@@ -1675,9 +2159,9 @@
         </div>
 
 
-        <!-- =========================
+        <!-- =================================================
              AJUDA
-        ========================= -->
+        ================================================== -->
 
         <div
             class="contacts fade-in"
@@ -1698,23 +2182,17 @@
                 <div class="contact-item">
 
                     <span class="contact-number">
-
                         188
-
                     </span>
 
                     <strong>
-
                         CVV
-
                     </strong>
 
                     <br>
 
                     <small>
-
                         24 horas - Apoio emocional
-
                     </small>
 
                 </div>
@@ -1723,23 +2201,17 @@
                 <div class="contact-item">
 
                     <span class="contact-number">
-
                         100
-
                     </span>
 
                     <strong>
-
                         Disque 100
-
                     </strong>
 
                     <br>
 
                     <small>
-
                         Direitos Humanos
-
                     </small>
 
                 </div>
@@ -1748,23 +2220,17 @@
                 <div class="contact-item">
 
                     <span class="contact-number">
-
                         CAPS
-
                     </span>
 
                     <strong>
-
                         CAPS/UBS
-
                     </strong>
 
                     <br>
 
                     <small>
-
                         Saúde Mental SUS
-
                     </small>
 
                 </div>
@@ -1788,9 +2254,9 @@
         </div>
 
 
-        <!-- =========================
-             FRASE
-        ========================= -->
+        <!-- =================================================
+             FRASE FINAL
+        ================================================== -->
 
         <div
             style="
@@ -1824,13 +2290,15 @@
             </p>
 
         </div>
+
     </div>
+
 </main>
 
 
-<!-- =========================
+<!-- =========================================================
      RODAPÉ
-========================= -->
+========================================================= -->
 
 <footer>
 
@@ -1841,164 +2309,178 @@
 </footer>
 
 
-<!-- =========================
+<!-- =========================================================
      JAVASCRIPT
-========================= -->
+========================================================= -->
 
 <script>
 
 
-    /* =========================
-       ANIMAÇÃO
-    ========================= */
+/* =========================================================
+   ANIMAÇÃO
+========================================================= */
 
-    const observer =
-        new IntersectionObserver((entries) => {
+const observer =
+    new IntersectionObserver((entries) => {
 
-            entries.forEach(entry => {
+        entries.forEach(entry => {
 
-                if (entry.isIntersecting) {
+            if (entry.isIntersecting) {
 
-                    entry.target
-                        .classList
-                        .add('visible');
+                entry.target
+                    .classList
+                    .add('visible');
+
+            }
+
+        });
+
+    });
+
+
+document
+    .querySelectorAll('.fade-in')
+    .forEach(el => {
+
+        observer.observe(el);
+
+    });
+
+
+/* =========================================================
+   SCROLL SUAVE
+========================================================= */
+
+document
+    .querySelectorAll('a[href^="#"]')
+    .forEach(anchor => {
+
+        anchor.addEventListener(
+            'click',
+            function(e) {
+
+                e.preventDefault();
+
+                const destino =
+                    document.querySelector(
+                        this.getAttribute('href')
+                    );
+
+                if (destino) {
+
+                    destino.scrollIntoView({
+                        behavior: 'smooth'
+                    });
 
                 }
 
-            });
+                document
+                    .getElementById("menuLinks")
+                    .classList
+                    .remove("aberto");
 
-        });
+            }
+        );
 
-
-    document
-        .querySelectorAll('.fade-in')
-        .forEach(el => {
-
-            observer.observe(el);
-
-        });
+    });
 
 
-    /* =========================
-       SCROLL SUAVE
-    ========================= */
+/* =========================================================
+   ABRIR / FECHAR MENU
+========================================================= */
 
-    document
-        .querySelectorAll('a[href^="#"]')
-        .forEach(anchor => {
+function abrirMenu() {
 
-            anchor.addEventListener(
-                'click',
-                function(e) {
+    const menu =
+        document.getElementById("menuLinks");
 
-                    e.preventDefault();
+    menu.classList.toggle("aberto");
 
-                    const destino =
-                        document.querySelector(
-                            this.getAttribute('href')
-                        );
-
-                    if (destino) {
-
-                        destino.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-
-                    }
-
-                    /* Fecha o menu depois de clicar */
-
-                    document
-                        .getElementById("menuLinks")
-                        .classList
-                        .remove("aberto");
-
-                }
-            );
-
-        });
+}
 
 
-    /* =========================
-       ABRIR / FECHAR MENU
-    ========================= */
+/* =========================================================
+   MODO ESCURO
+========================================================= */
 
-    function abrirMenu() {
+function alternarTema() {
 
-        const menu =
-            document.getElementById("menuLinks");
+    document.body
+        .classList
+        .toggle("dark-mode");
 
-        menu.classList.toggle("aberto");
+
+    const botao =
+        document.querySelector(".botao-tema");
+
+
+    if (
+        document.body
+            .classList
+            .contains("dark-mode")
+    ) {
+
+        botao.innerHTML = `
+            <i class="fas fa-sun"></i>
+            Tema
+        `;
+
+    } else {
+
+        botao.innerHTML = `
+            <i class="fas fa-moon"></i>
+            Tema
+        `;
 
     }
 
-
-    /* =========================
-       MODO ESCURO
-    ========================= */
-
-    function alternarTema() {
-
-        document.body
-            .classList
-            .toggle("dark-mode");
+}
 
 
-        const botao =
-            document.querySelector(".botao-tema");
+/* =========================================================
+   NOME DO USUÁRIO LOGADO
+========================================================= */
+
+fetch("php/verificar_login.php")
+
+    .then(response => response.json())
+
+    .then(data => {
+
+        const saudacao =
+            document.getElementById("saudacaoMenu");
+
+        if (!saudacao) {
+
+            return;
+        }
 
 
-        if (
-            document.body
-                .classList
-                .contains("dark-mode")
-        ) {
+        if (data.logado) {
 
-            botao.innerHTML = `
-                <i class="fas fa-sun"></i>
-                Tema
-            `;
+            saudacao.textContent =
+                "Olá, " + data.nome + " 👋";
 
         } else {
 
-            botao.innerHTML = `
-                <i class="fas fa-moon"></i>
-                Tema
-            `;
+            saudacao.textContent =
+                "Olá, visitante 👋";
 
         }
 
-    }
+    })
 
+    .catch(error => {
 
+        console.error(
+            "Erro ao verificar login:",
+            error
+        );
 
-    /* =========================
-       NOME DO USUÁRIO LOGADO
-    ========================= */
-
-    fetch("php/verificar_login.php")
-        .then(response => response.json())
-        .then(data => {
-
-            const saudacao =
-                document.getElementById("saudacaoMenu");
-
-            if (!saudacao) {
-                return;
-            }
-
-            if (data.logado) {
-                saudacao.textContent = "Olá, " + data.nome + " 👋";
-            } else {
-                saudacao.textContent = "Olá, visitante 👋";
-            }
-
-        })
-        .catch(error => {
-            console.error("Erro ao verificar login:", error);
-        });
+    });
 
 </script>
+
 
 </body>
 
