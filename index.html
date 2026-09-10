@@ -17,12 +17,12 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
         rel="stylesheet"
     >
+
     <!-- ÍCONES -->
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     >
-
 
 <style>
 
@@ -48,15 +48,10 @@ html {
     );
 
     --primary-light: #b2a0f5;
-
     --secondary: #f8fafc;
-
     --accent: #10b981;
-
     --text-primary: #1e293b;
-
     --text-secondary: #64748b;
-
     --border: #e2e8f0;
 
     --shadow:
@@ -137,46 +132,32 @@ body.dark-mode .saudacao-menu {
 
 .menu-fixo {
     position: fixed;
-
     top: 20px;
     left: 20px;
-
     width: auto;
     height: auto;
-
     background: transparent;
-
     display: flex;
     align-items: center;
-
     padding: 0;
-
     z-index: 1000;
-
     box-shadow: none;
 }
 
 .menu-botao {
     background: #803ca8;
-
     border: none;
-
     color: white;
-
     font-size: 24px;
-
     cursor: pointer;
-
     width: 50px;
     height: 50px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
     border-radius: 12px;
-
     transition: 0.3s;
 
     box-shadow:
@@ -185,7 +166,6 @@ body.dark-mode .saudacao-menu {
 
 .menu-botao:hover {
     background: #6d2f91;
-
     transform: scale(1.05);
 }
 
@@ -196,14 +176,11 @@ body.dark-mode .saudacao-menu {
 
 .menu-links {
     position: fixed;
-
     top: 80px;
     left: 20px;
-
     width: 230px;
 
     background: white;
-
     border-radius: 15px;
 
     box-shadow:
@@ -212,7 +189,6 @@ body.dark-mode .saudacao-menu {
     padding: 10px;
 
     display: none;
-
     flex-direction: column;
 
     z-index: 999;
@@ -229,13 +205,10 @@ body.dark-mode .saudacao-menu {
 
 .saudacao-menu {
     padding: 15px;
-
     margin-bottom: 5px;
 
     color: #803ca8;
-
     font-size: 16px;
-
     font-weight: 700;
 
     border-bottom:
@@ -252,11 +225,9 @@ body.dark-mode .saudacao-menu {
 .menu-links a,
 .menu-links button {
     width: 100%;
-
     padding: 13px 15px;
 
     border: none;
-
     background: transparent;
 
     text-align: left;
@@ -264,9 +235,7 @@ body.dark-mode .saudacao-menu {
     color: #803ca8;
 
     font-family: 'Inter', sans-serif;
-
     font-size: 15px;
-
     font-weight: 600;
 
     text-decoration: none;
@@ -281,7 +250,6 @@ body.dark-mode .saudacao-menu {
 .menu-links a:hover,
 .menu-links button:hover {
     background: #803ca8;
-
     color: white;
 }
 
@@ -292,9 +260,7 @@ body.dark-mode .saudacao-menu {
 
 .container {
     max-width: 1200px;
-
     margin: 0 auto;
-
     padding: 0 24px;
 }
 
@@ -305,18 +271,15 @@ body.dark-mode .saudacao-menu {
 
 header {
     background: var(--primary);
-
     color: white;
 
     min-height: 500px;
     height: 500px;
 
     position: relative;
-
     overflow: hidden;
 
     display: flex;
-
     align-items: center;
 }
 
@@ -327,16 +290,13 @@ header {
 
 header::before {
     content: '';
-
     position: absolute;
-
     inset: 0;
 
     background:
         url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff15"><path d="M0 0L50 30Q100 0 200 40T400 30T600 40Q800 20 900 50T1000 0V100H0Z"/></svg>');
 
     background-size: cover;
-
     background-position: center;
 
     pointer-events: none;
@@ -349,23 +309,17 @@ header::before {
 
 .header-container {
     width: 100%;
-
     max-width: 1250px;
-
     height: 500px;
 
     margin: 0 auto;
-
     padding: 30px 24px 0;
 
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
     position: relative;
-
     z-index: 2;
 
     gap: 20px;
@@ -378,11 +332,9 @@ header::before {
 
 .header-content {
     width: 52%;
-
     max-width: 650px;
 
     position: relative;
-
     z-index: 10;
 
     text-align: left;
@@ -396,9 +348,7 @@ header::before {
 ========================================================= */
 
 h1 {
-
     font-size: clamp(2.2rem, 3.5vw, 3.2rem);
-
     font-weight: 700;
 
     margin-bottom: 18px;
@@ -415,7 +365,6 @@ h1 {
         );
 
     -webkit-background-clip: text;
-
     -webkit-text-fill-color: transparent;
 
     background-clip: text;
@@ -428,7 +377,6 @@ h1 {
 
 .subtitle {
     font-size: 18px;
-
     font-weight: 400;
 
     line-height: 1.6;
@@ -467,7 +415,6 @@ h1 {
     display: block;
 
     width: 90px;
-
     height: 2px;
 
     margin-top: 8px;
@@ -484,13 +431,11 @@ h1 {
 
 .imagem-header {
     width: 55%;
-
     max-width: 680px;
 
     height: 540px;
 
     object-fit: contain;
-
     object-position: center bottom;
 
     display: block;
@@ -500,12 +445,6 @@ h1 {
     z-index: 3;
 
     flex-shrink: 0;
-
-    /*
-       A imagem fica maior e mais para a direita.
-       Não interfere no texto porque o texto
-       possui z-index maior.
-    */
 
     transform: translateX(15px);
 }
@@ -584,13 +523,15 @@ h2 {
     align-items: center;
 
     gap: 16px;
+
+    /* IMPORTANTE PARA O MENU */
+    scroll-margin-top: 100px;
 }
 
 h2 i {
     background: var(--primary);
 
     -webkit-background-clip: text;
-
     -webkit-text-fill-color: transparent;
 
     background-clip: text;
@@ -683,7 +624,6 @@ h2 i {
     display: flex;
 
     justify-content: center;
-
     align-items: center;
 
     gap: 50px;
@@ -699,7 +639,6 @@ h2 i {
 
 .pessoa img {
     width: 250px;
-
     height: 250px;
 
     object-fit: cover;
@@ -828,7 +767,6 @@ body.dark-mode .warning-card h3 {
     background: var(--primary);
 
     -webkit-background-clip: text;
-
     -webkit-text-fill-color: transparent;
 
     background-clip: text;
@@ -857,7 +795,6 @@ body.dark-mode .warning-card h3 {
 
 .tip-number {
     width: 56px;
-
     height: 56px;
 
     border-radius: 16px;
@@ -869,7 +806,6 @@ body.dark-mode .warning-card h3 {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     font-weight: 600;
@@ -1075,10 +1011,6 @@ footer {
 
         line-height: 1.15;
 
-        /*
-           No celular permitimos quebrar
-           porque a tela é pequena.
-        */
         white-space: normal;
 
         text-align: center;
@@ -1109,7 +1041,6 @@ footer {
 
     .frase-header::after {
         margin-left: auto;
-
         margin-right: auto;
     }
 
@@ -1168,6 +1099,8 @@ footer {
         font-size: 28px;
 
         gap: 10px;
+
+        scroll-margin-top: 80px;
     }
 
     h2 i {
@@ -1205,7 +1138,6 @@ footer {
 
     .pessoa img {
         width: 200px;
-
         height: 200px;
     }
 
@@ -1214,7 +1146,6 @@ footer {
 
     .menu-botao {
         width: 45px;
-
         height: 45px;
 
         font-size: 20px;
@@ -1222,13 +1153,11 @@ footer {
 
     .menu-fixo {
         top: 15px;
-
         left: 15px;
     }
 
     .menu-links {
         top: 70px;
-
         left: 15px;
 
         width:
@@ -1338,38 +1267,56 @@ footer {
 
     </div>
 
+
+    <!-- INÍCIO -->
     <a href="#inicio">
         Início
     </a>
 
-    <a href="#sobre">
+
+    <!-- QUEM SOMOS -->
+    <a href="#quem-somos">
         Quem somos
     </a>
 
+
+    <!-- TRANSTORNOS -->
     <a href="#transtornos">
         Transtornos
     </a>
 
-    <a href="#sinais_alerta">
+
+    <!-- SINAIS DE ALERTA -->
+    <a href="#sinais-alerta">
         Sinais de Alerta
     </a>
 
+
+    <!-- ESTATÍSTICAS -->
     <a href="#estatistica">
         Estatísticas
     </a>
 
+
+    <!-- PREVENÇÃO -->
     <a href="#prevencao">
         Prevenção
     </a>
 
+
+    <!-- AJUDA -->
     <a href="#ajuda">
         Ajuda
     </a>
 
+
+    <!-- QUIZ -->
     <a href="quiz.html">
         Quiz
     </a>
 
+
+    <!-- TEMA -->
     <button
         class="botao-tema"
         onclick="alternarTema()">
@@ -1378,6 +1325,8 @@ footer {
 
     </button>
 
+
+    <!-- LOGIN -->
     <a href="login.html">
         Login
     </a>
@@ -1386,7 +1335,7 @@ footer {
 
 
 <!-- =========================================================
-     CABEÇALHO
+     CABEÇALHO / INÍCIO
 ========================================================= -->
 
 <header id="inicio">
@@ -1400,9 +1349,13 @@ footer {
             </h1>
 
             <p class="subtitle">
+
                 Conscientização e prevenção para crianças e adolescentes.
+
                 <br>
+
                 Informação clara para identificar, prevenir e agir.
+
             </p>
 
             <p class="frase-header">
@@ -1472,7 +1425,8 @@ footer {
         ================================================== -->
 
         <div
-            class="section fade-in">
+            class="section fade-in"
+            id="quem-somos">
 
             <h2>
 
@@ -1546,6 +1500,7 @@ footer {
 
 
             <div class="grid">
+
 
                 <div class="card">
 
@@ -1720,7 +1675,7 @@ footer {
 
         <div
             class="section fade-in"
-            id="sinais_alerta">
+            id="sinais-alerta">
 
             <h2>
 
@@ -1733,6 +1688,7 @@ footer {
 
             <div class="grid">
 
+
                 <div class="card warning-card">
 
                     <h3>
@@ -1742,6 +1698,7 @@ footer {
                         Comportamento
 
                     </h3>
+
 
                     <ul class="warning-list">
 
@@ -1776,6 +1733,7 @@ footer {
 
                     </h3>
 
+
                     <ul class="warning-list">
 
                         <li>
@@ -1808,6 +1766,7 @@ footer {
                         Emocional
 
                     </h3>
+
 
                     <ul class="warning-list">
 
@@ -1854,6 +1813,7 @@ footer {
 
 
             <div class="stats-grid">
+
 
                 <div class="stat-card">
 
@@ -1930,6 +1890,7 @@ footer {
 
             <div class="grid">
 
+
                 <div class="card">
 
                     <div class="tip-number">
@@ -2002,6 +1963,7 @@ footer {
 
             <div class="contact-grid">
 
+
                 <div class="contact-item">
 
                     <span class="contact-number">
@@ -2061,11 +2023,12 @@ footer {
             </div>
 
 
-            <p style="
-                margin-top:32px;
-                color:var(--text-secondary);
-                font-size:1.1rem;
-            ">
+            <p
+                style="
+                    margin-top:32px;
+                    color:var(--text-secondary);
+                    font-size:1.1rem;
+                ">
 
                 Fale com pais, professores ou
                 psicólogos. O primeiro passo é
@@ -2137,6 +2100,7 @@ footer {
 
 <script>
 
+
 /* =========================================================
    ANIMAÇÃO
 ========================================================= */
@@ -2169,39 +2133,38 @@ document
 
 
 /* =========================================================
-   SCROLL SUAVE
+   NAVEGAÇÃO DO MENU
 ========================================================= */
 
 document
-    .querySelectorAll('a[href^="#"]')
-    .forEach(anchor => {
+    .querySelectorAll('.menu-links a[href^="#"]')
+    .forEach(link => {
 
-        anchor.addEventListener(
-            'click',
-            function(e) {
+        link.addEventListener('click', function(e) {
 
-                e.preventDefault();
+            e.preventDefault();
 
-                const destino =
-                    document.querySelector(
-                        this.getAttribute('href')
-                    );
+            const destino =
+                document.querySelector(
+                    this.getAttribute('href')
+                );
 
-                if (destino) {
+            if (destino) {
 
-                    destino.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-
-                }
-
-                document
-                    .getElementById("menuLinks")
-                    .classList
-                    .remove("aberto");
+                destino.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
 
             }
-        );
+
+            /* Fecha o menu depois do clique */
+            document
+                .getElementById("menuLinks")
+                .classList
+                .remove("aberto");
+
+        });
 
     });
 
@@ -2223,15 +2186,34 @@ function abrirMenu() {
 /* =========================================================
    MODO ESCURO
 ========================================================= */
+
 function alternarTema() {
+
     document.body
         .classList
         .toggle("dark-mode");
 
-    const botao =
-        document.querySelector(".botao-tema");
+    const modoEscuro =
+        document.body.classList.contains("dark-mode");
 
-    botao.innerHTML = "Tema";
+    localStorage.setItem(
+        "modoEscuro",
+        modoEscuro
+    );
+
+}
+
+
+/* =========================================================
+   MANTER O TEMA APÓS RECARREGAR
+========================================================= */
+
+if (
+    localStorage.getItem("modoEscuro") === "true"
+) {
+
+    document.body.classList.add("dark-mode");
+
 }
 
 
