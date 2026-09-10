@@ -50,8 +50,10 @@ html {
     --primary-light: #b2a0f5;
     --secondary: #f8fafc;
     --accent: #10b981;
+
     --text-primary: #1e293b;
     --text-secondary: #64748b;
+
     --border: #e2e8f0;
 
     --shadow:
@@ -68,6 +70,7 @@ body {
     background: var(--secondary);
     overflow-x: hidden;
 
+    /* CORRIGIDO */
     transition:
         background 0.3s ease,
         color 0.3s ease;
@@ -134,22 +137,33 @@ body.dark-mode .saudacao-menu {
     position: fixed;
     top: 20px;
     left: 20px;
+
     width: auto;
     height: auto;
+
     background: transparent;
+
     display: flex;
     align-items: center;
+
     padding: 0;
+
     z-index: 1000;
+
     box-shadow: none;
 }
 
 .menu-botao {
     background: #803ca8;
+
     border: none;
+
     color: white;
+
     font-size: 24px;
+
     cursor: pointer;
+
     width: 50px;
     height: 50px;
 
@@ -158,6 +172,7 @@ body.dark-mode .saudacao-menu {
     justify-content: center;
 
     border-radius: 12px;
+
     transition: 0.3s;
 
     box-shadow:
@@ -166,7 +181,9 @@ body.dark-mode .saudacao-menu {
 
 .menu-botao:hover {
     background: #6d2f91;
-    transform: scale(1.05);
+
+    transform:
+        scale(1.05);
 }
 
 
@@ -175,12 +192,19 @@ body.dark-mode .saudacao-menu {
 ========================================================= */
 
 .menu-links {
+
     position: fixed;
+
     top: 80px;
     left: 20px;
+
     width: 230px;
 
+    /* ALTURA MÁXIMA DO MENU */
+    max-height: calc(100vh - 105px);
+
     background: white;
+
     border-radius: 15px;
 
     box-shadow:
@@ -189,13 +213,47 @@ body.dark-mode .saudacao-menu {
     padding: 10px;
 
     display: none;
+
     flex-direction: column;
 
     z-index: 999;
+
+    /* PERMITE DESCER DENTRO DO MENU */
+    overflow-y: auto;
+
+    /* DEIXA A BARRA MAIS BONITA */
+    scrollbar-width: thin;
+    scrollbar-color: #803ca8 #f1f5f9;
 }
+
+
+/* MENU ABERTO */
 
 .menu-links.aberto {
     display: flex;
+}
+
+
+/* =========================================================
+   BARRA DE ROLAGEM DO MENU
+========================================================= */
+
+.menu-links::-webkit-scrollbar {
+    width: 7px;
+}
+
+.menu-links::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 10px;
+}
+
+.menu-links::-webkit-scrollbar-thumb {
+    background: #803ca8;
+    border-radius: 10px;
+}
+
+.menu-links::-webkit-scrollbar-thumb:hover {
+    background: #6d2f91;
 }
 
 
@@ -204,11 +262,15 @@ body.dark-mode .saudacao-menu {
 ========================================================= */
 
 .saudacao-menu {
+
     padding: 15px;
+
     margin-bottom: 5px;
 
     color: #803ca8;
+
     font-size: 16px;
+
     font-weight: 700;
 
     border-bottom:
@@ -224,10 +286,13 @@ body.dark-mode .saudacao-menu {
 
 .menu-links a,
 .menu-links button {
+
     width: 100%;
+
     padding: 13px 15px;
 
     border: none;
+
     background: transparent;
 
     text-align: left;
@@ -235,7 +300,9 @@ body.dark-mode .saudacao-menu {
     color: #803ca8;
 
     font-family: 'Inter', sans-serif;
+
     font-size: 15px;
+
     font-weight: 600;
 
     text-decoration: none;
@@ -245,11 +312,15 @@ body.dark-mode .saudacao-menu {
     cursor: pointer;
 
     transition: 0.3s;
+
+    flex-shrink: 0;
 }
 
 .menu-links a:hover,
 .menu-links button:hover {
+
     background: #803ca8;
+
     color: white;
 }
 
@@ -259,8 +330,11 @@ body.dark-mode .saudacao-menu {
 ========================================================= */
 
 .container {
+
     max-width: 1200px;
+
     margin: 0 auto;
+
     padding: 0 24px;
 }
 
@@ -270,13 +344,16 @@ body.dark-mode .saudacao-menu {
 ========================================================= */
 
 header {
+
     background: var(--primary);
+
     color: white;
 
     min-height: 500px;
     height: 500px;
 
     position: relative;
+
     overflow: hidden;
 
     display: flex;
@@ -289,14 +366,18 @@ header {
 ========================================================= */
 
 header::before {
+
     content: '';
+
     position: absolute;
+
     inset: 0;
 
     background:
         url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff15"><path d="M0 0L50 30Q100 0 200 40T400 30T600 40Q800 20 900 50T1000 0V100H0Z"/></svg>');
 
     background-size: cover;
+
     background-position: center;
 
     pointer-events: none;
@@ -308,18 +389,25 @@ header::before {
 ========================================================= */
 
 .header-container {
+
     width: 100%;
+
     max-width: 1250px;
+
     height: 500px;
 
     margin: 0 auto;
+
     padding: 30px 24px 0;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     position: relative;
+
     z-index: 2;
 
     gap: 20px;
@@ -331,10 +419,13 @@ header::before {
 ========================================================= */
 
 .header-content {
+
     width: 52%;
+
     max-width: 650px;
 
     position: relative;
+
     z-index: 10;
 
     text-align: left;
@@ -348,7 +439,10 @@ header::before {
 ========================================================= */
 
 h1 {
-    font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+
+    font-size:
+        clamp(2.2rem, 3.5vw, 3.2rem);
+
     font-weight: 700;
 
     margin-bottom: 18px;
@@ -365,6 +459,7 @@ h1 {
         );
 
     -webkit-background-clip: text;
+
     -webkit-text-fill-color: transparent;
 
     background-clip: text;
@@ -376,7 +471,9 @@ h1 {
 ========================================================= */
 
 .subtitle {
+
     font-size: 18px;
+
     font-weight: 400;
 
     line-height: 1.6;
@@ -398,28 +495,33 @@ h1 {
 ========================================================= */
 
 .frase-header {
+
     font-family: Georgia, serif;
 
     font-style: italic;
 
     font-size: 17px;
 
-    color: rgba(255,255,255,0.9);
+    color:
+        rgba(255,255,255,0.9);
 
     margin-top: 18px;
 }
 
 .frase-header::after {
+
     content: '';
 
     display: block;
 
     width: 90px;
+
     height: 2px;
 
     margin-top: 8px;
 
-    background: rgba(255,255,255,0.55);
+    background:
+        rgba(255,255,255,0.55);
 
     border-radius: 10px;
 }
@@ -430,12 +532,15 @@ h1 {
 ========================================================= */
 
 .imagem-header {
+
     width: 55%;
+
     max-width: 680px;
 
     height: 540px;
 
     object-fit: contain;
+
     object-position: center bottom;
 
     display: block;
@@ -446,7 +551,8 @@ h1 {
 
     flex-shrink: 0;
 
-    transform: translateX(15px);
+    transform:
+        translateX(15px);
 }
 
 
@@ -455,11 +561,16 @@ h1 {
 ========================================================= */
 
 main {
+
     padding: 70px 0;
 }
 
 .section {
+
     margin-bottom: 100px;
+
+    /* EVITA QUE O MENU CUBRA O TÍTULO */
+    scroll-margin-top: 90px;
 }
 
 
@@ -468,13 +579,17 @@ main {
 ========================================================= */
 
 #sobre {
+
     max-width: 850px;
 
     margin:
         -10px auto 80px;
+
+    scroll-margin-top: 90px;
 }
 
 #sobre .card {
+
     padding: 30px 35px;
 
     border-radius: 20px;
@@ -488,6 +603,7 @@ main {
 }
 
 #sobre .card p {
+
     color: var(--text-secondary);
 }
 
@@ -497,6 +613,7 @@ main {
 ========================================================= */
 
 .card-section {
+
     background: white;
 
     border-radius: 24px;
@@ -512,6 +629,7 @@ main {
 ========================================================= */
 
 h2 {
+
     font-size: 35px;
 
     font-weight: 600;
@@ -523,15 +641,20 @@ h2 {
     align-items: center;
 
     gap: 16px;
+}
 
-    /* IMPORTANTE PARA O MENU */
-    scroll-margin-top: 100px;
+
+/* TÍTULOS DO MENU */
+h2[id] {
+    scroll-margin-top: 90px;
 }
 
 h2 i {
+
     background: var(--primary);
 
     -webkit-background-clip: text;
+
     -webkit-text-fill-color: transparent;
 
     background-clip: text;
@@ -545,6 +668,7 @@ h2 i {
 ========================================================= */
 
 .grid {
+
     display: grid;
 
     grid-template-columns:
@@ -556,6 +680,7 @@ h2 i {
 }
 
 .card {
+
     background: white;
 
     border-radius: 24px;
@@ -577,25 +702,30 @@ h2 i {
 }
 
 .card::before {
+
     content: '';
 
     position: absolute;
 
     top: 0;
+
     left: 0;
+
     right: 0;
 
     height: 4px;
 
     background: var(--primary);
 
-    transform: scaleX(0);
+    transform:
+        scaleX(0);
 
     transition:
         transform 0.4s ease;
 }
 
 .card:hover {
+
     transform:
         translateY(-12px);
 
@@ -604,10 +734,13 @@ h2 i {
 }
 
 .card:hover::before {
-    transform: scaleX(1);
+
+    transform:
+        scaleX(1);
 }
 
 .card h3 {
+
     margin-bottom: 15px;
 
     font-size: 1.35rem;
@@ -621,9 +754,11 @@ h2 i {
 ========================================================= */
 
 .equipe {
+
     display: flex;
 
     justify-content: center;
+
     align-items: center;
 
     gap: 50px;
@@ -634,11 +769,14 @@ h2 i {
 }
 
 .pessoa {
+
     text-align: center;
 }
 
 .pessoa img {
+
     width: 250px;
+
     height: 250px;
 
     object-fit: cover;
@@ -659,6 +797,7 @@ h2 i {
 ========================================================= */
 
 .warning-card {
+
     background:
         linear-gradient(
             135deg,
@@ -671,6 +810,7 @@ h2 i {
 }
 
 .warning-card h3 {
+
     color: #dc2626;
 
     font-size: 1.4rem;
@@ -685,10 +825,12 @@ h2 i {
 }
 
 .warning-list {
+
     list-style: none;
 }
 
 .warning-list li {
+
     padding: 12px 0;
 
     padding-left: 32px;
@@ -701,6 +843,7 @@ h2 i {
 }
 
 .warning-list li::before {
+
     content: "•";
 
     position: absolute;
@@ -713,6 +856,7 @@ h2 i {
 }
 
 body.dark-mode .warning-card {
+
     background:
         linear-gradient(
             135deg,
@@ -724,10 +868,12 @@ body.dark-mode .warning-card {
 }
 
 body.dark-mode .warning-list li {
+
     color: #fecaca;
 }
 
 body.dark-mode .warning-card h3 {
+
     color: #fca5a5;
 }
 
@@ -737,6 +883,7 @@ body.dark-mode .warning-card h3 {
 ========================================================= */
 
 .stats-grid {
+
     display: grid;
 
     grid-template-columns:
@@ -748,6 +895,7 @@ body.dark-mode .warning-card h3 {
 }
 
 .stat-card {
+
     background: white;
 
     border-radius: 24px;
@@ -760,6 +908,7 @@ body.dark-mode .warning-card h3 {
 }
 
 .stat-number {
+
     font-size: 3.5rem;
 
     font-weight: 700;
@@ -767,6 +916,7 @@ body.dark-mode .warning-card h3 {
     background: var(--primary);
 
     -webkit-background-clip: text;
+
     -webkit-text-fill-color: transparent;
 
     background-clip: text;
@@ -777,6 +927,7 @@ body.dark-mode .warning-card h3 {
 }
 
 .stat-label {
+
     color: var(--text-secondary);
 
     font-size: 1.1rem;
@@ -794,7 +945,9 @@ body.dark-mode .warning-card h3 {
 ========================================================= */
 
 .tip-number {
+
     width: 56px;
+
     height: 56px;
 
     border-radius: 16px;
@@ -806,6 +959,7 @@ body.dark-mode .warning-card h3 {
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     font-weight: 600;
@@ -821,6 +975,7 @@ body.dark-mode .warning-card h3 {
 ========================================================= */
 
 .contacts {
+
     background: white;
 
     border-radius: 24px;
@@ -832,9 +987,12 @@ body.dark-mode .warning-card h3 {
     box-shadow: var(--shadow);
 
     margin-bottom: 100px;
+
+    scroll-margin-top: 90px;
 }
 
 .contact-grid {
+
     display: grid;
 
     grid-template-columns:
@@ -846,6 +1004,7 @@ body.dark-mode .warning-card h3 {
 }
 
 .contact-item {
+
     padding: 32px;
 
     background: var(--secondary);
@@ -857,6 +1016,7 @@ body.dark-mode .warning-card h3 {
 }
 
 .contact-item:hover {
+
     background:
         var(--primary-light);
 
@@ -865,6 +1025,7 @@ body.dark-mode .warning-card h3 {
 }
 
 .contact-number {
+
     font-size: 2.2rem;
 
     font-weight: 700;
@@ -882,6 +1043,7 @@ body.dark-mode .warning-card h3 {
 ========================================================= */
 
 .fade-in {
+
     opacity: 0;
 
     transform:
@@ -892,6 +1054,7 @@ body.dark-mode .warning-card h3 {
 }
 
 .fade-in.visible {
+
     opacity: 1;
 
     transform:
@@ -904,6 +1067,7 @@ body.dark-mode .warning-card h3 {
 ========================================================= */
 
 footer {
+
     background: var(--primary);
 
     color: white;
@@ -921,42 +1085,52 @@ footer {
 @media (max-width: 1000px) {
 
     header {
+
         min-height: 500px;
+
         height: 500px;
     }
 
     .header-container {
+
         height: 500px;
 
-        padding: 35px 20px 0;
+        padding:
+            35px 20px 0;
 
         gap: 10px;
     }
 
     .header-content {
+
         width: 50%;
     }
 
     h1 {
+
         font-size: 2.45rem;
 
         white-space: nowrap;
     }
 
     .subtitle {
+
         font-size: 16px;
     }
 
     .frase-header {
+
         font-size: 15px;
     }
 
     .imagem-header {
+
         width: 53%;
 
         height: 500px;
 
-        transform: translateX(10px);
+        transform:
+            translateX(10px);
     }
 }
 
@@ -968,6 +1142,7 @@ footer {
 @media (max-width: 768px) {
 
     header {
+
         min-height: auto;
 
         height: auto;
@@ -976,6 +1151,7 @@ footer {
     }
 
     .header-container {
+
         min-height: auto;
 
         height: auto;
@@ -997,6 +1173,7 @@ footer {
     }
 
     .header-content {
+
         width: 100%;
 
         max-width: 650px;
@@ -1007,6 +1184,7 @@ footer {
     }
 
     h1 {
+
         font-size: 2.3rem;
 
         line-height: 1.15;
@@ -1019,6 +1197,7 @@ footer {
     }
 
     .subtitle {
+
         font-size: 17px;
 
         line-height: 1.55;
@@ -1032,6 +1211,7 @@ footer {
     }
 
     .frase-header {
+
         font-size: 15px;
 
         margin-top: 12px;
@@ -1040,11 +1220,14 @@ footer {
     }
 
     .frase-header::after {
+
         margin-left: auto;
+
         margin-right: auto;
     }
 
     .imagem-header {
+
         width: 95%;
 
         max-width: 500px;
@@ -1063,18 +1246,23 @@ footer {
     }
 
 
-    /* CONTEÚDO */
+    /* =====================================================
+       CONTEÚDO
+    ===================================================== */
 
     main {
+
         padding: 40px 0;
     }
 
     #sobre {
+
         margin:
             0 auto 60px;
     }
 
     #sobre .card {
+
         padding:
             25px 22px;
 
@@ -1084,11 +1272,20 @@ footer {
     }
 
     .section {
+
         margin-bottom: 70px;
+
+        scroll-margin-top: 80px;
+    }
+
+    h2[id] {
+
+        scroll-margin-top: 80px;
     }
 
     .card,
     .card-section {
+
         padding:
             25px 20px;
 
@@ -1096,18 +1293,19 @@ footer {
     }
 
     h2 {
+
         font-size: 28px;
 
         gap: 10px;
-
-        scroll-margin-top: 80px;
     }
 
     h2 i {
+
         font-size: 1.6rem;
     }
 
     .grid {
+
         grid-template-columns: 1fr;
 
         gap: 20px;
@@ -1116,61 +1314,101 @@ footer {
     }
 
     .stats-grid {
+
         grid-template-columns: 1fr;
 
         gap: 18px;
     }
 
     .contact-grid {
+
         grid-template-columns: 1fr;
 
         gap: 20px;
     }
 
     .contacts {
+
         padding:
             40px 20px;
     }
 
     .equipe {
+
         gap: 30px;
     }
 
     .pessoa img {
+
         width: 200px;
+
         height: 200px;
     }
 
 
-    /* MENU */
+    /* =====================================================
+       MENU NO CELULAR
+    ===================================================== */
 
     .menu-botao {
+
         width: 45px;
+
         height: 45px;
 
         font-size: 20px;
     }
 
     .menu-fixo {
+
         top: 15px;
+
         left: 15px;
     }
 
     .menu-links {
+
         top: 70px;
+
         left: 15px;
 
         width:
             calc(100% - 30px);
 
         max-width: 300px;
+
+        /* ALTURA DO MENU NO CELULAR */
+        max-height:
+            calc(100vh - 90px);
+
+        /* BARRA DE ROLAGEM */
+        overflow-y: auto;
+    }
+
+    .menu-links a,
+    .menu-links button {
+
+        padding:
+            11px 13px;
+
+        font-size: 14px;
+    }
+
+    .saudacao-menu {
+
+        padding:
+            12px;
+
+        font-size: 14px;
     }
 
     .stat-number {
+
         font-size: 3rem;
     }
 
     .contact-number {
+
         font-size: 2rem;
     }
 }
@@ -1183,27 +1421,33 @@ footer {
 @media (max-width: 480px) {
 
     header {
+
         min-height: auto;
     }
 
     .header-container {
+
         padding:
             80px 15px 0;
     }
 
     h1 {
+
         font-size: 1.85rem;
     }
 
     .subtitle {
+
         font-size: 14px;
     }
 
     .frase-header {
+
         font-size: 13px;
     }
 
     .imagem-header {
+
         width: 98%;
 
         max-width: 420px;
@@ -1214,14 +1458,20 @@ footer {
     }
 
     .menu-links {
+
         max-width: none;
+
+        width:
+            calc(100% - 30px);
     }
 
     h2 {
+
         font-size: 25px;
     }
 
     .card {
+
         padding:
             22px 18px;
     }
@@ -1244,7 +1494,9 @@ footer {
     <button
         class="menu-botao"
         onclick="abrirMenu()"
-        aria-label="Abrir menu">
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="menuLinks">
 
         <i class="fas fa-bars"></i>
 
@@ -1268,55 +1520,62 @@ footer {
     </div>
 
 
-    <!-- INÍCIO -->
-    <a href="#inicio">
+    <!-- INÍCIO VAI PARA A PRIMEIRA PARTE -->
+
+    <a href="#sobre">
         Início
     </a>
 
 
-    <!-- QUEM SOMOS -->
-    <a href="#quem-somos">
+    <!-- QUEM SOMOS VAI DIRETO PARA O TÍTULO -->
+
+    <a href="#titulo-quem-somos">
         Quem somos
     </a>
 
 
-    <!-- TRANSTORNOS -->
-    <a href="#transtornos">
+    <!-- TRANSTORNOS VAI DIRETO PARA O TÍTULO -->
+
+    <a href="#titulo-transtornos">
         Transtornos
     </a>
 
 
-    <!-- SINAIS DE ALERTA -->
-    <a href="#sinais-alerta">
+    <!-- SINAIS VAI DIRETO PARA O TÍTULO -->
+
+    <a href="#titulo-sinais">
         Sinais de Alerta
     </a>
 
 
-    <!-- ESTATÍSTICAS -->
-    <a href="#estatistica">
+    <!-- ESTATÍSTICAS VAI DIRETO PARA O TÍTULO -->
+
+    <a href="#titulo-estatisticas">
         Estatísticas
     </a>
 
 
-    <!-- PREVENÇÃO -->
-    <a href="#prevencao">
+    <!-- PREVENÇÃO VAI DIRETO PARA O TÍTULO -->
+
+    <a href="#titulo-prevencao">
         Prevenção
     </a>
 
 
-    <!-- AJUDA -->
-    <a href="#ajuda">
+    <!-- AJUDA VAI DIRETO PARA O TÍTULO -->
+
+    <a href="#titulo-ajuda">
         Ajuda
     </a>
 
 
-    <!-- QUIZ -->
     <a href="quiz.html">
         Quiz
     </a>
 
 
-    <!-- TEMA -->
+    <!-- BOTÃO TEMA SEM LUA OU SOL -->
+
     <button
         class="botao-tema"
         onclick="alternarTema()">
@@ -1326,7 +1585,6 @@ footer {
     </button>
 
 
-    <!-- LOGIN -->
     <a href="login.html">
         Login
     </a>
@@ -1335,7 +1593,7 @@ footer {
 
 
 <!-- =========================================================
-     CABEÇALHO / INÍCIO
+     CABEÇALHO
 ========================================================= -->
 
 <header id="inicio">
@@ -1359,7 +1617,9 @@ footer {
             </p>
 
             <p class="frase-header">
+
                 Informação também é uma forma de cuidado.
+
             </p>
 
         </div>
@@ -1425,10 +1685,9 @@ footer {
         ================================================== -->
 
         <div
-            class="section fade-in"
-            id="quem-somos">
+            class="section fade-in">
 
-            <h2>
+            <h2 id="titulo-quem-somos">
 
                 <i class="fas fa-users"></i>
 
@@ -1451,6 +1710,7 @@ footer {
 
 
             <div class="equipe">
+
 
                 <div class="pessoa">
 
@@ -1477,6 +1737,7 @@ footer {
 
                 </div>
 
+
             </div>
 
         </div>
@@ -1490,7 +1751,7 @@ footer {
             class="section fade-in"
             id="transtornos">
 
-            <h2>
+            <h2 id="titulo-transtornos">
 
                 <i class="fas fa-info-circle"></i>
 
@@ -1664,6 +1925,7 @@ footer {
 
                 </div>
 
+
             </div>
 
         </div>
@@ -1675,9 +1937,9 @@ footer {
 
         <div
             class="section fade-in"
-            id="sinais-alerta">
+            id="sinais_alerta">
 
-            <h2>
+            <h2 id="titulo-sinais">
 
                 <i class="fas fa-exclamation-triangle"></i>
 
@@ -1790,6 +2052,7 @@ footer {
 
                 </div>
 
+
             </div>
 
         </div>
@@ -1803,7 +2066,7 @@ footer {
             class="section fade-in card-section"
             id="estatistica">
 
-            <h2>
+            <h2 id="titulo-estatisticas">
 
                 <i class="fas fa-chart-bar"></i>
 
@@ -1866,6 +2129,7 @@ footer {
 
                 </div>
 
+
             </div>
 
         </div>
@@ -1879,7 +2143,7 @@ footer {
             class="section fade-in"
             id="prevencao">
 
-            <h2>
+            <h2 id="titulo-prevencao">
 
                 <i class="fas fa-heart"></i>
 
@@ -1939,6 +2203,7 @@ footer {
 
                 </div>
 
+
             </div>
 
         </div>
@@ -1952,7 +2217,7 @@ footer {
             class="contacts fade-in"
             id="ajuda">
 
-            <h2>
+            <h2 id="titulo-ajuda">
 
                 <i class="fas fa-phone"></i>
 
@@ -2020,6 +2285,7 @@ footer {
 
                 </div>
 
+
             </div>
 
 
@@ -2075,6 +2341,7 @@ footer {
             </p>
 
         </div>
+
 
     </div>
 
@@ -2133,38 +2400,53 @@ document
 
 
 /* =========================================================
-   NAVEGAÇÃO DO MENU
+   SCROLL SUAVE
 ========================================================= */
 
 document
-    .querySelectorAll('.menu-links a[href^="#"]')
-    .forEach(link => {
+    .querySelectorAll('a[href^="#"]')
+    .forEach(anchor => {
 
-        link.addEventListener('click', function(e) {
+        anchor.addEventListener(
+            'click',
+            function(e) {
 
-            e.preventDefault();
+                e.preventDefault();
 
-            const destino =
-                document.querySelector(
-                    this.getAttribute('href')
-                );
+                const destino =
+                    document.querySelector(
+                        this.getAttribute('href')
+                    );
 
-            if (destino) {
+                if (destino) {
 
-                destino.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+                    destino.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+
+                }
+
+
+                /* FECHA O MENU */
+
+                document
+                    .getElementById("menuLinks")
+                    .classList
+                    .remove("aberto");
+
+
+                /* ATUALIZA O BOTÃO */
+
+                document
+                    .querySelector(".menu-botao")
+                    .setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
 
             }
-
-            /* Fecha o menu depois do clique */
-            document
-                .getElementById("menuLinks")
-                .classList
-                .remove("aberto");
-
-        });
+        );
 
     });
 
@@ -2178,8 +2460,16 @@ function abrirMenu() {
     const menu =
         document.getElementById("menuLinks");
 
-    menu.classList.toggle("aberto");
+    const botao =
+        document.querySelector(".menu-botao");
 
+    const aberto =
+        menu.classList.toggle("aberto");
+
+    botao.setAttribute(
+        "aria-expanded",
+        aberto
+    );
 }
 
 
@@ -2194,13 +2484,17 @@ function alternarTema() {
         .toggle("dark-mode");
 
     const modoEscuro =
-        document.body.classList.contains("dark-mode");
+        document.body.classList.contains(
+            "dark-mode"
+        );
+
+
+    /* SALVA A ESCOLHA */
 
     localStorage.setItem(
         "modoEscuro",
         modoEscuro
     );
-
 }
 
 
@@ -2212,8 +2506,9 @@ if (
     localStorage.getItem("modoEscuro") === "true"
 ) {
 
-    document.body.classList.add("dark-mode");
-
+    document.body.classList.add(
+        "dark-mode"
+    );
 }
 
 
@@ -2228,7 +2523,9 @@ fetch("php/verificar_login.php")
     .then(data => {
 
         const saudacao =
-            document.getElementById("saudacaoMenu");
+            document.getElementById(
+                "saudacaoMenu"
+            );
 
         if (!saudacao) {
             return;
@@ -2257,6 +2554,7 @@ fetch("php/verificar_login.php")
         );
 
     });
+
 
 </script>
 
