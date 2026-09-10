@@ -68,13 +68,9 @@ html {
 
 body {
     font-family: 'Inter', sans-serif;
-
     line-height: 1.7;
-
     color: var(--text-primary);
-
     background: var(--secondary);
-
     overflow-x: hidden;
 
     transition:
@@ -89,15 +85,11 @@ body {
 
 body.dark-mode {
     --secondary: #111827;
-
     --text-primary: #f1f5f9;
-
     --text-secondary: #cbd5e1;
-
     --border: #374151;
 
     background: #111827;
-
     color: #f1f5f9;
 }
 
@@ -248,6 +240,8 @@ body.dark-mode .saudacao-menu {
 
     border-bottom:
         1px solid #e2e8f0;
+
+    white-space: nowrap;
 }
 
 
@@ -356,13 +350,13 @@ header::before {
 .header-container {
     width: 100%;
 
-    max-width: 1200px;
+    max-width: 1250px;
 
-    min-height: 500px;
+    height: 500px;
 
     margin: 0 auto;
 
-    padding: 40px 24px 0;
+    padding: 30px 24px 0;
 
     display: flex;
 
@@ -374,7 +368,7 @@ header::before {
 
     z-index: 2;
 
-    gap: 30px;
+    gap: 20px;
 }
 
 
@@ -383,15 +377,17 @@ header::before {
 ========================================================= */
 
 .header-content {
-    width: 42%;
+    width: 52%;
 
-    max-width: 600px;
+    max-width: 650px;
 
     position: relative;
 
-    z-index: 5;
+    z-index: 10;
 
     text-align: left;
+
+    flex-shrink: 0;
 }
 
 
@@ -400,7 +396,7 @@ header::before {
 ========================================================= */
 
 h1 {
-    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-size: clamp(2.7rem, 4vw, 3.3rem);
 
     font-weight: 700;
 
@@ -408,6 +404,7 @@ h1 {
 
     line-height: 1.1;
 
+    /* AGORA O TÍTULO FICA INTEIRO EM UMA LINHA */
     white-space: nowrap;
 
     background:
@@ -430,7 +427,7 @@ h1 {
 ========================================================= */
 
 .subtitle {
-    font-size: 19px;
+    font-size: 18px;
 
     font-weight: 400;
 
@@ -440,7 +437,7 @@ h1 {
 
     opacity: 0.96;
 
-    max-width: 580px;
+    max-width: 600px;
 
     margin: 0 0 20px 0;
 
@@ -486,11 +483,11 @@ h1 {
 ========================================================= */
 
 .imagem-header {
-    width: 58%;
+    width: 55%;
 
-    max-width: 750px;
+    max-width: 680px;
 
-    height: 500px;
+    height: 540px;
 
     object-fit: contain;
 
@@ -503,6 +500,14 @@ h1 {
     z-index: 3;
 
     flex-shrink: 0;
+
+    /*
+       A imagem fica maior e mais para a direita.
+       Não interfere no texto porque o texto
+       possui z-index maior.
+    */
+
+    transform: translateX(15px);
 }
 
 
@@ -977,7 +982,7 @@ footer {
    TABLET
 ========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
 
     header {
         min-height: 500px;
@@ -985,23 +990,21 @@ footer {
     }
 
     .header-container {
-        min-height: 500px;
+        height: 500px;
 
-        padding: 40px 20px 0;
+        padding: 35px 20px 0;
 
-        gap: 15px;
+        gap: 10px;
     }
 
     .header-content {
-        width: 42%;
-
-        max-width: 600px;
-
-        padding-left: 10px;
+        width: 50%;
     }
 
     h1 {
-        font-size: 2.5rem;
+        font-size: 2.45rem;
+
+        white-space: nowrap;
     }
 
     .subtitle {
@@ -1013,11 +1016,11 @@ footer {
     }
 
     .imagem-header {
-        width: 50%;
+        width: 53%;
 
-        max-width: 550px;
+        height: 500px;
 
-        height: 470px;
+        transform: translateX(10px);
     }
 }
 
@@ -1031,11 +1034,15 @@ footer {
     header {
         min-height: auto;
 
+        height: auto;
+
         padding-bottom: 0;
     }
 
     .header-container {
         min-height: auto;
+
+        height: auto;
 
         padding:
             90px 20px 0;
@@ -1068,6 +1075,10 @@ footer {
 
         line-height: 1.15;
 
+        /*
+           No celular permitimos quebrar
+           porque a tela é pequena.
+        */
         white-space: normal;
 
         text-align: center;
@@ -1103,11 +1114,11 @@ footer {
     }
 
     .imagem-header {
-        width: 90%;
+        width: 95%;
 
-        max-width: 450px;
+        max-width: 500px;
 
-        height: 330px;
+        height: 360px;
 
         margin-top: 15px;
 
@@ -1116,6 +1127,8 @@ footer {
         object-fit: contain;
 
         object-position: center bottom;
+
+        transform: none;
     }
 
 
@@ -1262,11 +1275,11 @@ footer {
     }
 
     .imagem-header {
-        width: 96%;
+        width: 98%;
 
-        max-width: 400px;
+        max-width: 420px;
 
-        height: 270px;
+        height: 290px;
 
         margin-top: 10px;
     }
