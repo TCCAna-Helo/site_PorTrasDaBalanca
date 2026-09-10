@@ -197,6 +197,26 @@
             display: flex;
         }
 
+        /* =========================
+           SAUDAÇÃO DO USUÁRIO
+        ========================= */
+
+        .saudacao-menu {
+            padding: 15px;
+            margin-bottom: 5px;
+            color: #803ca8;
+            font-size: 16px;
+            font-weight: 700;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        body.dark-mode .saudacao-menu {
+            color: #c084fc;
+            border-bottom-color: #374151;
+        }
+
+
+
 
         .menu-links a,
         .menu-links button {
@@ -743,6 +763,12 @@
 ========================= -->
 
 <div class="menu-links" id="menuLinks">
+
+    <!-- SAUDAÇÃO DO USUÁRIO -->
+    <div class="saudacao-menu" id="saudacaoMenu">
+        Olá, visitante
+    </div>
+
 
     <a href="#inicio">
 
@@ -1805,6 +1831,34 @@
         }
 
     }
+
+
+
+    /* =========================
+       NOME DO USUÁRIO LOGADO
+    ========================= */
+
+    fetch("php/verificar_login.php")
+        .then(response => response.json())
+        .then(data => {
+
+            const saudacao =
+                document.getElementById("saudacaoMenu");
+
+            if (!saudacao) {
+                return;
+            }
+
+            if (data.logado) {
+                saudacao.textContent = "Olá, " + data.nome + " 👋";
+            } else {
+                saudacao.textContent = "Olá, visitante 👋";
+            }
+
+        })
+        .catch(error => {
+            console.error("Erro ao verificar login:", error);
+        });
 
 </script>
 
