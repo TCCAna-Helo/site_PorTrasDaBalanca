@@ -13,13 +13,16 @@
     <link rel="apple-touch-icon" sizes="180x180" href="logoooSite.png">
 
     <!-- FONTE -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
 
     <!-- ÍCONES -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    >
 
 <style>
 
@@ -64,7 +67,6 @@ html {
         0 30px 80px rgba(0,0,0,0.15);
 }
 
-
 body {
 
     font-family: 'Inter', sans-serif;
@@ -102,7 +104,6 @@ body.dark-mode {
     color: #f1f5f9;
 }
 
-
 body.dark-mode .card,
 body.dark-mode .card-section,
 body.dark-mode .contacts,
@@ -113,7 +114,6 @@ body.dark-mode .stat-card {
     color: #f1f5f9;
 }
 
-
 body.dark-mode .contact-item {
 
     background: #374151;
@@ -121,25 +121,21 @@ body.dark-mode .contact-item {
     color: #f1f5f9;
 }
 
-
 body.dark-mode .contact-number {
 
     color: #f1f5f9;
 }
-
 
 body.dark-mode .menu-links {
 
     background: #1f2937;
 }
 
-
 body.dark-mode .menu-links a,
 body.dark-mode .menu-links button {
 
     color: #c084fc;
 }
-
 
 body.dark-mode .menu-links a:hover,
 body.dark-mode .menu-links button:hover {
@@ -148,7 +144,6 @@ body.dark-mode .menu-links button:hover {
 
     color: white;
 }
-
 
 body.dark-mode .saudacao-menu {
 
@@ -187,7 +182,6 @@ body.dark-mode .saudacao-menu {
     box-shadow: none;
 }
 
-
 .menu-botao {
 
     background: #803ca8;
@@ -218,7 +212,6 @@ body.dark-mode .saudacao-menu {
         0 5px 15px rgba(0,0,0,0.15);
 }
 
-
 .menu-botao:hover {
 
     background: #6d2f91;
@@ -241,10 +234,6 @@ body.dark-mode .saudacao-menu {
 
     width: 230px;
 
-    max-height: calc(100vh - 100px);
-
-    overflow-y: auto;
-
     background: white;
 
     border-radius: 15px;
@@ -260,7 +249,6 @@ body.dark-mode .saudacao-menu {
 
     z-index: 999;
 }
-
 
 .menu-links.aberto {
 
@@ -323,7 +311,6 @@ body.dark-mode .saudacao-menu {
     transition: 0.3s;
 }
 
-
 .menu-links a:hover,
 .menu-links button:hover {
 
@@ -338,8 +325,6 @@ body.dark-mode .saudacao-menu {
 ========================================================= */
 
 .container {
-
-    width: 100%;
 
     max-width: 1200px;
 
@@ -357,9 +342,7 @@ header {
 
     background: var(--primary);
 
-    color: white;
-
-    min-height: 500px;
+    min-height: 560px;
 
     position: relative;
 
@@ -393,7 +376,7 @@ header::before {
 
 
 /* =========================================================
-   ⭐ CONTAINER DO CABEÇALHO
+   CONTAINER DO CABEÇALHO
 ========================================================= */
 
 .header-container {
@@ -402,7 +385,7 @@ header::before {
 
     max-width: 1200px;
 
-    min-height: 500px;
+    min-height: 560px;
 
     margin: 0 auto;
 
@@ -414,11 +397,11 @@ header::before {
 
     justify-content: space-between;
 
-    gap: 30px;
-
     position: relative;
 
     z-index: 2;
+
+    gap: 30px;
 }
 
 
@@ -428,17 +411,18 @@ header::before {
 
 .header-content {
 
-    width: 52%;
-
-    max-width: 620px;
-
     position: relative;
 
     z-index: 5;
 
+    width: 50%;
+
+    max-width: 620px;
+
+    padding-left: 25px;
+
     text-align: left;
 }
-
 
 h1 {
 
@@ -467,7 +451,6 @@ h1 {
     background-clip: text;
 }
 
-
 .subtitle {
 
     font-size: 19px;
@@ -485,7 +468,6 @@ h1 {
     text-align: left;
 }
 
-
 .frase-header {
 
     font-family: Georgia, serif;
@@ -499,7 +481,6 @@ h1 {
 
     margin-top: 18px;
 }
-
 
 .frase-header::after {
 
@@ -521,17 +502,17 @@ h1 {
 
 
 /* =========================================================
-   ⭐ IMAGEM PRINCIPAL
-   COMPUTADOR = LADO DIREITO
+   IMAGEM PRINCIPAL
+   COMPUTADOR
 ========================================================= */
 
 .imagem-header {
 
-    width: 45%;
+    width: 55%;
 
-    max-width: 500px;
+    max-width: 700px;
 
-    height: 500px;
+    height: 540px;
 
     object-fit: contain;
 
@@ -539,7 +520,7 @@ h1 {
 
     display: block;
 
-    position: relative;
+    align-self: flex-end;
 
     z-index: 3;
 
@@ -555,7 +536,6 @@ main {
 
     padding: 70px 0;
 }
-
 
 .section {
 
@@ -575,7 +555,6 @@ main {
         -10px auto 80px;
 }
 
-
 #sobre .card {
 
     padding: 30px 35px;
@@ -589,7 +568,6 @@ main {
     box-shadow:
         0 15px 40px rgba(0,0,0,0.08);
 }
-
 
 #sobre .card p {
 
@@ -632,7 +610,6 @@ h2 {
     gap: 16px;
 }
 
-
 h2 i {
 
     background: var(--primary);
@@ -663,7 +640,6 @@ h2 i {
     margin-top: 48px;
 }
 
-
 .card {
 
     background: white;
@@ -685,7 +661,6 @@ h2 i {
 
     overflow: hidden;
 }
-
 
 .card::before {
 
@@ -709,7 +684,6 @@ h2 i {
         transform 0.4s ease;
 }
 
-
 .card:hover {
 
     transform:
@@ -719,12 +693,10 @@ h2 i {
         var(--shadow-hover);
 }
 
-
 .card:hover::before {
 
     transform: scaleX(1);
 }
-
 
 .card h3 {
 
@@ -755,12 +727,10 @@ h2 i {
     flex-wrap: wrap;
 }
 
-
 .pessoa {
 
     text-align: center;
 }
-
 
 .pessoa img {
 
@@ -798,7 +768,6 @@ h2 i {
         1px solid #fca5a5;
 }
 
-
 .warning-card h3 {
 
     color: #dc2626;
@@ -814,12 +783,10 @@ h2 i {
     gap: 12px;
 }
 
-
 .warning-list {
 
     list-style: none;
 }
-
 
 .warning-list li {
 
@@ -834,7 +801,6 @@ h2 i {
     font-weight: 500;
 }
 
-
 .warning-list li::before {
 
     content: "•";
@@ -848,7 +814,6 @@ h2 i {
     color: #dc2626;
 }
 
-
 body.dark-mode .warning-card {
 
     background:
@@ -861,12 +826,10 @@ body.dark-mode .warning-card {
     border-color: #7f1d1d;
 }
 
-
 body.dark-mode .warning-list li {
 
     color: #fecaca;
 }
-
 
 body.dark-mode .warning-card h3 {
 
@@ -890,7 +853,6 @@ body.dark-mode .warning-card h3 {
     margin: 48px 0;
 }
 
-
 .stat-card {
 
     background: white;
@@ -903,7 +865,6 @@ body.dark-mode .warning-card h3 {
 
     text-align: center;
 }
-
 
 .stat-number {
 
@@ -923,7 +884,6 @@ body.dark-mode .warning-card h3 {
 
     display: block;
 }
-
 
 .stat-label {
 
@@ -965,8 +925,7 @@ body.dark-mode .warning-card h3 {
 
     font-size: 1.3rem;
 
-    margin:
-        0 auto 24px;
+    margin: 0 auto 24px;
 }
 
 
@@ -989,7 +948,6 @@ body.dark-mode .warning-card h3 {
     margin-bottom: 100px;
 }
 
-
 .contact-grid {
 
     display: grid;
@@ -1001,7 +959,6 @@ body.dark-mode .warning-card h3 {
 
     margin-top: 40px;
 }
-
 
 .contact-item {
 
@@ -1015,7 +972,6 @@ body.dark-mode .warning-card h3 {
         all 0.3s ease;
 }
 
-
 .contact-item:hover {
 
     background:
@@ -1024,7 +980,6 @@ body.dark-mode .warning-card h3 {
     transform:
         translateY(-4px);
 }
-
 
 .contact-number {
 
@@ -1054,7 +1009,6 @@ body.dark-mode .warning-card h3 {
     transition:
         all 0.8s ease;
 }
-
 
 .fade-in.visible {
 
@@ -1089,54 +1043,54 @@ footer {
 
     header {
 
-        min-height: 480px;
+        min-height: 500px;
     }
-
 
     .header-container {
 
-        min-height: 480px;
+        min-height: 500px;
 
         padding:
             40px 20px 0;
 
-        gap: 20px;
+        gap: 15px;
     }
-
 
     .header-content {
 
-        width: 52%;
-    }
+        width: 50%;
 
+        padding-left: 10px;
+    }
 
     h1 {
 
-        font-size: 2.4rem;
-
-        white-space: normal;
+        font-size: 2.5rem;
     }
-
 
     .subtitle {
 
         font-size: 16px;
     }
 
+    .frase-header {
+
+        font-size: 15px;
+    }
 
     .imagem-header {
 
-        width: 46%;
+        width: 50%;
 
-        max-width: 430px;
+        max-width: 550px;
 
-        height: 430px;
+        height: 470px;
     }
 }
 
 
 /* =========================================================
-   ⭐ CELULAR
+   CELULAR
    TEXTO EM CIMA + IMAGEM EMBAIXO
 ========================================================= */
 
@@ -1145,15 +1099,16 @@ footer {
     header {
 
         min-height: auto;
-    }
 
+        padding-bottom: 0;
+    }
 
     .header-container {
 
         min-height: auto;
 
         padding:
-            90px 20px 30px;
+            90px 20px 0;
 
         display: flex;
 
@@ -1163,23 +1118,21 @@ footer {
 
         justify-content: flex-start;
 
-        gap: 0;
-
         text-align: center;
-    }
 
+        gap: 0;
+    }
 
     .header-content {
 
         width: 100%;
 
-        max-width: 100%;
+        max-width: 650px;
 
         padding: 0;
 
         text-align: center;
     }
-
 
     h1 {
 
@@ -1193,7 +1146,6 @@ footer {
 
         margin-bottom: 15px;
     }
-
 
     .subtitle {
 
@@ -1209,7 +1161,6 @@ footer {
         text-align: center;
     }
 
-
     .frase-header {
 
         font-size: 15px;
@@ -1219,7 +1170,6 @@ footer {
         text-align: center;
     }
 
-
     .frase-header::after {
 
         margin-left: auto;
@@ -1227,36 +1177,25 @@ footer {
         margin-right: auto;
     }
 
-
-    /* =====================================================
-       ⭐ IMAGEM FICA EMBAIXO DO TEXTO
-    ===================================================== */
+    /*
+       IMAGEM FICA EMBAIXO
+    */
 
     .imagem-header {
 
-        position: relative;
+        width: 90%;
 
-        width: 100%;
+        max-width: 450px;
 
-        max-width: 400px;
+        height: 330px;
 
-        height: 300px;
+        margin-top: 15px;
 
-        margin-top: 20px;
-
-        right: auto;
-
-        bottom: auto;
-
-        transform: none;
+        align-self: center;
 
         object-fit: contain;
 
         object-position: center bottom;
-
-        display: block;
-
-        flex-shrink: 0;
     }
 
 
@@ -1266,17 +1205,14 @@ footer {
 
     main {
 
-        padding:
-            40px 0;
+        padding: 40px 0;
     }
-
 
     #sobre {
 
         margin:
             0 auto 60px;
     }
-
 
     #sobre .card {
 
@@ -1288,12 +1224,10 @@ footer {
         text-align: left;
     }
 
-
     .section {
 
         margin-bottom: 70px;
     }
-
 
     .card,
     .card-section {
@@ -1304,7 +1238,6 @@ footer {
         border-radius: 18px;
     }
 
-
     h2 {
 
         font-size: 28px;
@@ -1312,12 +1245,10 @@ footer {
         gap: 10px;
     }
 
-
     h2 i {
 
         font-size: 1.6rem;
     }
-
 
     .grid {
 
@@ -1328,14 +1259,12 @@ footer {
         margin-top: 30px;
     }
 
-
     .stats-grid {
 
         grid-template-columns: 1fr;
 
         gap: 18px;
     }
-
 
     .contact-grid {
 
@@ -1344,19 +1273,16 @@ footer {
         gap: 20px;
     }
 
-
     .contacts {
 
         padding:
             40px 20px;
     }
 
-
     .equipe {
 
         gap: 30px;
     }
-
 
     .pessoa img {
 
@@ -1379,14 +1305,12 @@ footer {
         font-size: 20px;
     }
 
-
     .menu-fixo {
 
         top: 15px;
 
         left: 15px;
     }
-
 
     .menu-links {
 
@@ -1400,12 +1324,10 @@ footer {
         max-width: 300px;
     }
 
-
     .stat-number {
 
         font-size: 3rem;
     }
-
 
     .contact-number {
 
@@ -1425,59 +1347,47 @@ footer {
         min-height: auto;
     }
 
-
     .header-container {
 
         padding:
-            80px 15px 20px;
+            80px 15px 0;
     }
-
 
     h1 {
 
         font-size: 1.85rem;
     }
 
-
     .subtitle {
 
         font-size: 14px;
     }
-
 
     .frase-header {
 
         font-size: 13px;
     }
 
-
-    /* =====================================================
-       IMAGEM NO FINAL DO CABEÇALHO
-    ===================================================== */
-
     .imagem-header {
 
-        width: 100%;
+        width: 96%;
 
-        max-width: 350px;
+        max-width: 400px;
 
-        height: 250px;
+        height: 270px;
 
-        margin-top: 15px;
+        margin-top: 10px;
     }
-
 
     .menu-links {
 
         max-width: none;
     }
 
-
     h2 {
 
         font-size: 25px;
     }
-
 
     .card {
 
@@ -1592,15 +1502,11 @@ footer {
 
     <div class="header-container">
 
-
-        <!-- TEXTO -->
-
         <div class="header-content fade-in">
 
             <h1>
                 Transtornos Alimentares
             </h1>
-
 
             <p class="subtitle">
 
@@ -1614,7 +1520,6 @@ footer {
 
             </p>
 
-
             <p class="frase-header">
 
                 Informação também é uma forma de cuidado.
@@ -1624,12 +1529,11 @@ footer {
         </div>
 
 
-        <!-- ⭐ IMAGEM -->
-
         <img
             src="ImagemPrincipal.png.png"
             alt="Ilustração sobre transtornos alimentares"
-            class="imagem-header">
+            class="imagem-header"
+        >
 
     </div>
 
@@ -1642,708 +1546,707 @@ footer {
 
 <main>
 
-<div class="container">
+    <div class="container">
 
 
-<!-- =========================================================
-     SOBRE
-========================================================= -->
+        <!-- =================================================
+             SOBRE
+        ================================================== -->
 
-<div
-    class="section fade-in"
-    id="sobre">
+        <div
+            class="section fade-in"
+            id="sobre">
 
-    <div class="card">
+            <div class="card">
 
-        <p>
+                <p>
 
-            Este site foi desenvolvido como
-            projeto de TCC com o objetivo de
-            informar e conscientizar sobre
-            transtornos alimentares em crianças
-            e adolescentes.
+                    Este site foi desenvolvido como
+                    projeto de TCC com o objetivo de
+                    informar e conscientizar sobre
+                    transtornos alimentares em crianças
+                    e adolescentes.
 
-            <br><br>
+                    <br><br>
 
-            A proposta é apresentar, de forma
-            clara e acessível, os principais
-            tipos de transtornos alimentares,
-            seus sinais e sintomas, possíveis
-            causas, impactos na saúde física e
-            emocional, além de orientar sobre
-            como e onde buscar ajuda.
+                    A proposta é apresentar, de forma
+                    clara e acessível, os principais
+                    tipos de transtornos alimentares,
+                    seus sinais e sintomas, possíveis
+                    causas, impactos na saúde física e
+                    emocional, além de orientar sobre
+                    como e onde buscar ajuda.
 
-        </p>
+                </p>
 
-    </div>
-
-</div>
-
-
-<!-- =========================================================
-     QUEM SOMOS
-========================================================= -->
-
-<div
-    class="section fade-in">
-
-    <h2>
-
-        <i class="fas fa-users"></i>
-
-        Quem somos?
-
-    </h2>
-
-
-    <p>
-
-        Somos estudantes do CEMEP e
-        desenvolvemos este projeto como parte
-        do TCC com o objetivo de conscientizar
-        sobre saúde mental.
-
-        <br><br>
-
-        Desenvolvido por:
-
-    </p>
-
-
-    <div class="equipe">
-
-
-        <div class="pessoa">
-
-            <img
-                src="AnaClara.jpeg"
-                alt="Ana Clara">
-
-            <p>
-                Ana Clara Amaral de Oliveira
-            </p>
-
-        </div>
-
-
-        <div class="pessoa">
-
-            <img
-                src="helofononova.jpeg"
-                alt="Heloísa">
-
-            <p>
-                Heloísa Maria Carvalho
-            </p>
-
-        </div>
-
-
-    </div>
-
-</div>
-
-
-<!-- =========================================================
-     O QUE SÃO
-========================================================= -->
-
-<div
-    class="section fade-in"
-    id="transtornos">
-
-    <h2>
-
-        <i class="fas fa-info-circle"></i>
-
-        O que são?
-
-    </h2>
-
-
-    <div class="grid">
-
-
-        <div class="card">
-
-            <h3>
-                Anorexia Nervosa
-            </h3>
-
-            <p>
-
-                Restrição extrema de comida
-                por medo de ganhar peso,
-                mesmo estando muito abaixo
-                do peso.
-
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>
-                Bulimia Nervosa
-            </h3>
-
-            <p>
-
-                Episódios de compulsão
-                alimentar seguidos de
-                comportamentos compensatórios.
-
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>
-                Compulsão Alimentar
-            </h3>
-
-            <p>
-
-                Episódios de consumo alimentar
-                acompanhados de sensação de
-                perda de controle.
-
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>
-                Vigorexia
-            </h3>
-
-            <p>
-
-                Também conhecida como dismorfia
-                muscular, envolve uma percepção
-                distorcida do próprio corpo,
-                com preocupação excessiva
-                relacionada à musculatura.
-
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>
-                Síndrome de Gourmet
-            </h3>
-
-            <p>
-
-                É um distúrbio raro em que a
-                pessoa desenvolve interesse
-                excessivo por comidas sofisticadas,
-                exóticas e pela preparação dos
-                pratos.
-
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>
-                Transtorno Alimentar Noturno
-            </h3>
-
-            <p>
-
-                É caracterizado pelo consumo
-                significativo de alimentos durante
-                a noite ou por episódios de
-                alimentação após acordar.
-
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>
-                Diabulimia
-            </h3>
-
-            <p>
-
-                Termo usado para descrever
-                comportamentos alimentares
-                relacionados ao controle inadequado
-                da insulina em pessoas com
-                diabetes tipo 1, geralmente
-                associado à preocupação com peso.
-
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>
-                Ortorexia
-            </h3>
-
-            <p>
-
-                Preocupação excessiva com uma
-                alimentação considerada saudável,
-                podendo gerar regras alimentares
-                muito rígidas.
-
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>
-                ARFID
-            </h3>
-
-            <p>
-
-                Restrição ou evitação de alimentos
-                que pode prejudicar a alimentação
-                e a obtenção adequada de nutrientes.
-
-            </p>
-
-        </div>
-
-
-    </div>
-
-</div>
-
-
-<!-- =========================================================
-     SINAIS DE ALERTA
-========================================================= -->
-
-<div
-    class="section fade-in"
-    id="sinais_alerta">
-
-    <h2>
-
-        <i class="fas fa-exclamation-triangle"></i>
-
-        Sinais de alerta
-
-    </h2>
-
-
-    <div class="grid">
-
-
-        <div class="card warning-card">
-
-            <h3>
-
-                <i class="fas fa-clock"></i>
-
-                Comportamento
-
-            </h3>
-
-
-            <ul class="warning-list">
-
-                <li>
-                    Evita refeições em grupo
-                </li>
-
-                <li>
-                    Come escondido ou muito rápido
-                </li>
-
-                <li>
-                    Desaparece após comer
-                </li>
-
-                <li>
-                    Exercícios compulsivos
-                </li>
-
-            </ul>
-
-        </div>
-
-
-        <div class="card warning-card">
-
-            <h3>
-
-                <i class="fas fa-chart-line"></i>
-
-                Físico
-
-            </h3>
-
-
-            <ul class="warning-list">
-
-                <li>
-                    Perda rápida de peso
-                </li>
-
-                <li>
-                    Cansaço constante
-                </li>
-
-                <li>
-                    Problemas dentários
-                </li>
-
-                <li>
-                    Cabelos fracos
-                </li>
-
-            </ul>
-
-        </div>
-
-
-        <div class="card warning-card">
-
-            <h3>
-
-                <i class="fas fa-head-side-virus"></i>
-
-                Emocional
-
-            </h3>
-
-
-            <ul class="warning-list">
-
-                <li>
-                    Baixa autoestima
-                </li>
-
-                <li>
-                    Ansiedade com comida
-                </li>
-
-                <li>
-                    Isolamento social
-                </li>
-
-                <li>
-                    Irritabilidade
-                </li>
-
-            </ul>
-
-        </div>
-
-
-    </div>
-
-</div>
-
-
-<!-- =========================================================
-     ESTATÍSTICAS
-========================================================= -->
-
-<div
-    class="section fade-in card-section"
-    id="estatistica">
-
-    <h2>
-
-        <i class="fas fa-chart-bar"></i>
-
-        Estatísticas
-
-    </h2>
-
-
-    <div class="stats-grid">
-
-
-        <div class="stat-card">
-
-            <span class="stat-number">
-                1 em 10
-            </span>
-
-            <span class="stat-label">
-                adolescentes afetados
-            </span>
-
-        </div>
-
-
-        <div class="stat-card">
-
-            <span class="stat-number">
-                90%
-            </span>
-
-            <span class="stat-label">
-                ocorrem em meninas
-            </span>
-
-        </div>
-
-
-        <div class="stat-card">
-
-            <span class="stat-number">
-                12-18
-            </span>
-
-            <span class="stat-label">
-                anos (pico maior)
-            </span>
-
-        </div>
-
-
-        <div class="stat-card">
-
-            <span class="stat-number">
-                70%
-            </span>
-
-            <span class="stat-label">
-                podem ser prevenidos
-            </span>
-
-        </div>
-
-
-    </div>
-
-</div>
-
-
-<!-- =========================================================
-     PREVENÇÃO
-========================================================= -->
-
-<div
-    class="section fade-in"
-    id="prevencao">
-
-    <h2>
-
-        <i class="fas fa-heart"></i>
-
-        Como prevenir
-
-    </h2>
-
-
-    <div class="grid">
-
-
-        <div class="card">
-
-            <div class="tip-number">
-                1
             </div>
 
-            <p>
-
-                Promova refeições familiares
-                sem julgamentos sobre peso
-                ou comida.
-
-            </p>
-
         </div>
 
 
-        <div class="card">
+        <!-- =================================================
+             QUEM SOMOS
+        ================================================== -->
 
-            <div class="tip-number">
-                2
+        <div
+            class="section fade-in">
+
+            <h2>
+
+                <i class="fas fa-users"></i>
+
+                Quem somos?
+
+            </h2>
+
+
+            <p>
+
+                Somos estudantes do CEMEP e
+                desenvolvemos este projeto como parte
+                do TCC com o objetivo de conscientizar
+                sobre saúde mental.
+
+                <br><br>
+
+                Desenvolvido por:
+
+            </p>
+
+
+            <div class="equipe">
+
+
+                <div class="pessoa">
+
+                    <img
+                        src="AnaClara.jpeg"
+                        alt="Ana Clara">
+
+                    <p>
+                        Ana Clara Amaral de Oliveira
+                    </p>
+
+                </div>
+
+
+                <div class="pessoa">
+
+                    <img
+                        src="helofononova.jpeg"
+                        alt="Heloísa">
+
+                    <p>
+                        Heloísa Maria Carvalho
+                    </p>
+
+                </div>
+
+
             </div>
 
-            <p>
-
-                Fale sobre saúde, não aparência.
-                Valorize força e energia.
-
-            </p>
-
         </div>
 
 
-        <div class="card">
+        <!-- =================================================
+             O QUE SÃO
+        ================================================== -->
 
-            <div class="tip-number">
-                3
+        <div
+            class="section fade-in"
+            id="transtornos">
+
+            <h2>
+
+                <i class="fas fa-info-circle"></i>
+
+                O que são?
+
+            </h2>
+
+
+            <div class="grid">
+
+
+                <div class="card">
+
+                    <h3>
+                        Anorexia Nervosa
+                    </h3>
+
+                    <p>
+
+                        Restrição extrema de comida
+                        por medo de ganhar peso,
+                        mesmo estando muito abaixo
+                        do peso.
+
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>
+                        Bulimia Nervosa
+                    </h3>
+
+                    <p>
+
+                        Episódios de compulsão
+                        alimentar seguidos de
+                        comportamentos compensatórios.
+
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>
+                        Compulsão Alimentar
+                    </h3>
+
+                    <p>
+
+                        Episódios de consumo alimentar
+                        acompanhados de sensação de
+                        perda de controle.
+
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>
+                        Vigorexia
+                    </h3>
+
+                    <p>
+
+                        Também conhecida como dismorfia
+                        muscular, envolve uma percepção
+                        distorcida do próprio corpo,
+                        com preocupação excessiva
+                        relacionada à musculatura.
+
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>
+                        Síndrome de Gourmet
+                    </h3>
+
+                    <p>
+
+                        É um distúrbio raro em que a
+                        pessoa desenvolve interesse
+                        excessivo por comidas sofisticadas,
+                        exóticas e pela preparação dos
+                        pratos.
+
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>
+                        Transtorno Alimentar Noturno
+                    </h3>
+
+                    <p>
+
+                        É caracterizado pelo consumo
+                        significativo de alimentos durante
+                        a noite ou por episódios de
+                        alimentação após acordar.
+
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>
+                        Diabulimia
+                    </h3>
+
+                    <p>
+
+                        Termo usado para descrever
+                        comportamentos alimentares
+                        relacionados ao controle inadequado
+                        da insulina em pessoas com
+                        diabetes tipo 1, geralmente
+                        associado à preocupação com peso.
+
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>
+                        Ortorexia
+                    </h3>
+
+                    <p>
+
+                        Preocupação excessiva com uma
+                        alimentação considerada saudável,
+                        podendo gerar regras alimentares
+                        muito rígidas.
+
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>
+                        ARFID
+                    </h3>
+
+                    <p>
+
+                        Restrição ou evitação de alimentos
+                        que pode prejudicar a alimentação
+                        e a obtenção adequada de nutrientes.
+
+                    </p>
+
+                </div>
+
+
             </div>
 
-            <p>
+        </div>
 
-                Observe mudanças e converse
-                com empatia, sem acusações.
+
+        <!-- =================================================
+             SINAIS DE ALERTA
+        ================================================== -->
+
+        <div
+            class="section fade-in"
+            id="sinais_alerta">
+
+            <h2>
+
+                <i class="fas fa-exclamation-triangle"></i>
+
+                Sinais de alerta
+
+            </h2>
+
+
+            <div class="grid">
+
+
+                <div class="card warning-card">
+
+                    <h3>
+
+                        <i class="fas fa-clock"></i>
+
+                        Comportamento
+
+                    </h3>
+
+
+                    <ul class="warning-list">
+
+                        <li>
+                            Evita refeições em grupo
+                        </li>
+
+                        <li>
+                            Come escondido ou muito rápido
+                        </li>
+
+                        <li>
+                            Desaparece após comer
+                        </li>
+
+                        <li>
+                            Exercícios compulsivos
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="card warning-card">
+
+                    <h3>
+
+                        <i class="fas fa-chart-line"></i>
+
+                        Físico
+
+                    </h3>
+
+
+                    <ul class="warning-list">
+
+                        <li>
+                            Perda rápida de peso
+                        </li>
+
+                        <li>
+                            Cansaço constante
+                        </li>
+
+                        <li>
+                            Problemas dentários
+                        </li>
+
+                        <li>
+                            Cabelos fracos
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="card warning-card">
+
+                    <h3>
+
+                        <i class="fas fa-head-side-virus"></i>
+
+                        Emocional
+
+                    </h3>
+
+
+                    <ul class="warning-list">
+
+                        <li>
+                            Baixa autoestima
+                        </li>
+
+                        <li>
+                            Ansiedade com comida
+                        </li>
+
+                        <li>
+                            Isolamento social
+                        </li>
+
+                        <li>
+                            Irritabilidade
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             ESTATÍSTICAS
+        ================================================== -->
+
+        <div
+            class="section fade-in card-section"
+            id="estatistica">
+
+            <h2>
+
+                <i class="fas fa-chart-bar"></i>
+
+                Estatísticas
+
+            </h2>
+
+
+            <div class="stats-grid">
+
+
+                <div class="stat-card">
+
+                    <span class="stat-number">
+                        1 em 10
+                    </span>
+
+                    <span class="stat-label">
+                        adolescentes afetados
+                    </span>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-number">
+                        90%
+                    </span>
+
+                    <span class="stat-label">
+                        ocorrem em meninas
+                    </span>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-number">
+                        12-18
+                    </span>
+
+                    <span class="stat-label">
+                        anos (pico maior)
+                    </span>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-number">
+                        70%
+                    </span>
+
+                    <span class="stat-label">
+                        podem ser prevenidos
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             PREVENÇÃO
+        ================================================== -->
+
+        <div
+            class="section fade-in"
+            id="prevencao">
+
+            <h2>
+
+                <i class="fas fa-heart"></i>
+
+                Como prevenir
+
+            </h2>
+
+
+            <div class="grid">
+
+
+                <div class="card">
+
+                    <div class="tip-number">
+                        1
+                    </div>
+
+                    <p>
+
+                        Promova refeições familiares
+                        sem julgamentos sobre peso
+                        ou comida.
+
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="tip-number">
+                        2
+                    </div>
+
+                    <p>
+
+                        Fale sobre saúde, não aparência.
+                        Valorize força e energia.
+
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="tip-number">
+                        3
+                    </div>
+
+                    <p>
+
+                        Observe mudanças e converse
+                        com empatia, sem acusações.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             AJUDA
+        ================================================== -->
+
+        <div
+            class="contacts fade-in"
+            id="ajuda">
+
+            <h2>
+
+                <i class="fas fa-phone"></i>
+
+                Ajuda imediata
+
+            </h2>
+
+
+            <div class="contact-grid">
+
+
+                <div class="contact-item">
+
+                    <span class="contact-number">
+                        188
+                    </span>
+
+                    <strong>
+                        CVV
+                    </strong>
+
+                    <br>
+
+                    <small>
+                        24 horas - Apoio emocional
+                    </small>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <span class="contact-number">
+                        100
+                    </span>
+
+                    <strong>
+                        Disque 100
+                    </strong>
+
+                    <br>
+
+                    <small>
+                        Direitos Humanos
+                    </small>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <span class="contact-number">
+                        CAPS
+                    </span>
+
+                    <strong>
+                        CAPS/UBS
+                    </strong>
+
+                    <br>
+
+                    <small>
+                        Saúde Mental SUS
+                    </small>
+
+                </div>
+
+
+            </div>
+
+
+            <p style="
+                margin-top:32px;
+                color:var(--text-secondary);
+                font-size:1.1rem;
+            ">
+
+                Fale com pais, professores ou
+                psicólogos. O primeiro passo é
+                buscar ajuda.
 
             </p>
 
         </div>
 
 
-    </div>
+        <!-- =================================================
+             FRASE FINAL
+        ================================================== -->
 
-</div>
+        <div
+            style="
+                text-align:center;
+                margin-bottom:60px;
+            ">
+
+            <p
+                style="
+                    margin-top:40px;
+                    color:var(--text-secondary);
+                    font-size:1.1rem;
+                ">
+
+                “O maior erro que um homem pode
+                cometer é sacrificar a sua saúde
+                a qualquer outra vantagem.”
+
+            </p>
 
 
-<!-- =========================================================
-     AJUDA
-========================================================= -->
+            <p
+                style="
+                    margin-top:32px;
+                    color:var(--text-secondary);
+                    font-size:1.1rem;
+                ">
 
-<div
-    class="contacts fade-in"
-    id="ajuda">
+                (Arthur Schopenhauer)
 
-    <h2>
-
-        <i class="fas fa-phone"></i>
-
-        Ajuda imediata
-
-    </h2>
-
-
-    <div class="contact-grid">
-
-
-        <div class="contact-item">
-
-            <span class="contact-number">
-                188
-            </span>
-
-            <strong>
-                CVV
-            </strong>
-
-            <br>
-
-            <small>
-                24 horas - Apoio emocional
-            </small>
+            </p>
 
         </div>
-
-
-        <div class="contact-item">
-
-            <span class="contact-number">
-                100
-            </span>
-
-            <strong>
-                Disque 100
-            </strong>
-
-            <br>
-
-            <small>
-                Direitos Humanos
-            </small>
-
-        </div>
-
-
-        <div class="contact-item">
-
-            <span class="contact-number">
-                CAPS
-            </span>
-
-            <strong>
-                CAPS/UBS
-            </strong>
-
-            <br>
-
-            <small>
-                Saúde Mental SUS
-            </small>
-
-        </div>
-
 
     </div>
-
-
-    <p style="
-        margin-top:32px;
-        color:var(--text-secondary);
-        font-size:1.1rem;
-    ">
-
-        Fale com pais, professores ou
-        psicólogos. O primeiro passo é
-        buscar ajuda.
-
-    </p>
-
-</div>
-
-
-<!-- =========================================================
-     FRASE FINAL
-========================================================= -->
-
-<div
-    style="
-        text-align:center;
-        margin-bottom:60px;
-    ">
-
-    <p
-        style="
-            margin-top:40px;
-            color:var(--text-secondary);
-            font-size:1.1rem;
-        ">
-
-        “O maior erro que um homem pode
-        cometer é sacrificar a sua saúde
-        a qualquer outra vantagem.”
-
-    </p>
-
-
-    <p
-        style="
-            margin-top:32px;
-            color:var(--text-secondary);
-            font-size:1.1rem;
-        ">
-
-        (Arthur Schopenhauer)
-
-    </p>
-
-</div>
-
-
-</div>
 
 </main>
 
