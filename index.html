@@ -492,28 +492,6 @@ h1 {
    SUA IMAGEM ORIGINAL
 ========================================================= */
 
-.imagem-header {
-
-    position: absolute;
-
-    right: 0;
-
-    bottom: 0;
-
-    width: 48%;
-
-    max-width: 650px;
-
-    height: 100%;
-
-    object-fit: contain;
-
-    object-position: right bottom;
-
-    z-index: 3;
-
-    pointer-events: none;
-}
 
 
 /* =========================================================
@@ -1082,13 +1060,47 @@ footer {
         font-size: 16px;
     }
 
+.imagem-header {
+    width: 48%;
+    max-width: 600px;
+    height: 500px;
 
-    .imagem-header {
+    object-fit: contain;
+    object-position: center bottom;
 
-        width: 48%;
+    display: block;
+    align-self: flex-end;
+    z-index: 3;
+}
 
-        right: 0;
-    }
+    .header-container {
+    max-width: 1200px;
+    min-height: 500px;
+    margin: 0 auto;
+    padding: 40px 24px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+    z-index: 2;
+}
+
+.header-content {
+    width: 52%;
+    max-width: 620px;
+    text-align: left;
+    position: relative;
+    z-index: 5;
+}
+
+.frase-header {
+    margin-top: 25px;
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 17px;
+    color: rgba(255,255,255,0.9);
 }
 
 
@@ -1099,21 +1111,44 @@ footer {
 
 @media (max-width: 768px) {
 
-    .container {
+    .header-container {
+        min-height: auto;
+        padding: 100px 20px 0;
 
-        padding: 0 18px;
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        text-align: center;
     }
 
-
-    header {
-
-        min-height: 650px;
-
-        padding: 0;
-
-        display: block;
+    .header-content {
+        width: 100%;
+        text-align: center;
     }
 
+    h1 {
+        font-size: 2.3rem;
+        white-space: normal;
+        text-align: center;
+    }
+
+    .subtitle {
+        font-size: 17px;
+        text-align: center;
+    }
+
+    .imagem-header {
+        width: 100%;
+        max-width: 430px;
+        height: 300px;
+
+        margin-top: 15px;
+
+        object-fit: contain;
+        object-position: center bottom;
+    }
+}
 
     /* TEXTO */
 
@@ -1519,48 +1554,35 @@ footer {
 
 <header id="inicio">
 
-
-    <!-- =====================================================
-         SUA IMAGEM ORIGINAL
-         NÃO TROQUEI
-    ====================================================== -->
-
-    <img
-        src="ImagemPrincipal.png.png"
-        alt="Ilustração sobre transtornos alimentares"
-        class="imagem-header"
-    >
-
-
-    <div class="container">
+    <div class="header-container">
 
         <div class="header-content fade-in">
-
 
             <h1>
                 Transtornos Alimentares
             </h1>
 
-
             <p class="subtitle">
-
                 Conscientização e prevenção
                 para crianças e adolescentes.
 
+                <br>
+
                 Informação clara para identificar,
                 prevenir e agir.
-
             </p>
-
 
             <p class="frase-header">
-
                 Informação também é uma forma de cuidado.
-
             </p>
 
-
         </div>
+
+        <img
+            src="ImagemPrincipal.png.png"
+            alt="Ilustração sobre transtornos alimentares"
+            class="imagem-header"
+        >
 
     </div>
 
