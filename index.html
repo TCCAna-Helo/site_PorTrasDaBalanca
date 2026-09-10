@@ -258,14 +258,17 @@
            CABEÇALHO
         ========================= */
 
-        header {
+       header {
+    background: var(--primary);
+    color: white;
 
-            background: var(--primary);
-            color: white;
-            padding: 140px 0 80px;
-            position: relative;
-            overflow: hidden;
-        }
+    padding: 100px 0 0;
+
+    min-height: 430px;
+
+    position: relative;
+    overflow: hidden;
+}
 
 
         header::before {
@@ -282,36 +285,32 @@
             background-size: cover;
         }
 
-
-        .header-content {
+.header-content {
     position: relative;
     z-index: 4;
     text-align: left;
-    max-width: 650px;
+    max-width: 700px;
     margin: 0;
-    padding-left: 40px;
+    padding-left: 60px;
     padding-top: 20px;
 }
 
         h1 {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.1;
 
-            font-size:
-                clamp(2.5rem, 5vw, 4rem);
+    background: linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #f1f5f9 100%
+    );
 
-            font-weight: 700;
-            margin-bottom: 20px;
-            background:
-                linear-gradient(
-                    135deg,
-                    #ffffff 0%,
-                    #f1f5f9 100%
-                );
-
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
 
         .subtitle {
 
@@ -731,17 +730,18 @@
             }
 
         }
-
-
         .imagem-header {
     position: absolute;
-    right: 10px;
+    right: 0;
     bottom: 0;
+
     width: 48%;
-    max-width: 700px;
+    max-width: 720px;
+
     height: 100%;
     object-fit: contain;
     object-position: right bottom;
+
     z-index: 3;
 }
 
