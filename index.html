@@ -41,7 +41,6 @@ html {
 }
 
 :root {
-
     --primary: linear-gradient(
         135deg,
         #803ca8 0%,
@@ -68,7 +67,6 @@ html {
 }
 
 body {
-
     font-family: 'Inter', sans-serif;
 
     line-height: 1.7;
@@ -90,7 +88,6 @@ body {
 ========================================================= */
 
 body.dark-mode {
-
     --secondary: #111827;
 
     --text-primary: #f1f5f9;
@@ -108,47 +105,36 @@ body.dark-mode .card,
 body.dark-mode .card-section,
 body.dark-mode .contacts,
 body.dark-mode .stat-card {
-
     background: #1f2937;
-
     color: #f1f5f9;
 }
 
 body.dark-mode .contact-item {
-
     background: #374151;
-
     color: #f1f5f9;
 }
 
 body.dark-mode .contact-number {
-
     color: #f1f5f9;
 }
 
 body.dark-mode .menu-links {
-
     background: #1f2937;
 }
 
 body.dark-mode .menu-links a,
 body.dark-mode .menu-links button {
-
     color: #c084fc;
 }
 
 body.dark-mode .menu-links a:hover,
 body.dark-mode .menu-links button:hover {
-
     background: #803ca8;
-
     color: white;
 }
 
 body.dark-mode .saudacao-menu {
-
     color: #c084fc;
-
     border-bottom-color: #374151;
 }
 
@@ -158,21 +144,17 @@ body.dark-mode .saudacao-menu {
 ========================================================= */
 
 .menu-fixo {
-
     position: fixed;
 
     top: 20px;
-
     left: 20px;
 
     width: auto;
-
     height: auto;
 
     background: transparent;
 
     display: flex;
-
     align-items: center;
 
     padding: 0;
@@ -183,7 +165,6 @@ body.dark-mode .saudacao-menu {
 }
 
 .menu-botao {
-
     background: #803ca8;
 
     border: none;
@@ -195,13 +176,11 @@ body.dark-mode .saudacao-menu {
     cursor: pointer;
 
     width: 50px;
-
     height: 50px;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     border-radius: 12px;
@@ -213,7 +192,6 @@ body.dark-mode .saudacao-menu {
 }
 
 .menu-botao:hover {
-
     background: #6d2f91;
 
     transform: scale(1.05);
@@ -225,11 +203,9 @@ body.dark-mode .saudacao-menu {
 ========================================================= */
 
 .menu-links {
-
     position: fixed;
 
     top: 80px;
-
     left: 20px;
 
     width: 230px;
@@ -251,7 +227,6 @@ body.dark-mode .saudacao-menu {
 }
 
 .menu-links.aberto {
-
     display: flex;
 }
 
@@ -261,7 +236,6 @@ body.dark-mode .saudacao-menu {
 ========================================================= */
 
 .saudacao-menu {
-
     padding: 15px;
 
     margin-bottom: 5px;
@@ -283,7 +257,6 @@ body.dark-mode .saudacao-menu {
 
 .menu-links a,
 .menu-links button {
-
     width: 100%;
 
     padding: 13px 15px;
@@ -313,7 +286,6 @@ body.dark-mode .saudacao-menu {
 
 .menu-links a:hover,
 .menu-links button:hover {
-
     background: #803ca8;
 
     color: white;
@@ -325,7 +297,6 @@ body.dark-mode .saudacao-menu {
 ========================================================= */
 
 .container {
-
     max-width: 1200px;
 
     margin: 0 auto;
@@ -338,32 +309,40 @@ body.dark-mode .saudacao-menu {
    CABEÇALHO
 ========================================================= */
 
-/* =========================================================
-   CABEÇALHO
-========================================================= */
-
 header {
     background: var(--primary);
+
     color: white;
+
     min-height: 500px;
     height: 500px;
+
     position: relative;
+
     overflow: hidden;
+
     display: flex;
+
     align-items: center;
 }
 
 
-/* FUNDO DECORATIVO */
+/* =========================================================
+   FUNDO DECORATIVO
+========================================================= */
 
 header::before {
     content: '';
+
     position: absolute;
+
     inset: 0;
 
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff15"><path d="M0 0L50 30Q100 0 200 40T400 30T600 40Q800 20 900 50T1000 0V100H0Z"/></svg>');
+    background:
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff15"><path d="M0 0L50 30Q100 0 200 40T400 30T600 40Q800 20 900 50T1000 0V100H0Z"/></svg>');
 
     background-size: cover;
+
     background-position: center;
 
     pointer-events: none;
@@ -376,37 +355,49 @@ header::before {
 
 .header-container {
     width: 100%;
+
     max-width: 1200px;
-    height: 500px;
+
+    min-height: 500px;
 
     margin: 0 auto;
-    padding: 20px 30px 0;
+
+    padding: 40px 24px 0;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     position: relative;
+
     z-index: 2;
+
+    gap: 30px;
 }
 
 
 /* =========================================================
-   TEXTO
+   TEXTO DO CABEÇALHO
 ========================================================= */
 
 .header-content {
-    width: 45%;
-    max-width: 620px;
+    width: 42%;
+
+    max-width: 600px;
 
     position: relative;
+
     z-index: 5;
 
     text-align: left;
 }
 
 
-/* TÍTULO */
+/* =========================================================
+   TÍTULO
+========================================================= */
 
 h1 {
     font-size: clamp(2.5rem, 4vw, 3.5rem);
@@ -419,20 +410,24 @@ h1 {
 
     white-space: nowrap;
 
-    background: linear-gradient(
-        135deg,
-        #ffffff 0%,
-        #f1f5f9 100%
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #f1f5f9 100%
+        );
 
     -webkit-background-clip: text;
+
     -webkit-text-fill-color: transparent;
 
     background-clip: text;
 }
 
 
-/* TEXTO ABAIXO DO TÍTULO */
+/* =========================================================
+   SUBTÍTULO
+========================================================= */
 
 .subtitle {
     font-size: 19px;
@@ -453,7 +448,9 @@ h1 {
 }
 
 
-/* FRASE */
+/* =========================================================
+   FRASE
+========================================================= */
 
 .frase-header {
     font-family: Georgia, serif;
@@ -466,7 +463,6 @@ h1 {
 
     margin-top: 18px;
 }
-
 
 .frase-header::after {
     content: '';
@@ -490,280 +486,35 @@ h1 {
 ========================================================= */
 
 .imagem-header {
-    width: 55%;
-
-    max-width: 700px;
-
-    height: 500px;
-
-    object-fit: contain;
-
-    object-position: center bottom;
-
-    display: block;
-
-    align-self: flex-end;
-
-    z-index: 3;
-
-    flex-shrink: 0;
-}
-
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 900px) {
-
-    header {
-        min-height: 480px;
-        height: 480px;
-    }
-
-    .header-container {
-        height: 480px;
-        padding: 20px;
-    }
-
-    .header-content {
-        width: 45%;
-    }
-
-    h1 {
-        font-size: 2.4rem;
-        white-space: normal;
-    }
-
-    .subtitle {
-        font-size: 16px;
-    }
-
-    .imagem-header {
-        width: 55%;
-        height: 470px;
-    }
-}
-
-
-/* =========================================================
-   CELULAR
-========================================================= */
-
-@media (max-width: 768px) {
-
-    header {
-        min-height: 650px;
-        height: auto;
-    }
-
-    .header-container {
-        height: auto;
-
-        padding: 90px 20px 0;
-
-        display: flex;
-
-        flex-direction: column;
-
-        align-items: center;
-
-        justify-content: flex-start;
-
-        text-align: center;
-    }
-
-    .header-content {
-        width: 100%;
-
-        max-width: 100%;
-
-        text-align: center;
-    }
-
-    h1 {
-        font-size: 2.2rem;
-
-        white-space: normal;
-
-        text-align: center;
-
-        margin-bottom: 15px;
-    }
-
-    .subtitle {
-        font-size: 16px;
-
-        text-align: center;
-
-        max-width: 100%;
-
-        margin: 0 auto 18px;
-    }
-
-    .frase-header {
-        font-size: 15px;
-
-        text-align: center;
-    }
-
-    .frase-header::after {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .imagem-header {
-        width: 100%;
-
-        max-width: 430px;
-
-        height: 300px;
-
-        margin-top: 15px;
-
-        object-fit: contain;
-
-        object-position: center bottom;
-
-        align-self: center;
-    }
-}
-
-
-/* =========================================================
-   CELULARES PEQUENOS
-========================================================= */
-
-@media (max-width: 480px) {
-
-    header {
-        min-height: 600px;
-    }
-
-    .header-container {
-        padding: 80px 15px 0;
-    }
-
-    h1 {
-        font-size: 1.9rem;
-    }
-
-    .subtitle {
-        font-size: 14px;
-    }
-
-    .frase-header {
-        font-size: 13px;
-    }
-
-    .imagem-header {
-        width: 100%;
-        height: 260px;
-    }
-}
-
-/* =========================================================
-   CONTAINER DO CABEÇALHO
-========================================================= */
-
-.header-container {
-
-    width: 100%;
-
-    max-width: 1200px;
-
-    min-height: 560px;
-
-    margin: 0 auto;
-
-    padding: 40px 24px 0;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    position: relative;
-
-    z-index: 2;
-
-    gap: 30px;
-}
-
-
-/* =========================================================
-   TEXTO DO CABEÇALHO
-========================================================= */
-.header-content {
-    width: 42%;
-    max-width: 600px;
-
-    position: relative;
-    z-index: 5;
-
-    text-align: left;
-}
-
-h1 {
-    font-size: clamp(2.5rem, 4vw, 3.5rem);
-    font-weight: 700;
-    margin-bottom: 18px;
-    line-height: 1.1;
-    white-space: nowrap;
-
-    background: linear-gradient(
-        135deg,
-        #ffffff 0%,
-        #f1f5f9 100%
-    );
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.subtitle {
-    font-size: 19px;
-    font-weight: 400;
-    line-height: 1.6;
-    opacity: 0.96;
-    max-width: 580px;
-    margin: 0 0 20px 0;
-    text-align: left;
-    color: white;
-}
-/* =========================================================
-   IMAGEM PRINCIPAL
-   COMPUTADOR
-========================================================= */
-.imagem-header {
-    
     width: 58%;
+
     max-width: 750px;
+
     height: 500px;
-    
+
     object-fit: contain;
+
     object-position: center bottom;
-    
+
     display: block;
+
     align-self: flex-end;
-    
+
     z-index: 3;
+
     flex-shrink: 0;
 }
+
 
 /* =========================================================
    CONTEÚDO
 ========================================================= */
 
 main {
-
     padding: 70px 0;
 }
 
 .section {
-
     margin-bottom: 100px;
 }
 
@@ -773,7 +524,6 @@ main {
 ========================================================= */
 
 #sobre {
-
     max-width: 850px;
 
     margin:
@@ -781,7 +531,6 @@ main {
 }
 
 #sobre .card {
-
     padding: 30px 35px;
 
     border-radius: 20px;
@@ -795,7 +544,6 @@ main {
 }
 
 #sobre .card p {
-
     color: var(--text-secondary);
 }
 
@@ -805,7 +553,6 @@ main {
 ========================================================= */
 
 .card-section {
-
     background: white;
 
     border-radius: 24px;
@@ -821,7 +568,6 @@ main {
 ========================================================= */
 
 h2 {
-
     font-size: 35px;
 
     font-weight: 600;
@@ -836,7 +582,6 @@ h2 {
 }
 
 h2 i {
-
     background: var(--primary);
 
     -webkit-background-clip: text;
@@ -854,7 +599,6 @@ h2 i {
 ========================================================= */
 
 .grid {
-
     display: grid;
 
     grid-template-columns:
@@ -866,7 +610,6 @@ h2 i {
 }
 
 .card {
-
     background: white;
 
     border-radius: 24px;
@@ -888,15 +631,12 @@ h2 i {
 }
 
 .card::before {
-
     content: '';
 
     position: absolute;
 
     top: 0;
-
     left: 0;
-
     right: 0;
 
     height: 4px;
@@ -910,7 +650,6 @@ h2 i {
 }
 
 .card:hover {
-
     transform:
         translateY(-12px);
 
@@ -919,12 +658,10 @@ h2 i {
 }
 
 .card:hover::before {
-
     transform: scaleX(1);
 }
 
 .card h3 {
-
     margin-bottom: 15px;
 
     font-size: 1.35rem;
@@ -938,7 +675,6 @@ h2 i {
 ========================================================= */
 
 .equipe {
-
     display: flex;
 
     justify-content: center;
@@ -953,12 +689,10 @@ h2 i {
 }
 
 .pessoa {
-
     text-align: center;
 }
 
 .pessoa img {
-
     width: 250px;
 
     height: 250px;
@@ -981,7 +715,6 @@ h2 i {
 ========================================================= */
 
 .warning-card {
-
     background:
         linear-gradient(
             135deg,
@@ -994,7 +727,6 @@ h2 i {
 }
 
 .warning-card h3 {
-
     color: #dc2626;
 
     font-size: 1.4rem;
@@ -1009,12 +741,10 @@ h2 i {
 }
 
 .warning-list {
-
     list-style: none;
 }
 
 .warning-list li {
-
     padding: 12px 0;
 
     padding-left: 32px;
@@ -1027,7 +757,6 @@ h2 i {
 }
 
 .warning-list li::before {
-
     content: "•";
 
     position: absolute;
@@ -1040,7 +769,6 @@ h2 i {
 }
 
 body.dark-mode .warning-card {
-
     background:
         linear-gradient(
             135deg,
@@ -1052,12 +780,10 @@ body.dark-mode .warning-card {
 }
 
 body.dark-mode .warning-list li {
-
     color: #fecaca;
 }
 
 body.dark-mode .warning-card h3 {
-
     color: #fca5a5;
 }
 
@@ -1067,7 +793,6 @@ body.dark-mode .warning-card h3 {
 ========================================================= */
 
 .stats-grid {
-
     display: grid;
 
     grid-template-columns:
@@ -1079,7 +804,6 @@ body.dark-mode .warning-card h3 {
 }
 
 .stat-card {
-
     background: white;
 
     border-radius: 24px;
@@ -1092,7 +816,6 @@ body.dark-mode .warning-card h3 {
 }
 
 .stat-number {
-
     font-size: 3.5rem;
 
     font-weight: 700;
@@ -1111,7 +834,6 @@ body.dark-mode .warning-card h3 {
 }
 
 .stat-label {
-
     color: var(--text-secondary);
 
     font-size: 1.1rem;
@@ -1129,7 +851,6 @@ body.dark-mode .warning-card h3 {
 ========================================================= */
 
 .tip-number {
-
     width: 56px;
 
     height: 56px;
@@ -1159,7 +880,6 @@ body.dark-mode .warning-card h3 {
 ========================================================= */
 
 .contacts {
-
     background: white;
 
     border-radius: 24px;
@@ -1174,7 +894,6 @@ body.dark-mode .warning-card h3 {
 }
 
 .contact-grid {
-
     display: grid;
 
     grid-template-columns:
@@ -1186,7 +905,6 @@ body.dark-mode .warning-card h3 {
 }
 
 .contact-item {
-
     padding: 32px;
 
     background: var(--secondary);
@@ -1198,7 +916,6 @@ body.dark-mode .warning-card h3 {
 }
 
 .contact-item:hover {
-
     background:
         var(--primary-light);
 
@@ -1207,7 +924,6 @@ body.dark-mode .warning-card h3 {
 }
 
 .contact-number {
-
     font-size: 2.2rem;
 
     font-weight: 700;
@@ -1225,7 +941,6 @@ body.dark-mode .warning-card h3 {
 ========================================================= */
 
 .fade-in {
-
     opacity: 0;
 
     transform:
@@ -1236,7 +951,6 @@ body.dark-mode .warning-card h3 {
 }
 
 .fade-in.visible {
-
     opacity: 1;
 
     transform:
@@ -1249,7 +963,6 @@ body.dark-mode .warning-card h3 {
 ========================================================= */
 
 footer {
-
     background: var(--primary);
 
     color: white;
@@ -1267,12 +980,11 @@ footer {
 @media (max-width: 900px) {
 
     header {
-
         min-height: 500px;
+        height: 500px;
     }
 
     .header-container {
-
         min-height: 500px;
 
         padding: 40px 20px 0;
@@ -1281,30 +993,26 @@ footer {
     }
 
     .header-content {
-
         width: 42%;
+
         max-width: 600px;
 
         padding-left: 10px;
     }
 
     h1 {
-
         font-size: 2.5rem;
     }
 
     .subtitle {
-
         font-size: 16px;
     }
 
     .frase-header {
-
         font-size: 15px;
     }
 
     .imagem-header {
-
         width: 50%;
 
         max-width: 550px;
@@ -1316,20 +1024,17 @@ footer {
 
 /* =========================================================
    CELULAR
-   TEXTO EM CIMA + IMAGEM EMBAIXO
 ========================================================= */
 
 @media (max-width: 768px) {
 
     header {
-
         min-height: auto;
 
         padding-bottom: 0;
     }
 
     .header-container {
-
         min-height: auto;
 
         padding:
@@ -1349,7 +1054,6 @@ footer {
     }
 
     .header-content {
-
         width: 100%;
 
         max-width: 650px;
@@ -1360,7 +1064,6 @@ footer {
     }
 
     h1 {
-
         font-size: 2.3rem;
 
         line-height: 1.15;
@@ -1373,7 +1076,6 @@ footer {
     }
 
     .subtitle {
-
         font-size: 17px;
 
         line-height: 1.55;
@@ -1387,7 +1089,6 @@ footer {
     }
 
     .frase-header {
-
         font-size: 15px;
 
         margin-top: 12px;
@@ -1396,18 +1097,12 @@ footer {
     }
 
     .frase-header::after {
-
         margin-left: auto;
 
         margin-right: auto;
     }
 
-    /*
-       IMAGEM FICA EMBAIXO
-    */
-
     .imagem-header {
-
         width: 90%;
 
         max-width: 450px;
@@ -1424,23 +1119,18 @@ footer {
     }
 
 
-    /* =====================================================
-       CONTEÚDO
-    ===================================================== */
+    /* CONTEÚDO */
 
     main {
-
         padding: 40px 0;
     }
 
     #sobre {
-
         margin:
             0 auto 60px;
     }
 
     #sobre .card {
-
         padding:
             25px 22px;
 
@@ -1450,13 +1140,11 @@ footer {
     }
 
     .section {
-
         margin-bottom: 70px;
     }
 
     .card,
     .card-section {
-
         padding:
             25px 20px;
 
@@ -1464,19 +1152,16 @@ footer {
     }
 
     h2 {
-
         font-size: 28px;
 
         gap: 10px;
     }
 
     h2 i {
-
         font-size: 1.6rem;
     }
 
     .grid {
-
         grid-template-columns: 1fr;
 
         gap: 20px;
@@ -1485,44 +1170,36 @@ footer {
     }
 
     .stats-grid {
-
         grid-template-columns: 1fr;
 
         gap: 18px;
     }
 
     .contact-grid {
-
         grid-template-columns: 1fr;
 
         gap: 20px;
     }
 
     .contacts {
-
         padding:
             40px 20px;
     }
 
     .equipe {
-
         gap: 30px;
     }
 
     .pessoa img {
-
         width: 200px;
 
         height: 200px;
     }
 
 
-    /* =====================================================
-       MENU
-    ===================================================== */
+    /* MENU */
 
     .menu-botao {
-
         width: 45px;
 
         height: 45px;
@@ -1531,14 +1208,12 @@ footer {
     }
 
     .menu-fixo {
-
         top: 15px;
 
         left: 15px;
     }
 
     .menu-links {
-
         top: 70px;
 
         left: 15px;
@@ -1550,12 +1225,10 @@ footer {
     }
 
     .stat-number {
-
         font-size: 3rem;
     }
 
     .contact-number {
-
         font-size: 2rem;
     }
 }
@@ -1568,33 +1241,27 @@ footer {
 @media (max-width: 480px) {
 
     header {
-
         min-height: auto;
     }
 
     .header-container {
-
         padding:
             80px 15px 0;
     }
 
     h1 {
-
         font-size: 1.85rem;
     }
 
     .subtitle {
-
         font-size: 14px;
     }
 
     .frase-header {
-
         font-size: 13px;
     }
 
     .imagem-header {
-
         width: 96%;
 
         max-width: 400px;
@@ -1605,17 +1272,14 @@ footer {
     }
 
     .menu-links {
-
         max-width: none;
     }
 
     h2 {
-
         font-size: 25px;
     }
 
     .card {
-
         padding:
             22px 18px;
     }
@@ -1661,46 +1325,37 @@ footer {
 
     </div>
 
-
     <a href="#inicio">
         Início
     </a>
-
 
     <a href="#sobre">
         Quem somos
     </a>
 
-
     <a href="#transtornos">
         Transtornos
     </a>
-
 
     <a href="#sinais_alerta">
         Sinais de Alerta
     </a>
 
-
     <a href="#estatistica">
         Estatísticas
     </a>
-
 
     <a href="#prevencao">
         Prevenção
     </a>
 
-
     <a href="#ajuda">
         Ajuda
     </a>
 
-
     <a href="quiz.html">
         Quiz
     </a>
-
 
     <button
         class="botao-tema"
@@ -1710,7 +1365,6 @@ footer {
         Tema
 
     </button>
-
 
     <a href="login.html">
         Login
@@ -1729,14 +1383,15 @@ footer {
 
         <div class="header-content fade-in">
 
-           <h1>Transtornos Alimentares</h1>
-            
+            <h1>
+                Transtornos Alimentares
+            </h1>
+
             <p class="subtitle">
-                
-            Conscientização e prevenção para crianças e adolescentes.<br>
-            Informação clara para identificar, prevenir e agir.
-            
-        
+
+                Conscientização e prevenção para crianças e adolescentes.<br>
+                Informação clara para identificar, prevenir e agir.
+
             </p>
 
             <p class="frase-header">
@@ -1818,7 +1473,6 @@ footer {
 
             </h2>
 
-
             <p>
 
                 Somos estudantes do CEMEP e
@@ -1834,7 +1488,6 @@ footer {
 
 
             <div class="equipe">
-
 
                 <div class="pessoa">
 
@@ -1861,7 +1514,6 @@ footer {
 
                 </div>
 
-
             </div>
 
         </div>
@@ -1885,7 +1537,6 @@ footer {
 
 
             <div class="grid">
-
 
                 <div class="card">
 
@@ -2049,7 +1700,6 @@ footer {
 
                 </div>
 
-
             </div>
 
         </div>
@@ -2074,7 +1724,6 @@ footer {
 
             <div class="grid">
 
-
                 <div class="card warning-card">
 
                     <h3>
@@ -2084,7 +1733,6 @@ footer {
                         Comportamento
 
                     </h3>
-
 
                     <ul class="warning-list">
 
@@ -2119,7 +1767,6 @@ footer {
 
                     </h3>
 
-
                     <ul class="warning-list">
 
                         <li>
@@ -2153,7 +1800,6 @@ footer {
 
                     </h3>
 
-
                     <ul class="warning-list">
 
                         <li>
@@ -2175,7 +1821,6 @@ footer {
                     </ul>
 
                 </div>
-
 
             </div>
 
@@ -2200,7 +1845,6 @@ footer {
 
 
             <div class="stats-grid">
-
 
                 <div class="stat-card">
 
@@ -2253,7 +1897,6 @@ footer {
 
                 </div>
 
-
             </div>
 
         </div>
@@ -2277,7 +1920,6 @@ footer {
 
 
             <div class="grid">
-
 
                 <div class="card">
 
@@ -2327,7 +1969,6 @@ footer {
 
                 </div>
 
-
             </div>
 
         </div>
@@ -2351,7 +1992,6 @@ footer {
 
 
             <div class="contact-grid">
-
 
                 <div class="contact-item">
 
@@ -2408,7 +2048,6 @@ footer {
                     </small>
 
                 </div>
-
 
             </div>
 
@@ -2488,7 +2127,6 @@ footer {
 ========================================================= -->
 
 <script>
-
 
 /* =========================================================
    ANIMAÇÃO
@@ -2625,7 +2263,6 @@ fetch("php/verificar_login.php")
             document.getElementById("saudacaoMenu");
 
         if (!saudacao) {
-
             return;
         }
 
