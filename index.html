@@ -338,42 +338,329 @@ body.dark-mode .saudacao-menu {
    CABEÇALHO
 ========================================================= */
 
+/* =========================================================
+   CABEÇALHO
+========================================================= */
+
 header {
-
     background: var(--primary);
-
-    min-height: 560px;
-
+    color: white;
+    min-height: 500px;
+    height: 500px;
     position: relative;
-
     overflow: hidden;
-
     display: flex;
-
     align-items: center;
 }
 
 
-/* Fundo decorativo */
+/* FUNDO DECORATIVO */
 
 header::before {
-
     content: '';
-
     position: absolute;
-
     inset: 0;
 
-    background:
-        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff15"><path d="M0 0L50 30Q100 0 200 40T400 30T600 40Q800 20 900 50T1000 0V100H0Z"/></svg>');
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff15"><path d="M0 0L50 30Q100 0 200 40T400 30T600 40Q800 20 900 50T1000 0V100H0Z"/></svg>');
 
     background-size: cover;
-
     background-position: center;
 
     pointer-events: none;
 }
 
+
+/* =========================================================
+   CONTAINER DO CABEÇALHO
+========================================================= */
+
+.header-container {
+    width: 100%;
+    max-width: 1200px;
+    height: 500px;
+
+    margin: 0 auto;
+    padding: 20px 30px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================================
+   TEXTO
+========================================================= */
+
+.header-content {
+    width: 45%;
+    max-width: 620px;
+
+    position: relative;
+    z-index: 5;
+
+    text-align: left;
+}
+
+
+/* TÍTULO */
+
+h1 {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+
+    font-weight: 700;
+
+    margin-bottom: 18px;
+
+    line-height: 1.1;
+
+    white-space: nowrap;
+
+    background: linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #f1f5f9 100%
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    background-clip: text;
+}
+
+
+/* TEXTO ABAIXO DO TÍTULO */
+
+.subtitle {
+    font-size: 19px;
+
+    font-weight: 400;
+
+    line-height: 1.6;
+
+    color: white;
+
+    opacity: 0.96;
+
+    max-width: 580px;
+
+    margin: 0 0 20px 0;
+
+    text-align: left;
+}
+
+
+/* FRASE */
+
+.frase-header {
+    font-family: Georgia, serif;
+
+    font-style: italic;
+
+    font-size: 17px;
+
+    color: rgba(255,255,255,0.9);
+
+    margin-top: 18px;
+}
+
+
+.frase-header::after {
+    content: '';
+
+    display: block;
+
+    width: 90px;
+
+    height: 2px;
+
+    margin-top: 8px;
+
+    background: rgba(255,255,255,0.55);
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   IMAGEM PRINCIPAL
+========================================================= */
+
+.imagem-header {
+    width: 55%;
+
+    max-width: 700px;
+
+    height: 500px;
+
+    object-fit: contain;
+
+    object-position: center bottom;
+
+    display: block;
+
+    align-self: flex-end;
+
+    z-index: 3;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    header {
+        min-height: 480px;
+        height: 480px;
+    }
+
+    .header-container {
+        height: 480px;
+        padding: 20px;
+    }
+
+    .header-content {
+        width: 45%;
+    }
+
+    h1 {
+        font-size: 2.4rem;
+        white-space: normal;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .imagem-header {
+        width: 55%;
+        height: 470px;
+    }
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 768px) {
+
+    header {
+        min-height: 650px;
+        height: auto;
+    }
+
+    .header-container {
+        height: auto;
+
+        padding: 90px 20px 0;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: flex-start;
+
+        text-align: center;
+    }
+
+    .header-content {
+        width: 100%;
+
+        max-width: 100%;
+
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+
+        white-space: normal;
+
+        text-align: center;
+
+        margin-bottom: 15px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+
+        text-align: center;
+
+        max-width: 100%;
+
+        margin: 0 auto 18px;
+    }
+
+    .frase-header {
+        font-size: 15px;
+
+        text-align: center;
+    }
+
+    .frase-header::after {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .imagem-header {
+        width: 100%;
+
+        max-width: 430px;
+
+        height: 300px;
+
+        margin-top: 15px;
+
+        object-fit: contain;
+
+        object-position: center bottom;
+
+        align-self: center;
+    }
+}
+
+
+/* =========================================================
+   CELULARES PEQUENOS
+========================================================= */
+
+@media (max-width: 480px) {
+
+    header {
+        min-height: 600px;
+    }
+
+    .header-container {
+        padding: 80px 15px 0;
+    }
+
+    h1 {
+        font-size: 1.9rem;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    .frase-header {
+        font-size: 13px;
+    }
+
+    .imagem-header {
+        width: 100%;
+        height: 260px;
+    }
+}
 
 /* =========================================================
    CONTAINER DO CABEÇALHO
