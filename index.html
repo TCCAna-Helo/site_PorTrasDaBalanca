@@ -410,91 +410,40 @@ header::before {
 ========================================================= */
 
 .header-content {
-
+    width: 42%;
+    max-width: 650px;
     position: relative;
-
     z-index: 5;
-
-    width: 50%;
-
-    max-width: 620px;
-
-    padding-left: 25px;
-
     text-align: left;
 }
 
 h1 {
-
-    font-size:
-        clamp(2.5rem, 4vw, 3.5rem);
-
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
     font-weight: 700;
-
     margin-bottom: 18px;
-
     line-height: 1.1;
+    white-space: nowrap;
 
-    white-space: normal;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ffffff 0%,
-            #f1f5f9 100%
-        );
+    background: linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #f1f5f9 100%
+    );
 
     -webkit-background-clip: text;
-
     -webkit-text-fill-color: transparent;
-
     background-clip: text;
 }
 
 .subtitle {
-    color: white;
     font-size: 19px;
     font-weight: 400;
     line-height: 1.6;
-    opacity: 0.96;
-    max-width: 580px;
+    color: white;
+    white-space: nowrap;
     margin: 0 0 20px 0;
     text-align: left;
 }
-
-.frase-header {
-
-    font-family: Georgia, serif;
-
-    font-style: italic;
-
-    font-size: 17px;
-
-    color:
-        rgba(255,255,255,0.9);
-
-    margin-top: 18px;
-}
-
-.frase-header::after {
-
-    content: '';
-
-    display: block;
-
-    width: 90px;
-
-    height: 2px;
-
-    margin-top: 8px;
-
-    background:
-        rgba(255,255,255,0.55);
-
-    border-radius: 10px;
-}
-
-
 /* =========================================================
    IMAGEM PRINCIPAL
    COMPUTADOR
@@ -1491,20 +1440,14 @@ footer {
 
         <div class="header-content fade-in">
 
-            <h1>
-                Transtornos Alimentares
-            </h1>
-
+           <h1>Transtornos Alimentares</h1>
+            
             <p class="subtitle">
-
-                Conscientização e prevenção
-                para crianças e adolescentes.
-
-                <br>
-
-                Informação clara para identificar,
-                prevenir e agir.
-
+                
+            Conscientização e prevenção para crianças e adolescentes.<br>
+            Informação clara para identificar, prevenir e agir.
+            
+        
             </p>
 
             <p class="frase-header">
