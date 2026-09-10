@@ -10,10 +10,12 @@
 
     <link rel="icon" type="image/png" href="logoooSite.png">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet"
+    <link
+        rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -53,7 +55,6 @@
             min-height: 100vh;
             transition: background 0.3s, color 0.3s;
         }
-
 
         /* =========================
            MENU
@@ -133,7 +134,6 @@
             color: white;
         }
 
-
         /* =========================
            TOPO
         ========================= */
@@ -177,7 +177,6 @@
             opacity: 0.92;
         }
 
-
         /* =========================
            CONTAINER
         ========================= */
@@ -187,7 +186,6 @@
             margin: 0 auto;
             padding: 40px 0 70px;
         }
-
 
         /* =========================
            VOLTAR
@@ -207,7 +205,6 @@
         .voltar:hover {
             transform: translateX(-4px);
         }
-
 
         /* =========================
            PROGRESSO
@@ -250,7 +247,6 @@
             transition: width 0.4s ease;
         }
 
-
         /* =========================
            CARD
         ========================= */
@@ -278,7 +274,6 @@
 
         }
 
-
         /* =========================
            NÚMERO DA PERGUNTA
         ========================= */
@@ -297,7 +292,6 @@
             font-size: 13px;
         }
 
-
         /* =========================
            PERGUNTA
         ========================= */
@@ -307,7 +301,6 @@
             line-height: 1.45;
             margin-bottom: 28px;
         }
-
 
         /* =========================
            ALTERNATIVAS
@@ -358,7 +351,6 @@
             background: #342b3c;
         }
 
-
         /* =========================
            RESPOSTA CORRETA
         ========================= */
@@ -368,7 +360,6 @@
             background:
                 rgba(34, 160, 107, 0.10);
         }
-
 
         /* =========================
            RESPOSTA ERRADA
@@ -380,7 +371,6 @@
                 rgba(220, 76, 100, 0.10);
         }
 
-
         .alternativa.desativada {
             cursor: default;
         }
@@ -388,7 +378,6 @@
         .alternativa.desativada:hover {
             transform: none;
         }
-
 
         /* =========================
            FEEDBACK
@@ -419,7 +408,6 @@
                 rgba(220, 76, 100, 0.12);
             color: var(--vermelho);
         }
-
 
         /* =========================
            BOTÃO PRÓXIMA
@@ -454,7 +442,6 @@
             background: #6d2f91;
             transform: translateY(-2px);
         }
-
 
         /* =========================
            RESULTADO
@@ -511,7 +498,6 @@
             line-height: 1.7;
         }
 
-
         /* =========================
            BOTÕES FINAIS
         ========================= */
@@ -549,6 +535,26 @@
             transform: translateY(-2px);
         }
 
+        /* =========================
+           RESULTADO BLOQUEADO
+        ========================= */
+
+        .resultado-bloqueado {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .resultado-bloqueado .trofeu {
+            background: #f1e6f6;
+        }
+
+        .resultado-bloqueado h2 {
+            margin-bottom: 15px;
+        }
+
+        .resultado-bloqueado p {
+            margin-bottom: 25px;
+        }
 
         /* =========================
            RESPONSIVO
@@ -603,9 +609,7 @@
 
 </head>
 
-
 <body>
-
 
 <!-- =========================
      MENU
@@ -624,45 +628,47 @@
 
 </nav>
 
-
 <div class="menu-links" id="menuLinks">
 
     <a href="index.html">
         Início
     </a>
 
-
     <a href="index.html#sobre">
-        Quem somos 
+        Quem somos
     </a>
-
 
     <a href="index.html#transtornos">
         Transtornos
     </a>
 
+    <a href="index.html#sinais_alerta">
+        Sinais de Alerta
+    </a>
+        
+    <a href="index.html#estatistica">
+        Estatísticas
+    </a>
 
     <a href="index.html#prevencao">
         Prevenção
     </a>
 
-
-    <a href="quiz.html">
-        Quiz
-    </a>
-
-
     <a href="index.html#ajuda">
         Ajuda
     </a>
 
+    
+    <a href="quiz.html">
+        Quiz
+    </a>
 
     <button
         class="botao-tema"
         onclick="alternarTema()">
+        <i class="fas fa-moon"></i>
         Tema
     </button>
-
 
     <a href="login.html">
         Login
@@ -670,26 +676,22 @@
 
 </div>
 
-
 <!-- =========================
      TOPO
 ========================= -->
 
 <header class="topo">
 
-<h1>
-    Quiz
-</h1>
+    <h1>
+        Quiz
+    </h1>
 
     <p>
-
         Vamos ver o quanto você aprendeu
         sobre transtornos alimentares?
-
     </p>
 
 </header>
-
 
 <!-- =========================
      CONTEÚDO
@@ -697,13 +699,12 @@
 
 <main class="container">
 
-
     <a href="index.html" class="voltar">
 
         <i class="fas fa-arrow-left"></i>
         Voltar para o início
-    </a>
 
+    </a>
 
     <!-- =========================
          PROGRESSO
@@ -716,20 +717,14 @@
         <div class="progresso-info">
 
             <span id="contador">
-
                 Pergunta 1 de 10
-
             </span>
 
-
             <span id="porcentagem">
-
                 10%
-
             </span>
 
         </div>
-
 
         <div class="barra">
 
@@ -742,7 +737,6 @@
 
     </div>
 
-
     <!-- =========================
          CARD DO QUIZ
     ========================= -->
@@ -751,40 +745,30 @@
         class="quiz-card"
         id="quizCard">
 
-
         <div class="numero-pergunta">
 
             <i class="fas fa-lightbulb"></i>
 
             <span id="numeroPergunta">
-
                 PERGUNTA 1
-
             </span>
 
         </div>
 
-
         <h2
             class="pergunta"
             id="pergunta">
-
         </h2>
-
 
         <div
             class="alternativas"
             id="alternativas">
-
         </div>
-
 
         <div
             class="feedback"
             id="feedback">
-
         </div>
-
 
         <div class="area-proxima">
 
@@ -801,9 +785,7 @@
 
         </div>
 
-
     </div>
-
 
     <!-- =========================
          RESULTADO
@@ -813,69 +795,113 @@
         class="resultado-final"
         id="resultadoFinal">
 
-
-        <div class="trofeu">
-
-            <i class="fas fa-trophy"></i>
-
-        </div>
-
-
-        <h2>
-            Quiz concluído! 🎉
-        </h2>
-
+        <!-- RESULTADO BLOQUEADO -->
 
         <div
-            class="pontuacao"
-            id="pontuacao">
+            id="resultadoBloqueado"
+            class="resultado-bloqueado">
 
-            0/10
+            <div class="trofeu">
+
+                <i class="fas fa-lock"></i>
+
+            </div>
+
+            <h2>
+                Faça login para ver seu resultado
+            </h2>
+
+            <p class="mensagem-final">
+                Para receber o resultado do quiz,
+                é necessário estar conectado à sua conta.
+            </p>
+
+            <div class="botoes-final">
+
+                <a
+                    href="login.html?retorno=quiz"
+                    class="botao-final refazer">
+
+                    <i class="fas fa-right-to-bracket"></i>
+
+                    Fazer login
+
+                </a>
+
+                <a
+                    href="index.html"
+                    class="botao-final inicio">
+
+                    <i class="fas fa-house"></i>
+
+                    Voltar ao início
+
+                </a>
+
+            </div>
 
         </div>
 
+        <!-- RESULTADO LIBERADO -->
 
-        <p
-            class="mensagem-final"
-            id="mensagemFinal">
+        <div
+            id="resultadoUsuario"
+            style="display: none;">
 
-        </p>
+            <div class="trofeu">
 
+                <i class="fas fa-trophy"></i>
 
-        <div class="botoes-final">
+            </div>
 
+            <h2>
+                Quiz concluído! 🎉
+            </h2>
 
-            <button
-                class="botao-final refazer"
-                onclick="reiniciarQuiz()">
+            <div
+                class="pontuacao"
+                id="pontuacao">
 
-                <i class="fas fa-rotate-right"></i>
+                0/10
 
-                Refazer quiz
+            </div>
 
-            </button>
+            <p
+                class="mensagem-final"
+                id="mensagemFinal">
+            </p>
 
+            <div class="botoes-final">
 
-            <a
-                href="index.html"
-                class="botao-final inicio">
+                <button
+                    class="botao-final refazer"
+                    onclick="reiniciarQuiz()">
 
-                <i class="fas fa-house"></i>
+                    <i class="fas fa-rotate-right"></i>
 
-                Voltar ao início
+                    Refazer quiz
 
-            </a>
+                </button>
+
+                <a
+                    href="index.html"
+                    class="botao-final inicio">
+
+                    <i class="fas fa-house"></i>
+
+                    Voltar ao início
+
+                </a>
+
+            </div>
 
         </div>
 
     </div>
 
-
 </main>
 
-
 <script>
-
 
 /* =========================
    PERGUNTAS
@@ -902,7 +928,6 @@ const perguntas = [
         correta: 0
     },
 
-
     {
         pergunta:
             "Qual transtorno está associado a uma preocupação intensa com o peso e medo de engordar?",
@@ -921,7 +946,6 @@ const perguntas = [
 
         correta: 1
     },
-
 
     {
         pergunta:
@@ -942,7 +966,6 @@ const perguntas = [
         correta: 0
     },
 
-
     {
         pergunta:
             "A bulimia nervosa pode envolver episódios de compulsão alimentar acompanhados de:",
@@ -961,7 +984,6 @@ const perguntas = [
 
         correta: 0
     },
-
 
     {
         pergunta:
@@ -982,7 +1004,6 @@ const perguntas = [
         correta: 0
     },
 
-
     {
         pergunta:
             "Qual atitude é mais adequada quando alguém apresenta sinais de um transtorno alimentar?",
@@ -1001,7 +1022,6 @@ const perguntas = [
 
         correta: 2
     },
-
 
     {
         pergunta:
@@ -1022,7 +1042,6 @@ const perguntas = [
         correta: 1
     },
 
-
     {
         pergunta:
             "Qual afirmação sobre transtornos alimentares é verdadeira?",
@@ -1042,7 +1061,6 @@ const perguntas = [
         correta: 1
     },
 
-
     {
         pergunta:
             "A prevenção dos transtornos alimentares pode envolver:",
@@ -1061,7 +1079,6 @@ const perguntas = [
 
         correta: 1
     },
-
 
     {
         pergunta:
@@ -1084,11 +1101,8 @@ const perguntas = [
 
 ];
 
-
 let perguntaAtual = 0;
-
 let pontuacao = 0;
-
 let respondeu = false;
 
 
@@ -1100,26 +1114,16 @@ function mostrarPergunta() {
 
     respondeu = false;
 
+    const pergunta = perguntas[perguntaAtual];
 
-    const pergunta =
-        perguntas[perguntaAtual];
+    document.getElementById("numeroPergunta").textContent =
+        "PERGUNTA " + (perguntaAtual + 1);
 
-
-    document.getElementById(
-        "numeroPergunta"
-    ).textContent =
-        "PERGUNTA " +
-        (perguntaAtual + 1);
-
-
-    document.getElementById(
-        "contador"
-    ).textContent =
+    document.getElementById("contador").textContent =
         "Pergunta " +
         (perguntaAtual + 1) +
         " de " +
         perguntas.length;
-
 
     const porcentagem =
         Math.round(
@@ -1127,33 +1131,19 @@ function mostrarPergunta() {
             perguntas.length) * 100
         );
 
-
-    document.getElementById(
-        "porcentagem"
-    ).textContent =
+    document.getElementById("porcentagem").textContent =
         porcentagem + "%";
 
-
-    document.getElementById(
-        "barraProgresso"
-    ).style.width =
+    document.getElementById("barraProgresso").style.width =
         porcentagem + "%";
 
-
-    document.getElementById(
-        "pergunta"
-    ).textContent =
+    document.getElementById("pergunta").textContent =
         pergunta.pergunta;
 
-
     const alternativas =
-        document.getElementById(
-            "alternativas"
-        );
-
+        document.getElementById("alternativas");
 
     alternativas.innerHTML = "";
-
 
     const letras = [
         "A",
@@ -1162,36 +1152,26 @@ function mostrarPergunta() {
         "D"
     ];
 
-
     pergunta.alternativas.forEach(
         function(texto, indice) {
 
             const botao =
-                document.createElement(
-                    "button"
-                );
-
+                document.createElement("button");
 
             botao.className =
                 "alternativa";
 
-
             botao.innerHTML = `
 
                 <span class="letra">
-
                     ${letras[indice]}
-
                 </span>
 
                 <span>
-
                     ${texto}
-
                 </span>
 
             `;
-
 
             botao.onclick =
                 function() {
@@ -1203,38 +1183,23 @@ function mostrarPergunta() {
 
                 };
 
-
-            alternativas.appendChild(
-                botao
-            );
+            alternativas.appendChild(botao);
 
         }
     );
 
-
     const feedback =
-        document.getElementById(
-            "feedback"
-        );
-
+        document.getElementById("feedback");
 
     feedback.className =
         "feedback";
 
-
     feedback.textContent = "";
 
-
     const proxima =
-        document.getElementById(
-            "botaoProxima"
-        );
+        document.getElementById("botaoProxima");
 
-
-    proxima.classList.remove(
-        "mostrar"
-    );
-
+    proxima.classList.remove("mostrar");
 
     if (
         perguntaAtual ===
@@ -1277,19 +1242,15 @@ function selecionarResposta(
         return;
     }
 
-
     respondeu = true;
-
 
     const pergunta =
         perguntas[perguntaAtual];
-
 
     const todos =
         document.querySelectorAll(
             ".alternativa"
         );
-
 
     todos.forEach(
         function(item) {
@@ -1303,7 +1264,6 @@ function selecionarResposta(
         }
     );
 
-
     if (
         indice ===
         pergunta.correta
@@ -1313,9 +1273,7 @@ function selecionarResposta(
             "correta"
         );
 
-
         pontuacao++;
-
 
         mostrarFeedback(
             true,
@@ -1328,13 +1286,11 @@ function selecionarResposta(
             "errada"
         );
 
-
         todos[
             pergunta.correta
         ].classList.add(
             "correta"
         );
-
 
         mostrarFeedback(
             false,
@@ -1342,7 +1298,6 @@ function selecionarResposta(
         );
 
     }
-
 
     document.getElementById(
         "botaoProxima"
@@ -1367,11 +1322,9 @@ function mostrarFeedback(
             "feedback"
         );
 
-
     feedback.textContent =
         (correto ? "✓ " : "✕ ") +
         mensagem;
-
 
     feedback.className =
         "feedback mostrar " +
@@ -1394,9 +1347,7 @@ function proximaPergunta() {
         return;
     }
 
-
     perguntaAtual++;
-
 
     if (
         perguntaAtual >=
@@ -1409,25 +1360,19 @@ function proximaPergunta() {
 
     }
 
-
     const card =
         document.getElementById(
             "quizCard"
         );
 
-
     card.style.animation = "none";
 
-
     void card.offsetWidth;
-
 
     card.style.animation =
         "aparecer 0.4s ease";
 
-
     mostrarPergunta();
-
 
     window.scrollTo({
         top: 200,
@@ -1447,68 +1392,137 @@ function mostrarResultado() {
         "quizCard"
     ).style.display = "none";
 
-
     document.getElementById(
         "progressoArea"
     ).style.display = "none";
 
-
     document.getElementById(
         "resultadoFinal"
-    ).classList.add(
-        "mostrar"
-    );
+    ).classList.add("mostrar");
 
+    /*
+       Primeiro verificamos se a pessoa
+       está logada.
+    */
 
-    document.getElementById(
-        "pontuacao"
-    ).textContent =
-        pontuacao +
-        "/" +
-        perguntas.length;
+    fetch("php/verificar_login.php")
+        .then(function(response) {
 
+            if (!response.ok) {
+                throw new Error(
+                    "Erro ao verificar login."
+                );
+            }
 
-    const porcentagem =
-        (pontuacao /
-        perguntas.length) *
-        100;
+            return response.json();
 
+        })
+        .then(function(data) {
 
-    let mensagem;
+            const bloqueado =
+                document.getElementById(
+                    "resultadoBloqueado"
+                );
 
+            const usuario =
+                document.getElementById(
+                    "resultadoUsuario"
+                );
 
-    if (porcentagem >= 80) {
+            if (data.logado) {
 
-        mensagem =
-            "Excelente! Você demonstrou que conhece bem os principais conceitos sobre transtornos alimentares. Continue buscando informações confiáveis e ajudando a combater preconceitos.";
+                /*
+                   A pessoa está logada.
+                   Mostra o resultado.
+                */
 
-    }
+                bloqueado.style.display =
+                    "none";
 
-    else if (porcentagem >= 50) {
+                usuario.style.display =
+                    "block";
 
-        mensagem =
-            "Muito bom! Você já conhece vários aspectos importantes. Continue aprendendo sobre o assunto e compartilhando informações responsáveis.";
+                document.getElementById(
+                    "pontuacao"
+                ).textContent =
+                    pontuacao +
+                    "/" +
+                    perguntas.length;
 
-    }
+                const porcentagem =
+                    (pontuacao /
+                    perguntas.length) *
+                    100;
 
-    else {
+                let mensagem;
 
-        mensagem =
-            "Este quiz é uma oportunidade para aprender mais. Conhecer o tema ajuda a reconhecer a importância da informação, da prevenção e da busca por ajuda.";
+                if (porcentagem >= 80) {
 
-    }
+                    mensagem =
+                        "Excelente! Você demonstrou que conhece bem os principais conceitos sobre transtornos alimentares. Continue buscando informações confiáveis e ajudando a combater preconceitos.";
 
+                }
 
-    document.getElementById(
-        "mensagemFinal"
-    ).textContent =
-        mensagem;
+                else if (porcentagem >= 50) {
 
+                    mensagem =
+                        "Muito bom! Você já conhece vários aspectos importantes. Continue aprendendo sobre o assunto e compartilhando informações responsáveis.";
 
-    window.scrollTo({
-        top: 200,
-        behavior: "smooth"
-    });
+                }
+
+                else {
+
+                    mensagem =
+                        "Este quiz é uma oportunidade para aprender mais. Conhecer o tema ajuda a reconhecer a importância da informação, da prevenção e da busca por ajuda.";
+
+                }
+
+                document.getElementById(
+                    "mensagemFinal"
+                ).textContent =
+                    mensagem;
+
+            } else {
+
+                /*
+                   A pessoa NÃO está logada.
+                   O resultado fica bloqueado.
+                */
+
+                bloqueado.style.display =
+                    "block";
+
+                usuario.style.display =
+                    "none";
+
+            }
+
+            window.scrollTo({
+                top: 200,
+                behavior: "smooth"
+            });
+
+        })
+        .catch(function(error) {
+
+            console.error(error);
+
+            /*
+               Se houver algum erro na verificação,
+               também bloqueamos o resultado.
+            */
+
+            document.getElementById(
+                "resultadoBloqueado"
+            ).style.display =
+                "block";
+
+            document.getElementById(
+                "resultadoUsuario"
+            ).style.display =
+                "none";
+
+        });
 
 }
 
@@ -1525,28 +1539,33 @@ function reiniciarQuiz() {
 
     respondeu = false;
 
-
     document.getElementById(
         "resultadoFinal"
     ).classList.remove(
         "mostrar"
     );
 
+    document.getElementById(
+        "resultadoBloqueado"
+    ).style.display =
+        "block";
+
+    document.getElementById(
+        "resultadoUsuario"
+    ).style.display =
+        "none";
 
     document.getElementById(
         "quizCard"
     ).style.display =
         "block";
 
-
     document.getElementById(
         "progressoArea"
     ).style.display =
         "block";
 
-
     mostrarPergunta();
-
 
     window.scrollTo({
         top: 200,
@@ -1567,7 +1586,6 @@ function abrirMenu() {
             "menuLinks"
         );
 
-
     menu.classList.toggle(
         "aberto"
     );
@@ -1585,12 +1603,10 @@ function alternarTema() {
         "dark-mode"
     );
 
-
     const botao =
         document.querySelector(
             ".botao-tema"
         );
-
 
     if (
         document.body.classList.contains(
@@ -1628,7 +1644,6 @@ function alternarTema() {
 mostrarPergunta();
 
 </script>
-
 
 </body>
 
