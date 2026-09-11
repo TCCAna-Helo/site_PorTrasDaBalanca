@@ -2483,9 +2483,10 @@ function alternarTema() {
         .toggle("dark-mode");
 
     const modoEscuro =
-        document.body.classList.contains(
-            "dark-mode"
-        );
+        document.body.classList.contains("dark-mode");
+
+    const botao =
+        document.querySelector(".botao-tema");
 
 
     /* SALVA A ESCOLHA */
